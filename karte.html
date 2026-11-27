@@ -7,9 +7,11 @@
   <title>Historische Karte | Karlsruhe erinnert</title>
   <link rel="preconnect" href="https://unpkg.com">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="styles.css?v=map-v2-20261127">
+  <link rel="stylesheet" href="styles.css?v=map-v3-archive">
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
-  <script src="app.js?v=map-v2-20261127" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="supabase-config.js" defer></script>
+  <script src="app.js?v=map-v3-archive" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#content">Zum Inhalt springen</a>
@@ -41,7 +43,7 @@
     <section class="page-hero"><p class="section-kicker">02 / EURE FORSCHUNGSKARTE</p><h1>Erkunden. Untersuchen. Gestalten.</h1><p>Wählt eine Station und öffnet die Materialien. Unter „Bearbeiten“ könnt ihr eigene Notizen und Links hinzufügen. Eure Eingaben bleiben vorerst nur im jeweiligen Browser gespeichert.</p></section>
 <section id="kartenansicht" class="workspace-section">
       <div class="workspace-head">
-        <div><p class="section-kicker">02 / INTERAKTIVE KARTE</p><h2>Vier Orte. Eure Forschung.</h2><p>Wählt einen Punkt auf der Karte. Die Station öffnet sich rechts – inklusive Materialien, Aufgaben und bearbeitbaren Feldern.</p></div>
+        <div><p class="section-kicker">02 / INTERAKTIVE KARTE</p><h2>Vier Orte. Eure Forschung.</h2><p>Wählt einen Punkt auf der Karte. Die Station öffnet sich rechts – mit historischen Materialien, freigegebenen Funden aus der Database, Aufgaben und euren bearbeitbaren Feldern.</p></div>
         <div class="workspace-counter"><span id="completed-count">0</span><small>VON 4 STATIONEN<br>LOKAL BEARBEITET</small></div>
       </div>
       <div class="workspace">
@@ -65,7 +67,7 @@
           <div id="station-body" aria-live="polite"></div>
         </aside>
       </div>
-    </section><div class="after-map"><a class="button button-outline" href="database.html">Weiter zur Database (Platzhalter) ↗</a><a class="text-route-link" href="methodenkoffer.html">Benötigt ihr Unterstützung? Zum Methodenkoffer →</a></div>
+    </section><div class="after-map"><a class="button button-outline" href="database.html">Zur gemeinsamen Database ↗</a><a class="text-route-link" href="methodenkoffer.html">Benötigt ihr Unterstützung? Zum Methodenkoffer →</a></div>
   </main>
   <footer><span>Karlsruhe erinnert · WebQuest Geschichte 9/10</span><span>Unabhängiges Unterrichtsprojekt · keine amtliche Veröffentlichung der Stadt Karlsruhe</span><a href="https://stadtgeschichte.karlsruhe.de/erinnerungskultur/erinnerungskultur-im-oeffentlichen-raum/schaufahrt-1933" target="_blank" rel="noopener noreferrer">Historische Grundlage: Stadtarchiv Karlsruhe ↗</a></footer>
   <dialog id="source-dialog" aria-label="Materialansicht"><div class="dialog-shell"><button class="dialog-close" type="button" aria-label="Schließen" id="close-dialog">×</button><div id="dialog-content"></div></div></dialog>
