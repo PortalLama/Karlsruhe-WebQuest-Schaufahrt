@@ -13,6 +13,30 @@ Ein **didaktischer Prototyp** für Geschichte Klasse 9/10. Der Auftrag der Stadt
 
 Die Navigation funktioniert über eigenständige HTML-Dateien, nicht über Scroll-Anker. Alle Seiten nutzen `styles.css`. Nur `karte.html` lädt zusätzlich Leaflet und `app.js`.
 
+## Kartendesign V2
+
+Die Forschungsseite \`karte.html\` zeigt einen **hellen, farblich reduzierten OpenStreetMap-Hintergrund**. Dazu werden die bisherigen OSM-Kacheln ausschließlich per CSS-Filter dargestellt; es wird kein API-Schlüssel eines zusätzlichen Kartendienstes benötigt. Leaflet und die sichtbare OpenStreetMap-Nennung bleiben bestehen.
+
+**Eigene Erinnerungsmarker:** Vier aufeinander abgestimmte Stele-/Kartenmarker mit SVG-Piktogrammen und den Stationsnummern 01–04:
+
+- Gefängnis Riefstahlstraße: Gitter
+- Kanzlei Ludwig Marum: Waage (Rechtsstaat)
+- Volksfreund-Redaktion: Zeitung
+- Badisches Ständehaus: Säulen (Parlament)
+
+Der gewählte Marker ist rot, die übrigen erscheinen in Creme/Anthrazit.
+
+**Korrigierte Standortpositionen:**
+
+- Riefstahlstraße 9: ungefähr 49.013674, 8.385422 (JVA, Outdooractive)
+- Kaiserstraße 176: ungefähr 49.010300, 8.391900 (heutiger Standort, Limehome/OSM)
+- Waldstraße 28: **noch näherungsweise** 49.010650, 8.396950 (Standort anhand Archivplan eingepasst; verifizieren)
+- Ständehaus/Friedrichsplatz: ungefähr 49.008757, 8.400328
+
+Die rot gestrichelte Teilstrecke ist eine **näherungsweise Rekonstruktion anhand des historischen Stadtarchivplans**, nicht ein präziser digitalisierter Verlauf. Zwölf Wendepunkte folgen ungefähr dem Straßenverlauf; es ist **keine komplette Fahrt nach Kislau** und kein verifiziertes modernes Fuß-/Autorouting. Eine weitere Abgleichung mit historischer Karte und genauer Georeferenzierung ist vor dem Unterricht sinnvoll.
+
+Archivvorlage: https://stadtgeschichte.karlsruhe.de/erinnerungskultur/erinnerungskultur-im-oeffentlichen-raum/schaufahrt-1933/orte
+
 ## Aktueller Funktionsumfang und Grenzen
 
 - Vier historische Lernstationen; anklickbare Marker und Materialkarten.
