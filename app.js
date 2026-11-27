@@ -128,6 +128,7 @@ const approvedArchive = {
   client:null, items:[], status:"loading", error:""
 };
 let materialDialogRequest=0;
+let lastArchiveCheck=0;
 
 function safeApprovedUrl(value){
   try{
@@ -139,6 +140,7 @@ function approvedForStation(stationIndex){
   return approvedArchive.items.filter(item=>item.station===stationIndex+1);
 }
 async function refreshApprovedArchive(){
+  lastArchiveCheck=Date.now();
   const cfg=window.WEBQUEST_DB_CONFIG||{};
   if(!safeApprovedUrl(cfg.url)
     ||typeof cfg.publishableKey!=="string"
@@ -348,7 +350,7 @@ function discoverView(station){
   body.append(section("Wo sind wir?","⌖",paragraph(station.where)));
   body.append(section("Was ist hier passiert?","◷",paragraph(station.happened)));
   const sourceWrap=el("div");
-  sourceWrap.append(paragraph("Erste Materialien: Sie sind noch nicht quellenkritisch ausgewertet. Für die spätere Fassung werden Originalscans und genaue Fundstellen ergänzt."));
+  sourceWrap.append(paragraph("Die Ausgangsmaterialien dienen eurer ersten Orientierung. Prüft ihre Herkunft, Perspektive und Aussagekraft. Weitere freigegebene Forschungsfunde aus der gemeinsamen Database erscheinen darunter."));
   const list=el("div",{className:"source-list"});
   const current=work[station.id];
   const sources=[...station.sources];
@@ -525,5 +527,11 @@ function setup(){
   byId("source-dialog").addEventListener("click",e=>{if(e.target===byId("source-dialog"))byId("source-dialog").close()});
   setupMap();render();
   void refreshApprovedArchive();
+  document.addEventListener("visibilitychange",()=>{
+    // Beim Zurückkehren vom Freigabe-Dashboard neue Einträge anzeigen.
+    if(!document.hidden && Date.now()-lastArchiveCheck>20000){
+      void refreshApprovedArchive();
+    }
+  });
 }
 document.addEventListener("DOMContentLoaded",setup);
