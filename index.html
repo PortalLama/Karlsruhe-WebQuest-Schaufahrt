@@ -3,35 +3,46 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Interaktiver WebQuest-Prototyp zur Schaufahrt vom 16. Mai 1933 in Karlsruhe.">
-  <title>Gegner oder Feind? | Karlsruhe 1933</title>
-  <link rel="preconnect" href="https://unpkg.com">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <meta name="description" content="Gegner oder Feind? – Karlsruher WebQuest zur Schaufahrt vom 16. Mai 1933.">
+  <title>Gegner oder Feind? | Karlsruhe erinnert</title>
+  
   <link rel="stylesheet" href="styles.css">
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
-  <script src="app.js" defer></script>
+  
 </head>
 <body>
-  <a class="skip-link" href="#rundgang">Zum Rundgang springen</a>
+  <a class="skip-link" href="#content">Zum Inhalt springen</a>
   <header class="topbar">
-    <a class="brand" href="#start" aria-label="Zur Startseite">
+    <a class="brand" href="index.html" aria-label="Zur Startseite">
       <span class="brand-mark" aria-hidden="true">K<span class="brand-dot">.</span></span>
       <span><strong>Karlsruhe erinnert</strong><small>WEBQUEST · GESCHICHTE 9/10</small></span>
     </a>
     <nav class="main-nav" aria-label="Hauptnavigation">
-      <a href="#auftrag">Der Auftrag</a><a href="#rundgang">Karte</a><a href="#methodenkoffer">Methodenkoffer</a>
+      <a href="index.html" aria-current="page">Start</a>
+<a href="auftrag.html">Der Auftrag</a>
+<a href="karte.html">Historische Karte</a>
+<a href="database.html">Database</a>
+<a href="methodenkoffer.html">Methodenkoffer</a>
+<a href="erinnerungsrundgang.html">Erinnerungsrundgang</a>
     </nav>
+    <details class="mobile-nav">
+      <summary>Menü <span aria-hidden="true">☰</span></summary>
+      <nav aria-label="Mobile Navigation"><a href="index.html" aria-current="page">Start</a>
+<a href="auftrag.html">Der Auftrag</a>
+<a href="karte.html">Historische Karte</a>
+<a href="database.html">Database</a>
+<a href="methodenkoffer.html">Methodenkoffer</a>
+<a href="erinnerungsrundgang.html">Erinnerungsrundgang</a></nav>
+    </details>
     <span class="top-label">PROTOTYP</span>
   </header>
-
-  <main>
+  <main id="content">
     <section class="intro" id="start">
       <div class="intro-copy">
         <p class="eyebrow"><span class="pulse-dot"></span> FORSCHUNGSAUFTRAG · KARLSRUHE 1933</p>
         <h1>Gegner <em>oder Feind?</em></h1>
         <p class="intro-lead">Sieben politische Gegner. Ein offener Polizeiwagen. Eine Fahrt durch Karlsruhe. Warum inszenierten die Nationalsozialisten am 16. Mai 1933 diese öffentliche Demütigung?</p>
         <p class="intro-sub">Das fiktive städtische Projektbüro sucht euch als historische Redaktion: Untersucht Quellen und gestaltet vier Stationen eines digitalen Erinnerungsrundgangs.</p>
-        <div class="intro-actions"><a class="button button-main" href="#rundgang">Rundgang erkunden <span aria-hidden="true">↗</span></a><a class="button button-quiet" href="#auftrag">Projektauftrag lesen</a></div>
+        <div class="intro-actions"><a class="button button-main" href="karte.html">Rundgang erkunden <span aria-hidden="true">↗</span></a><a class="button button-quiet" href="auftrag.html">Projektauftrag lesen</a></div>
       </div>
       <div class="intro-graphic" aria-hidden="true">
         <div class="graphic-orbit orbit-1"></div><div class="graphic-orbit orbit-2"></div><div class="graphic-orbit orbit-3"></div>
@@ -40,58 +51,19 @@
         <div class="graphic-caption">KARLSRUHE<br>VIER ORTE · VIELE FRAGEN</div>
       </div>
     </section>
-
-    <section class="assignment" id="auftrag">
-      <div class="section-kicker">01 / DER AUFTRAG</div>
-      <div class="assignment-main"><h2>Die Karte ist da.<br><span>Die Geschichte fehlt noch.</span></h2>
-      <p>2023 erinnerten in Karlsruhe temporäre Informationsstelen an die Schaufahrt. Für unser <strong>ausdrücklich fiktives</strong> neues Erinnerungsprojekt wurden vier Orte bereits auf einer digitalen Karte markiert. Erste Hinweise und Fundstellen sind vorhanden – die kritische Analyse und eine verständliche mediale Vermittlung aber noch nicht.</p></div>
-      <div class="assignment-tasks"><span class="task-number">01</span><p>Untersucht historische Materialien und ihre Perspektiven.</p><span class="task-number">02</span><p>Entwickelt gemeinsam eine belegte historische Aussage.</p><span class="task-number">03</span><p>Gestaltet einen digitalen Beitrag für eure Station.</p></div>
-    </section>
-
-    <section id="rundgang" class="workspace-section">
-      <div class="workspace-head">
-        <div><p class="section-kicker">02 / INTERAKTIVER RUNDGANG</p><h2>Vier Orte. Eure Forschung.</h2><p>Wählt einen Punkt auf der Karte. Die Station öffnet sich rechts – inklusive Materialien, Aufgaben und bearbeitbaren Feldern.</p></div>
-        <div class="workspace-counter"><span id="completed-count">0</span><small>VON 4 STATIONEN<br>LOKAL BEARBEITET</small></div>
-      </div>
-      <div class="workspace">
-        <div class="map-column">
-          <div class="map-topline"><span><span class="live-dot"></span> KARLSRUHE · INNENSTADT</span><button class="small-button" id="fit-map" type="button">Alle Orte zeigen</button></div>
-          <div id="map" role="application" aria-label="Interaktive Karte der ausgewählten historischen Orte in Karlsruhe">
-            <div class="map-fallback">Die Karte wird geladen. Für die Kartendarstellung ist eine Internetverbindung erforderlich.</div>
-          </div>
-          <div class="map-footer"><span class="legend-line"></span> Verbindung der vier Lernstationen (schematisch, <strong>nicht</strong> die vollständige historische Fahrtstrecke)<br><span class="map-disclaimer">Die Pins dienen zunächst der Orientierung. Positionen und Verlauf vor dem Unterricht anhand des Stadtarchivs prüfen.</span></div>
-          <div class="station-menu"><h3>Station auswählen</h3><div id="station-buttons" class="station-buttons" role="group" aria-label="Historische Stationen"></div></div>
-          <div class="map-note"><strong>Historische Einordnung:</strong> Die tatsächliche Schaufahrt führte an weiteren Orten vorbei und endete außerhalb der Innenstadt im Konzentrationslager Kislau. <a href="https://stadtgeschichte.karlsruhe.de/erinnerungskultur/erinnerungskultur-im-oeffentlichen-raum/schaufahrt-1933/orte" target="_blank" rel="noopener noreferrer">Originalroute des Stadtarchivs ↗</a></div>
-        </div>
-
-        <aside class="detail-column" aria-label="Stationsinformationen">
-          <div class="detail-topline"><span id="station-index">STATION 01 / 04</span><span class="chip chip-pending" id="station-status">NOCH NICHT BEARBEITET</span></div>
-          <h3 id="station-title"></h3><p class="station-address" id="station-address"></p>
-          <div class="tab-row" role="tablist" aria-label="Stationsansicht">
-            <button type="button" class="tab active" id="tab-discover" role="tab" aria-selected="true">Entdecken</button>
-            <button type="button" class="tab" id="tab-edit" role="tab" aria-selected="false">Bearbeiten</button>
-          </div>
-          <div id="station-body" aria-live="polite"></div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="methods" id="methodenkoffer">
-      <p class="section-kicker">03 / HILFE & METHODEN</p>
-      <div class="methods-header"><h2>Euer Methodenkoffer</h2><p>Wählt selbst, wann ihr Hilfestellungen benötigt. Hier gibt es keine fertigen Lösungen.</p></div>
-      <div class="method-grid">
-        <details class="method-card"><summary><span class="method-icon">⌕</span><span><strong>Quellen untersuchen</strong><small>Quellenkritik in sechs Schritten</small></span><span class="plus">+</span></summary><ol><li>Welche Art von Material liegt vor?</li><li>Wer hat es wann und für wen erstellt?</li><li>Welche Aussage oder Beobachtung ist belegt?</li><li>Welche Absicht oder Perspektive ist erkennbar?</li><li>Was können wir daraus nicht sicher schließen?</li><li>Wie geben wir die Fundstelle korrekt an?</li></ol></details>
-        <details class="method-card"><summary><span class="method-icon">◈</span><span><strong>Historisch argumentieren</strong><small>Behauptung · Beleg · Erklärung</small></span><span class="plus">+</span></summary><p>Formuliert zuerst eure historische Aussage. Verweist dann auf die konkrete Stelle in der Quelle. Erklärt, warum der Beleg eure Aussage stützt – und welche Grenzen er hat.</p></details>
-        <details class="method-card"><summary><span class="method-icon">☷</span><span><strong>Im Team arbeiten</strong><small>Kooperation statt Einzelarbeit</small></span><span class="plus">+</span></summary><p>Verteilt Rollen als Verantwortlichkeiten, nicht als getrennte Arbeitspakete. Entscheidet gemeinsam über Unterleitfrage, historische Kernaussage und Medienform. Jede Person muss das Ergebnis erklären können.</p></details>
-        <details class="method-card"><summary><span class="method-icon">▣</span><span><strong>Beiträge gestalten</strong><small>Video · Galerie · Präsentation</small></span><span class="plus">+</span></summary><p>Entscheidet euch für ein geeignetes Medium. Erstellt ein kurzes Storyboard mit Ort, Quellenbeleg und historischer Erklärung. Videos, Präsentationen und Galerien erfüllen dieselben fachlichen Mindestkriterien.</p></details>
-        <details class="method-card"><summary><span class="method-icon">✓</span><span><strong>Redaktionscheck</strong><small>Peerfeedback und Selbstkontrolle</small></span><span class="plus">+</span></summary><ul><li>Ist die historische Aussage nachvollziehbar?</li><li>Ist sie durch Quellen belegt?</li><li>Unterscheiden wir Täter- und Opferperspektiven?</li><li>Kann eine Person ohne Vorwissen den Beitrag verstehen?</li></ul></details>
-        <details class="method-card"><summary><span class="method-icon">?</span><span><strong>Jean-Claude</strong><small>Digitaler Assistent · Konzept</small></span><span class="plus">+</span></summary><p>„Ich helfe euch, Fragen an Quellen zu stellen, Fachbegriffe zu verstehen und euren Beitrag zu planen.“ Diese Demo bietet feste Hilfen; ein echter KI-Chat ist noch <strong>nicht</strong> angebunden.</p></details>
-      </div>
-    </section>
+<section class="page-overview" aria-labelledby="uebersicht-title">
+  <p class="section-kicker">EUER PROJEKTWEG</p>
+  <h2 id="uebersicht-title">Vom historischen Fund zum digitalen Erinnerungsort</h2>
+  <div class="journey-grid">
+    <a class="journey-card" href="auftrag.html"><span class="journey-index">01</span><strong>Der Auftrag</strong><p>Erfahrt, weshalb eure historische Redaktion gebraucht wird.</p><span class="journey-link">Auftrag lesen ↗</span></a>
+    <a class="journey-card" href="karte.html"><span class="journey-index">02</span><strong>Historische Karte</strong><p>Erkundet vier Orte, untersucht Materialien und haltet eure Erkenntnisse fest.</p><span class="journey-link">Stationen öffnen ↗</span></a>
+    <a class="journey-card journey-card-muted" href="database.html"><span class="journey-index">03</span><strong>Database</strong><p>Geplanter Sammelort für Links, Quellen und Materialien.</p><span class="journey-link">Platzhalter ansehen ↗</span></a>
+    <a class="journey-card" href="methodenkoffer.html"><span class="journey-index">04</span><strong>Methodenkoffer</strong><p>Findet Quellenhilfen, Teamtipps und Gestaltungsideen.</p><span class="journey-link">Hilfen öffnen ↗</span></a>
+    <a class="journey-card journey-card-muted" href="erinnerungsrundgang.html"><span class="journey-index">05</span><strong>Erinnerungsrundgang</strong><p>Hier sollen die später geprüften Gruppenbeiträge erscheinen.</p><span class="journey-link">Ausstellung ansehen ↗</span></a>
+  </div>
+</section>
   </main>
-
   <footer><span>Karlsruhe erinnert · Bildungsprototyp</span><span>Fiktiver Projektauftrag auf Basis historischer Ereignisse · Kein Angebot der Stadt Karlsruhe</span><a href="https://stadtgeschichte.karlsruhe.de/erinnerungskultur/erinnerungskultur-im-oeffentlichen-raum/schaufahrt-1933" target="_blank" rel="noopener noreferrer">Historische Grundlage: Stadtarchiv Karlsruhe ↗</a></footer>
-
-  <dialog id="source-dialog" aria-label="Materialansicht"><div class="dialog-shell"><button class="dialog-close" type="button" aria-label="Schließen" id="close-dialog">×</button><div id="dialog-content"></div></div></dialog>
+  
 </body>
 </html>
