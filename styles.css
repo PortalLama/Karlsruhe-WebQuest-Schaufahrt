@@ -1105,3 +1105,124 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   .archive-detail-field{grid-template-columns:1fr;gap:4px}
   .archive-intro-actions .archive-button{flex:1 1 auto}
 }
+
+
+/* === Database V2 · private PDFs und Bilder === */
+.archive-upload-choice{
+  border:1px solid #D7D1CA;
+  padding:15px 16px 13px;
+  margin:2px 0 0;
+  background:#F8F5F0;
+  border-radius:9px;
+  min-width:0;
+}
+.archive-upload-choice legend{
+  padding:0 6px;
+  color:#302D31;
+  font-size:12px;
+  font-weight:750;
+}
+.archive-upload-options{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:3px 0 11px;
+}
+.archive-form-grid .archive-upload-option{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  flex:1 1 190px;
+  background:#FFF;
+  border:1px solid #DBD5CD;
+  padding:12px 14px;
+  border-radius:7px;
+  cursor:pointer;
+  font-size:13px;
+  color:#29262A;
+  font-weight:650;
+}
+.archive-upload-option:has(input:checked){
+  border-color:#A72C36;
+  background:#FDF5F2;
+}
+.archive-form-grid .archive-upload-option input{
+  width:16px;
+  height:16px;
+  margin:0;
+  padding:0;
+  accent-color:#A72C36;
+  flex:0 0 16px;
+}
+.archive-upload-option:has(input:disabled){
+  cursor:not-allowed;
+  opacity:.65;
+}
+.archive-upload-hint,.archive-file-area p{
+  margin:9px 0 0;
+  color:#403D41;
+  font-size:12px;
+  line-height:1.6;
+  font-weight:400;
+}
+.archive-form-grid .archive-file-area>label{
+  font-size:12px;
+  font-weight:750;
+}
+.archive-file-area{
+  background:#F8F5F0;
+  border:1px dashed #C5BCB4;
+  border-radius:9px;
+  padding:16px;
+}
+.archive-form-grid .archive-file-area input[type=file]{
+  background:#FFF;
+  padding:10px;
+  cursor:pointer;
+}
+.archive-file-area .archive-upload-warning{
+  color:#87303A;
+  font-weight:650;
+}
+.archive-file-preview{
+  border:1px solid #DDD6CF;
+  border-radius:9px;
+  padding:16px;
+  margin-top:23px;
+  background:#F4F0EB;
+  text-align:center;
+}
+.archive-preview-image{
+  display:block;
+  width:100%;
+  max-height:430px;
+  object-fit:contain;
+  border-radius:6px;
+  background:#fff;
+}
+.archive-preview-note,.archive-preview-lifetime,.archive-preview-error{
+  font-size:12px;
+  line-height:1.65;
+  color:#3F3B40;
+  margin:9px 0;
+}
+.archive-preview-lifetime{
+  text-align:left;
+  color:#575258;
+  margin-top:15px;
+}
+.archive-preview-error{
+  color:#8F2832;
+  text-align:left;
+}
+.archive-pdf-preview{
+  display:grid;
+  place-items:center;
+  background:#F1E5E3;
+  color:#A72C36;
+  border-radius:9px;
+  width:80px;
+  height:90px;
+  font-size:47px;
+  margin:10px auto;
+}
