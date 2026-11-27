@@ -596,3 +596,127 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
     padding:24px;
   }
 }
+
+
+/* === Historische Karte V2 · zurückhaltender OSM-Stil, Stele-Marker === */
+#map{
+  background:#F8F5EC;
+  border-top:1px solid #E5DED5;
+  border-bottom:1px solid #E5DED5;
+}
+/* Nur Kartenkacheln filtern: Routenlinie, Stationen und Bedienelemente
+   behalten unveränderte Kontrast- und Akzentfarben. */
+#map .leaflet-tile-pane .leaflet-tile{
+  filter:grayscale(.95) sepia(.16) brightness(1.10) contrast(.85);
+}
+#map .leaflet-control-zoom a{
+  color:#35343A;
+  background:#FFFDF9;
+  border-color:#D7D1C9;
+}
+#map .leaflet-control-zoom a:hover{
+  background:#F3EEE8;
+}
+#map .leaflet-control-attribution{
+  background:rgba(255,253,248,.92);
+  color:#343239;
+}
+#map .leaflet-control-attribution a{color:#81202C}
+#map .leaflet-tooltip{
+  background:#2D2C31;
+  color:#fff;
+  border:none;
+  font-size:12px;
+  font-weight:700;
+  box-shadow:0 6px 14px rgba(0,0,0,.18);
+}
+#map .leaflet-tooltip::before{border-top-color:#2D2C31}
+#map .leaflet-div-icon.station-marker-v2{
+  border:none!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  display:block;
+  overflow:visible;
+}
+.memorial-pin{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:2px;
+  width:47px;
+  height:53px;
+  box-sizing:border-box;
+  background:#FFFCF6;
+  color:#343237;
+  border:2px solid #343237;
+  border-radius:7px 7px 5px 5px;
+  box-shadow:0 4px 12px rgba(25,24,27,.22);
+  transition:background .15s ease, color .15s ease,transform .15s ease;
+}
+.memorial-pin::after{
+  content:"";
+  position:absolute;
+  bottom:-9px;
+  left:15px;
+  width:13px;
+  height:13px;
+  background:inherit;
+  border-right:2px solid #343237;
+  border-bottom:2px solid #343237;
+  border-bottom-right-radius:2px;
+  transform:rotate(45deg);
+  z-index:-1;
+}
+.memorial-symbol{
+  display:block;
+  width:25px;
+  height:25px;
+  flex-shrink:0;
+}
+.memorial-number{
+  font-size:11px;
+  line-height:1.1;
+  font-weight:800;
+  letter-spacing:.04em;
+  font-variant-numeric:tabular-nums;
+}
+.station-marker-v2:hover .memorial-pin,
+.station-marker-v2.is-active .memorial-pin{
+  background:#A72C36;
+  color:#FFFDFC;
+  border-color:#7D2029;
+  transform:translateY(-3px);
+  box-shadow:0 7px 17px rgba(104,26,34,.34);
+}
+.station-marker-v2:hover .memorial-pin::after,
+.station-marker-v2.is-active .memorial-pin::after{
+  border-right-color:#7D2029;
+  border-bottom-color:#7D2029;
+}
+.station-marker-v2:focus-visible .memorial-pin{
+  outline:3px solid #E0B68A;
+  outline-offset:3px;
+}
+.map-topline .live-dot{background:#A72C36}
+.map-topline .small-button{background:#FFFCF8;border-color:#D8D1C9;color:#333137}
+.map-topline .small-button:hover{background:#F1EAE2}
+.map-footer{
+  background:#FCFAF6;
+  border-bottom:1px solid #DED8D0;
+  color:#353338;
+  font-size:11px;
+  line-height:1.75;
+}
+.map-footer strong{color:#242328}
+.map-disclaimer{color:#4E4A4E}
+.map-disclaimer a{color:#962732;font-weight:700}
+.station-number{background:#36343A}
+.station-btn.active .station-number{background:#A72C36}
+.map-note{border-left:3px solid #A72C36;background:#F7F1EB;color:#343237}
+@media(max-width:700px){
+  .memorial-pin{width:43px;height:49px}
+  .memorial-pin::after{left:13px}
+  .memorial-symbol{width:23px;height:23px}
+}
