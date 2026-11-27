@@ -519,3 +519,80 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   .roles-section .role-button-grid{grid-template-columns:1fr}
   .role-button-grid .role-card{min-height:150px}
 }
+
+
+/* === Nachbesserung: gut sichtbare Leitfrage und großzügigere Rollenkarten === */
+.core-question-section{
+  background-color:#DADADC;
+  border-top:1px solid #C9C8CB;
+  border-bottom:1px solid #C9C8CB;
+}
+.core-question-inner h2#main-research-question{
+  /* Dieselbe klassische Serifenschrift wie die großen Seitenüberschriften. */
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:400;
+  font-style:normal;
+  font-size:clamp(33px,3.25vw,45px);
+  line-height:1.29;
+  letter-spacing:-.032em;
+  color:#A72C36;
+}
+.roles-section .role-button-grid{
+  gap:20px;
+}
+.role-button-grid .role-card{
+  min-height:286px;
+  padding:31px 29px 27px;
+  border:1px solid #D5D0CB;
+}
+.role-button-grid .role-name{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:21px;
+  line-height:1.32;
+  margin-bottom:12px;
+}
+.role-button-grid .role-short{
+  font-size:12px;
+  line-height:1.65;
+  margin-bottom:21px;
+}
+.role-button-grid .role-motif{
+  margin-bottom:23px;
+}
+/* Bei mittelgroßen Bildschirmen lieber zwei geräumige Karten pro Zeile,
+   statt vier schmale Karten mit dicht gedrängtem Text. */
+@media(max-width:1300px){
+  .roles-section .role-button-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .role-button-grid .role-card{
+    min-height:250px;
+  }
+}
+@media(max-width:700px){
+  .core-question-section{
+    padding:56px 22px;
+  }
+  .core-question-inner h2#main-research-question{
+    font-size:clamp(29px,6.1vw,37px);
+  }
+  .roles-section .role-button-grid{
+    gap:14px;
+  }
+  .role-button-grid .role-card{
+    min-height:246px;
+    padding:22px 19px 21px;
+  }
+  .role-button-grid .role-name{
+    font-size:19px;
+  }
+}
+@media(max-width:540px){
+  .roles-section .role-button-grid{
+    grid-template-columns:1fr;
+  }
+  .role-button-grid .role-card{
+    min-height:190px;
+    padding:24px;
+  }
+}
