@@ -364,7 +364,7 @@
     const linkChoice=document.querySelector('input[name="delivery"][value="link"]');
     const fileChoice=el("archive-file-mode");
     linkChoice.disabled=state.editingFile;
-    fileChoice.disabled=!state.filesReady && !state.editingFile;
+    fileChoice.disabled=Boolean(state.editingId) ? !state.editingFile : !state.filesReady;
     (state.editingFile ? fileChoice : linkChoice).checked=true;
     syncDelivery();
     el("archive-entry-title").textContent=item ? "Material bearbeiten" : "Neues Material";
