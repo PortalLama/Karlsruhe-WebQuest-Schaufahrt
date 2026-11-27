@@ -4,7 +4,8 @@
  * Karlsruher WebQuest · Kartenlayout V2
  * Die Streckenführung ist näherungsweise aus dem Archivplan übertragen,
  * jedoch noch keine vermessene oder vollständig gesicherte Fahrtlinie.
- * Alle Einträge liegen vorerst ausschließlich im Browser (localStorage).
+ * Die individuellen Bearbeitungsfelder bleiben im Browser (localStorage).
+ * Freigegebene Quellen werden ergänzend aus der Supabase-Database geladen.
  */
 const ARCHIVE_ROOT = "https://stadtgeschichte.karlsruhe.de/erinnerungskultur/erinnerungskultur-im-oeffentlichen-raum/schaufahrt-1933";
 const STATIONS = [
@@ -110,6 +111,192 @@ let activeIndex = 0;
 let activeTab = "discover";
 let map, markerObjects = [], routeObject;
 const byId = id => document.getElementById(id);
+
+/* Gemeinsame, freigegebene Materialien aus derselben Database.
+ * Nur LESEN mit öffentlichem Publishable Key, ohne Login.
+ * RLS und private Storage-Policies entscheiden serverseitig über Zugriff.
+ */
+const DB_BUCKET = "webquest-materials";
+const DB_KIND = Object.freeze({
+  quelle:"Historische Quelle",
+  darstellung:"Historische Darstellung",
+  bild:"Bild / Fotografie",
+  video:"Video / Audio",
+  link:"Weiterführender Link"
+});
+const approvedArchive = {
+  client:null, items:[], status:"loading", error:""
+};
+let materialDialogRequest=0;
+
+function safeApprovedUrl(value){
+  try{
+    const url=new URL(String(value||"").trim());
+    return url.protocol==="https:" && !url.username && !url.password && Boolean(url.hostname);
+  }catch{return false;}
+}
+function approvedForStation(stationIndex){
+  return approvedArchive.items.filter(item=>item.station===stationIndex+1);
+}
+async function refreshApprovedArchive(){
+  const cfg=window.WEBQUEST_DB_CONFIG||{};
+  if(!safeApprovedUrl(cfg.url)
+    ||typeof cfg.publishableKey!=="string"
+    ||!cfg.publishableKey.startsWith("sb_publishable_")
+    ||!window.supabase?.createClient){
+    approvedArchive.status="unavailable";
+    approvedArchive.error="Die Verbindung zur gemeinsamen Database ist derzeit nicht eingerichtet oder konnte nicht geladen werden.";
+    if(activeTab==="discover")render();
+    return;
+  }
+  approvedArchive.status="loading";
+  if(activeTab==="discover")render();
+  try{
+    if(!approvedArchive.client){
+      approvedArchive.client=window.supabase.createClient(cfg.url,cfg.publishableKey,{
+        auth:{persistSession:false,autoRefreshToken:false,detectSessionInUrl:false}
+      });
+    }
+    const {data,error}=await approvedArchive.client.from("research_materials")
+      .select("id,title,kind,station,description,author,historical_date,source_reference,material_url,storage_path")
+      .eq("review_status","approved")
+      .in("station",[1,2,3,4])
+      .order("created_at",{ascending:false})
+      .limit(250);
+    if(error)throw error;
+    approvedArchive.items=(Array.isArray(data)?data:[]).filter(item=>
+      Number.isInteger(item.station)&&item.station>=1&&item.station<=4
+      &&typeof item.title==="string"
+      &&(safeApprovedUrl(item.material_url) || Boolean(item.storage_path))
+    );
+    approvedArchive.status="ready";
+    approvedArchive.error="";
+  }catch(error){
+    approvedArchive.items=[];
+    approvedArchive.status="error";
+    approvedArchive.error="Die freigegebenen Materialien sind vorübergehend nicht erreichbar. Die Archivlinks oben bleiben verfügbar.";
+    // Details nur in der Entwicklerkonsole, nicht in der Schüleransicht.
+    console.warn("Database-Materialien konnten nicht geladen werden:",error);
+  }
+  if(activeTab==="discover")render();
+}
+
+function approvedMaterialSection(stationIndex){
+  const wrap=el("div",{className:"approved-archive"});
+  const head=el("div",{className:"approved-archive-head"});
+  const heading=el("strong",{text:"Freigegebene Materialien aus der Database"});
+  const refresh=el("button",{
+    type:"button",className:"archive-refresh-small",text:"↻ Aktualisieren",
+    title:"Neu freigegebene Materialien laden"
+  });
+  refresh.addEventListener("click",()=>void refreshApprovedArchive());
+  head.append(heading,refresh);
+  wrap.append(head);
+  const status=el("p",{className:"approved-archive-status"});
+  status.setAttribute("role","status");
+  if(approvedArchive.status==="loading"){
+    status.textContent="Gemeinsame Materialien werden geladen …";
+  }else if(approvedArchive.status==="error" || approvedArchive.status==="unavailable"){
+    status.textContent=approvedArchive.error;
+  }else{
+    const count=approvedForStation(stationIndex).length;
+    status.textContent=count===0
+      ? "Für diese Station sind noch keine Materialien freigegeben."
+      : count===1
+        ? "1 geprüft und freigegeben · für alle sichtbar"
+        : count+" geprüft und freigegeben · für alle sichtbar";
+  }
+  wrap.append(status);
+  if(approvedArchive.status==="ready"){
+    const list=el("div",{className:"source-list approved-source-list"});
+    for(const item of approvedForStation(stationIndex)){
+      const button=el("button",{
+        className:"source-card approved-source-card",type:"button",
+        title:item.title+" – freigegebenes Material öffnen"
+      });
+      const icon=item.storage_path
+        ? (/\.(?:png|webp|jpg)$/i.test(item.storage_path)?"▧":"▤")
+        : "↗";
+      const thumbnail=el("div",{className:"source-thumb approved-source-thumb",text:icon});
+      button.append(thumbnail);
+      button.append(el("strong",{text:item.title}));
+      button.append(el("small",{
+        text:(DB_KIND[item.kind]||"Material")
+          +(item.storage_path?" · Datei ansehen":" · Link öffnen")
+      }));
+      button.append(el("span",{className:"approved-source-tag",text:"✓ FREIGEGEN"}));
+      button.addEventListener("click",()=>void openApprovedMaterial(item));
+      list.append(button);
+    }
+    wrap.append(list);
+  }
+  const link=safeAnchor("database.html?station="+String(stationIndex+1),
+    "Alle Quellen in der Database ansehen ↗","approved-archive-link");
+  wrap.append(link);
+  return wrap;
+}
+
+async function openApprovedMaterial(item){
+  materialDialogRequest++;
+  const requestId=materialDialogRequest;
+  const dialog=byId("source-dialog"), body=byId("dialog-content");
+  body.replaceChildren();
+  body.append(
+    el("p",{className:"section-kicker",text:"DATABASE · FREIGEGEBEN"}),
+    el("h3",{text:item.title}),
+    el("p",{className:"approved-dialog-kind",text:DB_KIND[item.kind]||"Material"})
+  );
+  if(item.author)body.append(el("p",{text:"Urheber / Verfasser: "+item.author}));
+  if(item.historical_date)body.append(el("p",{text:"Entstehungszeit: "+item.historical_date}));
+  body.append(el("p",{text:"Fundstelle: "+(item.source_reference||"Nicht angegeben")}));
+  body.append(el("p",{text:item.description||"Keine Beschreibung vorhanden."}));
+  if(safeApprovedUrl(item.material_url)){
+    body.append(safeAnchor(item.material_url,"Material / externe Fundstelle öffnen ↗"));
+    dialog.showModal();
+    return;
+  }
+  if(!item.storage_path||!approvedArchive.client){
+    body.append(el("p",{text:"Die Datei kann momentan nicht geladen werden."}));
+    dialog.showModal();
+    return;
+  }
+  const preview=el("div",{className:"approved-file-preview"});
+  preview.append(el("p",{text:"Geschützte Dateivorschau wird geladen …"}));
+  body.append(preview);
+  dialog.showModal();
+  try{
+    const {data,error}=await approvedArchive.client.storage.from(DB_BUCKET)
+      .createSignedUrl(item.storage_path,120);
+    if(requestId!==materialDialogRequest||!dialog.open)return;
+    if(error||!data?.signedUrl)throw error||new Error("Keine Datei-URL erhalten");
+    preview.replaceChildren();
+    const isImage=/\.(jpg|png|webp)$/i.test(item.storage_path);
+    if(isImage){
+      const img=el("img");
+      img.className="approved-preview-image";
+      img.src=data.signedUrl;
+      img.alt="Vorschau des Materials: "+item.title;
+      img.loading="lazy";
+      preview.append(img);
+    }else{
+      preview.append(el("p",{className:"approved-preview-pdf",text:"▤  PDF-Dokument"}));
+    }
+    preview.append(safeAnchor(data.signedUrl,
+      isImage?"Bild in neuem Tab öffnen ↗":"PDF in neuem Tab öffnen ↗"));
+    preview.append(el("p",{
+      className:"approved-preview-note",
+      text:"Der Dateilink ist aus Datenschutzgründen nur zwei Minuten gültig. Für einen neuen Link das Material erneut öffnen."
+    }));
+  }catch(error){
+    if(requestId!==materialDialogRequest||!dialog.open)return;
+    preview.replaceChildren(el("p",{
+      className:"approved-preview-error",
+      text:"Die Datei kann gerade nicht geöffnet werden. Bitte Verbindung und Freigabe prüfen oder es später erneut versuchen."
+    }));
+    console.warn("Freigegebene Datei nicht erreichbar:",error);
+  }
+}
+
 function loadWork() {
   try {
     const saved=JSON.parse(localStorage.getItem(STORAGE_KEY)||"{}");
@@ -152,7 +339,7 @@ function openMaterial(item){
   const d=byId("source-dialog"), body=byId("dialog-content");
   body.replaceChildren();
   body.append(el("p",{className:"section-kicker",text:item.kind||"MATERIAL"}),el("h3",{text:item.label}),paragraph(item.description||""));
-  body.append(paragraph("Hinweis: Dieser Prototyp enthält noch keine lokal hochgeladenen Archivscans. Die Fundstelle lässt sich über den folgenden Link öffnen."));
+  body.append(paragraph("Archivmaterial des vorgegebenen Quellenpakets. Öffnet die Fundstelle, beachtet Urheber und Entstehungszeit und prüft die Perspektive der Quelle."));
   if(validExternalUrl(item.url)) body.append(safeAnchor(item.url,"Quelle / Fundstelle in neuem Tab öffnen ↗"));
   d.showModal();
 }
@@ -173,7 +360,7 @@ function discoverView(station){
     card.addEventListener("click",()=>openMaterial(source));
     list.append(card);
   });
-  sourceWrap.append(list,el("div",{className:"empty-box",text:"+ Weitere Originalquellen fehlen noch – ergänzt und prüft sie während eurer Forschung."}));
+  sourceWrap.append(list,approvedMaterialSection(STATIONS.indexOf(station)));
   body.append(section("Welche Materialien gibt es?", "▤",sourceWrap));
   const q=el("div",{className:"question-card"});
   q.append(el("strong",{text:"MÖGLICHE FORSCHUNGSFRAGE"}),paragraph(station.question));
@@ -334,8 +521,9 @@ function setup(){
   byId("tab-discover").addEventListener("click",()=>{activeTab="discover";render()});
   byId("tab-edit").addEventListener("click",()=>{activeTab="edit";render()});
   byId("fit-map").addEventListener("click",()=>{if(map&&routeObject){const fit=L.latLngBounds([...ROUTE_GUIDE,...STATIONS.map(s=>s.coordinates)]);map.fitBounds(fit.pad(.14),{maxZoom:15,padding:[28,28]});}});
-  byId("close-dialog").addEventListener("click",()=>byId("source-dialog").close());
+  byId("close-dialog").addEventListener("click",()=>{materialDialogRequest++;byId("source-dialog").close()});
   byId("source-dialog").addEventListener("click",e=>{if(e.target===byId("source-dialog"))byId("source-dialog").close()});
   setupMap();render();
+  void refreshApprovedArchive();
 }
 document.addEventListener("DOMContentLoaded",setup);
