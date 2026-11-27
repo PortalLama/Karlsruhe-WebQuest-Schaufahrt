@@ -303,7 +303,7 @@
           .update(payload).eq("id",state.editingId).select("id").single();
       } else {
         response = await state.client.from("research_materials")
-          .insert({...payload,owner_id:state.user.id}).select("id").single();
+          .insert(payload).select("id").single();
       }
       if (response.error) throw response.error;
       el("archive-entry-dialog").close();
