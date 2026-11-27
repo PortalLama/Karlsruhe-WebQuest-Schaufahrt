@@ -4,11 +4,14 @@
  * Karlsruhe erinnert · Forschungsarchiv V1
  * Die öffentliche Website liefert nur die Oberfläche.
  * Zentral gespeichert wird ausschließlich nach Supabase-Einrichtung.
- * Keine Uploads, kein versteckter lokaler Ersatzspeicher.
+ * V2 unterstützt private, moderierte Bild-/PDF-Dateien nach SQL-Migration.
+ * Kein versteckter lokaler Ersatzspeicher.
  * Row Level Security in supabase/schema.sql entscheidet serverseitig,
  * wer welche Einträge lesen oder verändern darf.
  */
 (() => {
+  const STORAGE_BUCKET = "webquest-materials";
+  const MAX_FILE_BYTES = 10 * 1024 * 1024;
   const KIND = Object.freeze({
     quelle: "Historische Quelle",
     darstellung: "Historische Darstellung",
@@ -46,6 +49,7 @@
     editingId: null,
     selected: null,
     ready: false,
+    filesReady: false,
     loading: false
   };
 
@@ -54,6 +58,105 @@
       const u = new URL(String(raw).trim());
       return u.protocol === "https:" && !u.username && !u.password && Boolean(u.hostname);
     } catch { return false; }
+  }
+
+
+  /* Vor dem Upload prüfen wir Signatur, Endung und Dateigröße.
+     Das ist nur eine zusätzliche Client-Kontrolle: Die Storage-Bucket-
+     Beschränkungen und RLS müssen serverseitig eingerichtet sein. */
+  async function checkUploadFile(file) {
+    if (!file || file.size === 0 || file.size > MAX_FILE_BYTES) {
+      throw new Error("Bitte eine Datei zwischen 1 Byte und 10 MB auswählen.");
+    }
+    const parts = file.name.toLowerCase().split(".");
+    const suffix = parts.length > 1 ? parts.pop() : "";
+    const bytes = new Uint8Array(await file.slice(0,16).arrayBuffer());
+    const ascii = (from,to) => String.fromCharCode(...bytes.slice(from,to));
+    const signature =
+      ascii(0,4) === "%PDF" ? "pdf" :
+      bytes[0] === 0x89 && ascii(1,4) === "PNG" ? "png" :
+      bytes[0] === 0xff && bytes[1] === 0xd8 && bytes[2] === 0xff ? "jpg" :
+      ascii(0,4) === "RIFF" && ascii(8,12) === "WEBP" ? "webp" : null;
+    const ext = suffix === "jpeg" ? "jpg" : suffix;
+    if (!signature || signature !== ext) {
+      throw new Error("Nur echte PDF-, JPG-, PNG- oder WebP-Dateien mit passender Dateiendung sind erlaubt.");
+    }
+    const type = {
+      pdf:"application/pdf",
+      jpg:"image/jpeg",
+      png:"image/png",
+      webp:"image/webp"
+    }[signature];
+    return {ext:signature,contentType:type};
+  }
+
+  function isFile(item) {
+    return Boolean(item && typeof item.storage_path === "string" && item.storage_path);
+  }
+  function isImage(item) {
+    return isFile(item) && /\.(jpg|png|webp)$/.test(item.storage_path);
+  }
+  function getDelivery() {
+    return document.querySelector('input[name="delivery"]:checked')?.value || "link";
+  }
+  function syncDelivery() {
+    const file = getDelivery() === "file";
+    const editingFile = Boolean(state.editingId && state.editingFile);
+    el("archive-url-area").hidden = file;
+    el("archive-file-area").hidden = !file;
+    const urlInput = el("archive-entry-form").elements.namedItem("material_url");
+    const fileInput = el("archive-file-input");
+    urlInput.required = !file;
+    fileInput.required = file && !editingFile;
+    fileInput.disabled = !file || editingFile;
+    const hint = el("archive-upload-state");
+    hint.textContent = editingFile
+      ? "Die vorhandene Datei kann nach dem Einreichen nicht direkt ersetzt werden. Metadaten lassen sich bis zur Freigabe bearbeiten."
+      : state.filesReady
+        ? "Datei-Uploads erfordern einen privaten Bucket namens webquest-materials. Maximale Dateigröße: 10 MB."
+        : "Datei-Uploads werden nach der SQL-Migration und Einrichtung des privaten Supabase-Buckets verfügbar.";
+  }
+  function setFileAvailability() {
+    const mode = el("archive-file-mode");
+    mode.disabled = !state.filesReady;
+    el("archive-upload-state").textContent = state.filesReady
+      ? "Datei-Uploads sind für PDF, JPG, PNG und WebP vorbereitet (max. 10 MB)."
+      : "Datei-Uploads werden nach der SQL-Migration und Einrichtung des privaten Supabase-Buckets verfügbar.";
+  }
+
+  async function showPrivateFile(item, preview, actions) {
+    if (!state.client || !isFile(item)) return;
+    preview.replaceChildren(make("p","archive-preview-note","Dateivorschau wird sicher geladen …"));
+    const {data,error} = await state.client.storage.from(STORAGE_BUCKET)
+      .createSignedUrl(item.storage_path, 120);
+    if (state.selected?.id !== item.id) return;
+    if (error || !data?.signedUrl) {
+      preview.replaceChildren(make("p","archive-preview-error",
+        "Datei kann nicht geöffnet werden. Prüfe die Storage-Richtlinien und die Freigabe. " +
+        (error?.message || "")));
+      return;
+    }
+    const signed = data.signedUrl;
+    preview.replaceChildren();
+    if (isImage(item)) {
+      const image = make("img","archive-preview-image");
+      image.alt = "Vorschau des Materials: " + item.title;
+      image.src = signed;
+      image.loading = "lazy";
+      preview.append(image);
+    } else {
+      preview.append(make("div","archive-pdf-preview", "▤"));
+      preview.append(make("p","archive-preview-note",
+        "PDF-Dokument: Zum Betrachten im Browser öffnen."));
+    }
+    const a=make("a","archive-button archive-button-primary",
+      isImage(item) ? "Bild öffnen ↗" : "PDF öffnen ↗");
+    a.href=signed;
+    a.target="_blank";
+    a.rel="noopener noreferrer";
+    actions.prepend(a);
+    preview.append(make("p","archive-preview-lifetime",
+      "Der Zugriff auf diese private Datei wird für zwei Minuten freigegeben. Danach die Materialdetails erneut öffnen."));
   }
 
   function showConnection(title, description, connected) {
@@ -74,7 +177,7 @@
     el("archive-login-button").disabled = !connected;
     for (const control of form.querySelectorAll("input")) control.disabled = !connected;
     el("archive-session-text").textContent = signedIn
-      ? "Angemeldet. Du kannst neue Quellen und Links zur Prüfung einreichen und eigene offene Einträge bearbeiten."
+      ? "Angemeldet. Du kannst Quellen, Links und nach Einrichtung des Dateispeichers auch PDFs und Bilder zur Prüfung einreichen."
       : connected
         ? "Mit einem freigegebenen Projektkonto kannst du Quellen und Links einreichen. Freigegebene Materialien sind auch ohne Anmeldung sichtbar."
         : "Die gemeinsame Speicherung ist noch nicht verbunden. Das Formular wird nach der Einrichtung aktiv.";
@@ -171,6 +274,12 @@
       detail.type="button";
       detail.addEventListener("click",() => openDetail(item));
       buttons.append(detail);
+      if (isFile(item)) {
+        const previewButton = make("button","archive-link-button","Datei ansehen ↗");
+        previewButton.type="button";
+        previewButton.addEventListener("click", () => openDetail(item));
+        buttons.append(previewButton);
+      }
       if (secureUrl(item.material_url)) {
         const anchor = make("a","archive-link-button","Material öffnen ↗");
         anchor.href=item.material_url;
@@ -215,6 +324,12 @@
     detailLine(dl,"Eingereicht am",dateLabel(item.created_at));
     detailLine(dl,"Status",STATUS[item.review_status] || "Unbekannt");
     content.append(dl);
+    if (isFile(item)) {
+      detailLine(dl,"Dateityp",item.storage_path.endsWith(".pdf")?"PDF-Dokument":"Bilddatei");
+      const preview=make("div","archive-file-preview");
+      content.append(preview);
+      void showPrivateFile(item,preview,actions);
+    }
 
     if (secureUrl(item.material_url)) {
       const a=make("a","archive-button archive-button-primary","Material extern öffnen ↗");
@@ -245,6 +360,13 @@
     const form=el("archive-entry-form");
     form.reset(); msg("");
     state.editingId=item?.id || null;
+    state.editingFile = isFile(item);
+    const linkChoice=document.querySelector('input[name="delivery"][value="link"]');
+    const fileChoice=el("archive-file-mode");
+    linkChoice.disabled=state.editingFile;
+    fileChoice.disabled=!state.filesReady && !state.editingFile;
+    (state.editingFile ? fileChoice : linkChoice).checked=true;
+    syncDelivery();
     el("archive-entry-title").textContent=item ? "Material bearbeiten" : "Neues Material";
     el("archive-entry-submit").textContent=item ? "Änderungen speichern" : "Zur Prüfung einreichen";
     if(item) {
@@ -264,6 +386,11 @@
       .delete().eq("id",item.id);
     if(error){ window.alert("Löschen nicht möglich: "+error.message);return; }
     el("archive-detail-dialog").close();
+    if (isFile(item)) {
+      const {error:fileError} = await state.client.storage
+        .from(STORAGE_BUCKET).remove([item.storage_path]);
+      if (fileError) window.alert("Eintrag gelöscht, aber die Datei konnte noch nicht aus dem Speicher entfernt werden: " + fileError.message);
+    }
     await loadItems();
   }
 
@@ -280,36 +407,74 @@
       historical_date:f("historical_date"),
       source_reference:f("source_reference"),
       description:f("description"),
-      material_url:f("material_url")
+      material_url:getDelivery()==="file" ? null : f("material_url")
     };
   }
 
   async function saveMaterial(event) {
     event.preventDefault();
-    if (!state.client || !state.user) { msg("Bitte erst mit einem Projektkonto anmelden.");return; }
+    if (!state.client || !state.user) { msg("Bitte zuerst mit einem Projektkonto anmelden."); return; }
     const form=event.currentTarget;
-    if(!form.reportValidity())return;
+    if(!form.reportValidity()) return;
     const payload=formPayload(form);
-    if (!secureUrl(payload.material_url)) {
+    const uploading=getDelivery()==="file" && !state.editingId;
+    if(getDelivery()==="link" && !secureUrl(payload.material_url)) {
       msg("Bitte einen gültigen HTTPS-Link ohne Zugangsdaten eintragen.");
       return;
     }
+    if(uploading && !state.filesReady) {
+      msg("Der private Dateispeicher ist noch nicht eingerichtet. Bitte zuerst die SQL-Migration ausführen.");
+      return;
+    }
     const btn=el("archive-entry-submit");
-    btn.disabled=true;msg("Eintrag wird gespeichert …");
-    let response;
+    btn.disabled=true;
+    msg(uploading ? "Datei wird geprüft und hochgeladen …" : "Eintrag wird gespeichert …");
+    let uploadedPath=null;
     try {
-      if (state.editingId) {
-        response = await state.client.from("research_materials")
+      if(uploading) {
+        const file=el("archive-file-input").files[0];
+        const check=await checkUploadFile(file);
+        if (!globalThis.crypto?.randomUUID) throw new Error("Bitte einen aktuellen Browser mit sicherer HTTPS-Verbindung verwenden.");
+        uploadedPath=state.user.id + "/" + globalThis.crypto.randomUUID() + "." + check.ext;
+        const {error:uploadError}=await state.client.storage
+          .from(STORAGE_BUCKET).upload(uploadedPath,file,{
+            contentType:check.contentType,cacheControl:"60",upsert:false
+          });
+        if(uploadError) {
+          uploadedPath=null;
+          throw new Error("Datei-Upload fehlgeschlagen: "+uploadError.message+
+            ". Bitte privaten Bucket und Storage-Richtlinien prüfen.");
+        }
+        payload.storage_path=uploadedPath;
+        payload.material_url=null;
+        msg("Datei gespeichert. Quellenangaben werden zur Prüfung eingereicht …");
+      }
+      let response;
+      if(state.editingId) {
+        // Der Dateipfad ist unveränderlich. Nur die Metadaten werden bearbeitet.
+        response=await state.client.from("research_materials")
           .update(payload).eq("id",state.editingId).select("id").single();
       } else {
-        response = await state.client.from("research_materials")
+        response=await state.client.from("research_materials")
           .insert(payload).select("id").single();
       }
-      if (response.error) throw response.error;
+      if(response.error) throw response.error;
+      uploadedPath=null; // Datensatz besitzt die Datei; nicht aufräumen.
       el("archive-entry-dialog").close();
       el("archive-view-filter").value="mine";
       await loadItems();
     } catch(e) {
+      // Wenn der Datensatz nicht erstellt wurde, unbenutzte Datei löschen.
+      if(uploadedPath){
+        const {error:cleanupError}=await state.client.storage
+          .from(STORAGE_BUCKET).remove([uploadedPath]);
+        if(cleanupError) {
+          msg("Speichern fehlgeschlagen: "+(e.message||"")+
+            " Die hochgeladene Datei muss eventuell im Supabase-Dashboard aufgeräumt werden.");
+          btn.disabled=false;
+          return;
+        }
+      }
       msg("Speichern fehlgeschlagen: "+(e.message || "Bitte Eingaben und Zugriffsrechte prüfen."));
     } finally { btn.disabled=false; }
   }
@@ -319,15 +484,28 @@
     state.loading=true;
     el("archive-count").textContent="Lade Materialien …";
     try {
-      const {data,error} = await state.client.from("research_materials")
-        .select("id,title,kind,station,author,historical_date,source_reference,description,material_url,owner_id,review_status,created_at")
-        .order("created_at",{ascending:false}).limit(250);
+      const columns="id,title,kind,station,author,historical_date,source_reference,description,material_url,owner_id,review_status,created_at";
+      let {data,error}=await state.client.from("research_materials")
+        .select(columns + ",storage_path").order("created_at",{ascending:false}).limit(250);
+      if (error && (error.code === "42703" || /storage_path/.test(error.message || ""))) {
+        // Rollout ohne Bruch: die bisherige Link-Datenbank bleibt benutzbar,
+        // selbst wenn die SQL-Migration noch nicht angewendet wurde.
+        state.filesReady=false;
+        const fallback=await state.client.from("research_materials")
+          .select(columns).order("created_at",{ascending:false}).limit(250);
+        data=fallback.data;error=fallback.error;
+      } else if(!error) {
+        state.filesReady=true;
+      }
       if(error) throw error;
       state.items=Array.isArray(data)?data:[];
+      setFileAvailability();
       showConnection("Gemeinsames Forschungsarchiv verbunden",
         "Freigegebene Materialien sind sichtbar. Eigene Entwürfe erscheinen nach Anmeldung im Bereich „Meine Einreichungen“.",true);
     } catch(e){
       state.items=[];
+      state.filesReady=false;
+      setFileAvailability();
       showConnection("Die Materialsammlung kann nicht geladen werden",
         "Bitte SQL-Schema, Projektkonfiguration und Zugriffsrechte prüfen. "+(e.message || ""),false);
     } finally {state.loading=false;renderItems();}
@@ -383,6 +561,9 @@
     el("archive-login-form").addEventListener("submit",login);
     el("archive-logout").addEventListener("click",logout);
     el("archive-entry-form").addEventListener("submit",saveMaterial);
+    for(const input of document.querySelectorAll('input[name="delivery"]')){
+      input.addEventListener("change",syncDelivery);
+    }
     for(const button of document.querySelectorAll("[data-close]")){
       button.addEventListener("click",() => {
         const dialog=el(button.dataset.close);
@@ -400,6 +581,7 @@
   async function init() {
     bindEvents();
     setAuthUi();
+    setFileAvailability();
     const cfg=window.WEBQUEST_DB_CONFIG || {};
     const validConfig=secureUrl(cfg.url) && typeof cfg.publishableKey === "string"
       && cfg.publishableKey.startsWith("sb_publishable_");
