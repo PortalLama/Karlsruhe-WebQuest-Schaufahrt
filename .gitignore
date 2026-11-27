@@ -1,0 +1,22 @@
+# Persönliche Daten und lokale Konfiguration
+.env
+.env.*
+!.env.example
+*.local
+*.secret
+secrets/
+private/
+uploads/
+student-data/
+student-work/
+*.sqlite
+*.db
+
+# Editor-, System- und Build-Dateien
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+node_modules/
+dist/
+.cache/
