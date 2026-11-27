@@ -94,3 +94,39 @@
   .exhibit-card{min-height:auto}
   .after-map{gap:14px}
 }
+
+
+/* === Startseite: historischer Projektauftrag und Archivfotografie === */
+.intro-photo{grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);align-items:stretch}
+.intro-photo .intro-copy{padding-top:68px;padding-bottom:72px}
+.intro-photo .intro-copy h1{font-size:clamp(46px,4.7vw,72px);margin-bottom:26px}
+.intro-overline{display:inline-block;font-size:12px;letter-spacing:.07em;color:#e8c1a8;text-transform:uppercase;border-left:3px solid #e8c1a8;padding:5px 0 5px 14px;margin:0 0 18px;font-weight:650}
+.intro-photo .intro-lead{font-size:17px;line-height:1.75;color:#f4f3ec}
+.intro-photo .intro-sub{font-size:14px;line-height:1.8}
+.intro-historical-photo{display:flex;flex-direction:column;position:relative;min-width:0;margin:0;background:#d6d2c8;overflow:hidden}
+.intro-photo-link{position:relative;display:block;flex:1;min-height:370px;background:#d6d2c8;overflow:hidden}
+.intro-photo-link img{display:block;width:100%;height:100%;min-height:470px;object-fit:cover;object-position:49% 47%;filter:grayscale(100%) contrast(1.05);transition:transform .4s ease}
+.intro-photo-link:hover img{transform:scale(1.025)}
+.intro-photo-link::after{content:"";position:absolute;inset:auto 0 0;height:32%;background:linear-gradient(transparent,rgba(17,30,30,.73));pointer-events:none}
+.photo-hint{position:absolute;bottom:22px;left:25px;z-index:1;color:#fff;font-size:10px;font-weight:750;letter-spacing:.12em;text-shadow:0 1px 5px #1a2e2f}
+.photo-hint span{font-size:16px;margin-left:10px}
+.intro-historical-photo figcaption{font-size:10px;line-height:1.65;color:#e4e6df;background:#173236;padding:13px 22px}
+.intro-historical-photo figcaption a{color:#edd3bc}
+.story-section{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(35px,5vw,95px);padding:75px max(5vw,calc((100vw - 1300px)/2)) 80px;background:#fbfaf6;border-bottom:1px solid var(--line)}
+.story-heading .section-kicker{display:block;margin-bottom:22px}
+.story-heading h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height:1.25;letter-spacing:-.04em;font-size:clamp(27px,3vw,42px);color:#294848;margin:0}
+.story-text p{font-size:15px;line-height:1.85;color:#4e6260;margin:0 0 19px}
+.story-text .story-call{font-family:Georgia,serif;font-size:24px;color:#9a4f3d;line-height:1.4;margin:25px 0}
+.story-actions{margin-top:24px}
+@media(max-width:1100px){
+  .intro-photo{grid-template-columns:minmax(0,1fr) minmax(300px,.85fr)}
+  .intro-photo .intro-copy h1{white-space:normal}
+}
+@media(max-width:760px){
+  .intro-photo{grid-template-columns:1fr}
+  .intro-photo .intro-copy{padding:55px 22px}
+  .intro-photo-link{min-height:310px;max-height:430px}
+  .intro-photo-link img{min-height:310px;object-position:center 42%}
+  .story-section{grid-template-columns:1fr;gap:23px;padding:52px 20px}
+  .story-heading h2{font-size:32px}
+}
