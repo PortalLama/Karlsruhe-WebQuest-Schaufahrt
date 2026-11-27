@@ -15,8 +15,11 @@
 
 begin;
 
+-- Einmalige Migration: die Spalte existiert in Database V1 noch nicht.
+-- Ohne IF NOT EXISTS, damit auch einfachere SQL-Parser die Syntax lesen.
+-- NICHT erneut ausführen, wenn die Spalte bereits erfolgreich angelegt wurde.
 alter table public.research_materials
-  add column if not exists storage_path text;
+  add column storage_path text;
 
 alter table public.research_materials
   alter column material_url drop not null;
