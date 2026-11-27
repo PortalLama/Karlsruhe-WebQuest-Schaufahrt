@@ -6,7 +6,10 @@
   <meta name="description" content="Gegner oder Feind? – Karlsruher WebQuest zur Schaufahrt vom 16. Mai 1933.">
   <title>Database | Karlsruhe erinnert</title>
   
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=archive-v1">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="supabase-config.js" defer></script>
+  <script src="database.js?v=archive-v1" defer></script>
   
 </head>
 <body>
@@ -36,15 +39,160 @@
     <span class="top-label">KARLSRUHE 1933</span>
   </header>
   <main id="content">
-    <section class="page-hero"><p class="section-kicker">03 / DATABASE · IM AUFBAU</p><h1>Eure gemeinsame Materialsammlung.</h1><p>Hier soll später eine zentrale Sammlung für historische Quellen, verlässliche Links und eure Medienmaterialien entstehen. Die eigentliche Upload- und Speicherfunktion ist noch nicht eingerichtet.</p></section><section class="database-section">
-  <div class="database-banner"><span class="database-symbol" aria-hidden="true">▤</span><div><strong>Database ist noch ein Platzhalter</strong><p>Ihr könnt hier aktuell noch keine Dateien hochladen oder Materialien für andere Gruppen speichern. Die späteren Funktionen planen wir gemeinsam.</p></div><span class="database-state">IN PLANUNG</span></div>
-  <div class="database-cards">
-    <article class="database-card"><span class="db-icon" aria-hidden="true">⌕</span><h2>Historische Quellen</h2><p>Scans, Fotografien, Briefe und Zeitungsartikel – jeweils mit Fundstelle und quellenkritischen Angaben.</p><div class="database-sample">Noch keine Einträge vorhanden</div></article>
-    <article class="database-card"><span class="db-icon" aria-hidden="true">↗</span><h2>Links &amp; Recherche</h2><p>Archivseiten, wissenschaftliche Darstellungen und weitere geprüfte Recherchefunde.</p><div class="database-sample">Noch keine Links gesammelt</div></article>
-    <article class="database-card"><span class="db-icon" aria-hidden="true">▣</span><h2>Dateien &amp; Medien</h2><p>Material zur Bearbeitung und spätere Beiträge wie Bildergalerien, Präsentationen oder Videos.</p><div class="database-sample">Noch keine Uploadfunktion</div></article>
-  </div>
-  <div class="database-bottom"><strong>Für die spätere Entwicklung vorgesehen</strong><p>Zuordnungen zu Stationen, Quellensteckbriefe, Dateiverknüpfungen, gemeinsame Sammlung und ein geschützter Freigabeprozess. Vor einer Umsetzung müssen Zugriffsrechte, Datenschutz und Nutzungsrechte geklärt werden.</p><a class="text-route-link" href="karte.html">Zur Forschungsarbeit auf der Karte →</a></div>
- </section>
+    <section class="page-hero">
+      <p class="section-kicker">03 / GEMEINSAMES FORSCHUNGSARCHIV</p>
+      <h1>Database</h1>
+      <p>Quellen finden. Materialien teilen. Geschichte erforschen. In unserem Forschungsarchiv sammelt ihr Fundstellen, Links und Hinweise zu den vier Orten der Schaufahrt.</p>
+    </section>
+
+    <section class="archive-section" id="datenbank">
+      <div class="archive-intro">
+        <div>
+          <p class="section-kicker">QUELLEN &amp; RECHERCHE</p>
+          <h2>Unsere Materialsammlung</h2>
+          <p>Jeder Eintrag erhält eine nachvollziehbare Herkunft und eine kurze Beschreibung. Neue Materialien werden zunächst geprüft, bevor sie für alle erscheinen.</p>
+        </div>
+        <div class="archive-intro-actions">
+          <button type="button" class="archive-button archive-button-secondary" id="archive-refresh">↻ Aktualisieren</button>
+          <button type="button" class="archive-button archive-button-primary" id="archive-add" disabled>+ Material hinzufügen</button>
+        </div>
+      </div>
+
+      <div id="archive-status" class="archive-status" role="status" aria-live="polite">
+        <span class="archive-status-icon" aria-hidden="true">⌁</span>
+        <div><strong id="archive-status-title">Datenbankverbindung noch nicht eingerichtet</strong>
+          <p id="archive-status-description">Die Oberfläche ist vorbereitet. Sobald die Datenbank verbunden ist, werden hier die gemeinsamen Materialien angezeigt. Im Moment werden keine Einträge zentral gespeichert.</p>
+        </div>
+      </div>
+
+      <div class="archive-account" id="archive-account">
+        <div class="archive-account-heading">
+          <div>
+            <strong>Redaktionszugang</strong>
+            <p id="archive-session-text">Melde dich mit einem freigegebenen Projektkonto an, um Materialien einzureichen.</p>
+          </div>
+          <button type="button" class="archive-button archive-button-secondary" id="archive-logout" hidden>Abmelden</button>
+        </div>
+        <form id="archive-login-form" class="archive-login-form">
+          <label>E-Mail <input type="email" name="email" autocomplete="username" required placeholder="Projektkonto-E-Mail"></label>
+          <label>Passwort <input type="password" name="password" autocomplete="current-password" required placeholder="Passwort"></label>
+          <button type="submit" class="archive-button archive-button-primary" id="archive-login-button">Anmelden</button>
+        </form>
+        <p class="archive-account-note">Es gibt hier keine öffentliche Registrierung. Projektkonten werden durch die Projektverantwortlichen eingerichtet. Keine privaten Schülerdaten in Beiträgen hinterlegen.</p>
+      </div>
+
+      <div class="archive-controls" aria-label="Materialfilter">
+        <div class="archive-search">
+          <label for="archive-search">Materialien durchsuchen</label>
+          <div class="archive-input-wrap"><span aria-hidden="true">⌕</span>
+            <input id="archive-search" type="search" placeholder="Titel, Person, Ort oder Fundstelle …" autocomplete="off">
+          </div>
+        </div>
+        <div class="archive-filter">
+          <label for="archive-station-filter">Station</label>
+          <select id="archive-station-filter">
+            <option value="all">Alle Stationen</option>
+            <option value="1">01 – Gefängnis</option>
+            <option value="2">02 – Kanzlei Marum</option>
+            <option value="3">03 – Volksfreund</option>
+            <option value="4">04 – Ständehaus</option>
+            <option value="general">Übergreifend</option>
+          </select>
+        </div>
+        <div class="archive-filter">
+          <label for="archive-type-filter">Materialart</label>
+          <select id="archive-type-filter">
+            <option value="all">Alle Materialarten</option>
+            <option value="quelle">Historische Quelle</option>
+            <option value="darstellung">Historische Darstellung</option>
+            <option value="bild">Bild / Fotografie</option>
+            <option value="video">Video / Audio</option>
+            <option value="link">Weiterführender Link</option>
+          </select>
+        </div>
+        <div class="archive-filter">
+          <label for="archive-view-filter">Anzeige</label>
+          <select id="archive-view-filter">
+            <option value="all">Freigegebene Materialien</option>
+            <option value="mine">Meine Einreichungen</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="archive-list-heading">
+        <h3>Materialübersicht</h3>
+        <span id="archive-count" aria-live="polite">Noch keine Einträge</span>
+      </div>
+      <div id="archive-results" class="archive-grid" aria-live="polite">
+        <div class="archive-empty"><span aria-hidden="true">▧</span><strong>Hier entsteht euer Forschungsarchiv.</strong>
+          <p>Mit der Datenbankverbindung könnt ihr Materialien gemeinsam sammeln und nach Orten, Themen oder Quellentypen durchsuchen.</p>
+        </div>
+      </div>
+
+      <div class="archive-footnote">
+        <strong>So funktioniert die Materialsammlung:</strong>
+        <p>Tragt bei euren Funden möglichst Urheber, Entstehungszeit, Fundstelle und eine kurze quellenkritische Einordnung ein. Links zu Bildern, PDFs und Videos sind möglich. Direkte Datei-Uploads werden in einer späteren Ausbaustufe ergänzt.</p>
+        <p>Ein Link kann ungültig werden, wenn die externe Datei entfernt wird. Für dauerhafte Archivierung sind Nutzungsrechte und Sicherungskopien gesondert zu klären.</p>
+      </div>
+    </section>
+
+    <dialog id="archive-entry-dialog" class="archive-dialog" aria-labelledby="archive-entry-title">
+      <form id="archive-entry-form" class="archive-form">
+        <div class="archive-dialog-header">
+          <div><p class="section-kicker">RECHERCHEERGEBNIS EINREICHEN</p>
+            <h2 id="archive-entry-title">Neues Material</h2></div>
+          <button type="button" class="archive-dialog-close" data-close="archive-entry-dialog" aria-label="Schließen">×</button>
+        </div>
+        <p>Ergänzt einen öffentlich erreichbaren <strong>HTTPS-Link</strong> sowie nachvollziehbare Angaben zum Material. Vor der Freigabe ist der Eintrag nur für das einreichende Konto sichtbar.</p>
+        <div class="archive-form-grid">
+          <label class="archive-field-full">Titel des Materials <span aria-hidden="true">*</span>
+            <input name="title" required minlength="4" maxlength="180" placeholder="z. B. Zeitungsbericht zur Schaufahrt">
+          </label>
+          <label>Materialart <span aria-hidden="true">*</span>
+            <select name="kind" required>
+              <option value="quelle">Historische Quelle</option>
+              <option value="darstellung">Historische Darstellung</option>
+              <option value="bild">Bild / Fotografie</option>
+              <option value="video">Video / Audio</option>
+              <option value="link">Weiterführender Link</option>
+            </select>
+          </label>
+          <label>Zugehörige Station
+            <select name="station">
+              <option value="">Übergreifend</option>
+              <option value="1">01 – Gefängnis</option>
+              <option value="2">02 – Kanzlei Marum</option>
+              <option value="3">03 – Volksfreund</option>
+              <option value="4">04 – Ständehaus</option>
+            </select>
+          </label>
+          <label>Urheber / Verfasser <input name="author" maxlength="180" placeholder="Soweit bekannt"></label>
+          <label>Entstehungszeit <input name="historical_date" maxlength="80" placeholder="z. B. Mai 1933"></label>
+          <label class="archive-field-full">Archiv / Fundstelle / Quellenangabe <span aria-hidden="true">*</span>
+            <input name="source_reference" required minlength="4" maxlength="500" placeholder="Institution, Sammlung, Signatur oder genaue Fundstelle">
+          </label>
+          <label class="archive-field-full">Erläuterung und quellenkritische Hinweise <span aria-hidden="true">*</span>
+            <textarea name="description" rows="4" required minlength="10" maxlength="1200" placeholder="Was zeigt das Material? Von wem stammt es? Welche Perspektive hat es und wozu ist es nützlich?"></textarea>
+          </label>
+          <label class="archive-field-full">Link zum Material (HTTPS) <span aria-hidden="true">*</span>
+            <input name="material_url" type="url" required maxlength="1800" pattern="https://.*" placeholder="https://…">
+          </label>
+        </div>
+        <div class="archive-dialog-actions">
+          <button type="button" class="archive-button archive-button-secondary" data-close="archive-entry-dialog">Abbrechen</button>
+          <button type="submit" class="archive-button archive-button-primary" id="archive-entry-submit">Zur Prüfung einreichen</button>
+        </div>
+        <p class="archive-form-message" id="archive-form-message" role="status" aria-live="polite"></p>
+      </form>
+    </dialog>
+
+    <dialog id="archive-detail-dialog" class="archive-dialog archive-detail-dialog" aria-labelledby="archive-detail-title">
+      <div class="archive-detail-body">
+        <button type="button" class="archive-dialog-close" data-close="archive-detail-dialog" aria-label="Schließen">×</button>
+        <div id="archive-detail-content"></div>
+        <div class="archive-dialog-actions" id="archive-detail-actions"></div>
+      </div>
+    </dialog>
   </main>
   <footer><span>Karlsruhe erinnert · WebQuest Geschichte 9/10</span><span>Unabhängiges Unterrichtsprojekt · keine amtliche Veröffentlichung der Stadt Karlsruhe</span><a href="https://stadtgeschichte.karlsruhe.de/erinnerungskultur/erinnerungskultur-im-oeffentlichen-raum/schaufahrt-1933" target="_blank" rel="noopener noreferrer">Historische Grundlage: Stadtarchiv Karlsruhe ↗</a></footer>
   
