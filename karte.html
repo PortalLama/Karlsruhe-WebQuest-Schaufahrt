@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Gegner oder Feind? – Karlsruher WebQuest zur Schaufahrt vom 16. Mai 1933.">
+  <title>Historische Karte | Karlsruhe erinnert</title>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Zum Inhalt springen</a>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Zur Startseite">
+      <span class="brand-mark" aria-hidden="true">K<span class="brand-dot">.</span></span>
+      <span><strong>Karlsruhe erinnert</strong><small>WEBQUEST · GESCHICHTE 9/10</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Hauptnavigation">
+      <a href="index.html">Start</a>
+<a href="auftrag.html">Der Auftrag</a>
+<a href="karte.html" aria-current="page">Historische Karte</a>
+<a href="database.html">Database</a>
+<a href="methodenkoffer.html">Methodenkoffer</a>
+<a href="erinnerungsrundgang.html">Erinnerungsrundgang</a>
+    </nav>
+    <details class="mobile-nav">
+      <summary>Menü <span aria-hidden="true">☰</span></summary>
+      <nav aria-label="Mobile Navigation"><a href="index.html">Start</a>
+<a href="auftrag.html">Der Auftrag</a>
+<a href="karte.html" aria-current="page">Historische Karte</a>
+<a href="database.html">Database</a>
+<a href="methodenkoffer.html">Methodenkoffer</a>
+<a href="erinnerungsrundgang.html">Erinnerungsrundgang</a></nav>
+    </details>
+    <span class="top-label">PROTOTYP</span>
+  </header>
+  <main id="content">
+    <section class="page-hero"><p class="section-kicker">02 / EURE FORSCHUNGSKARTE</p><h1>Erkunden. Untersuchen. Gestalten.</h1><p>Wählt eine Station und öffnet die Materialien. Unter „Bearbeiten“ könnt ihr eigene Notizen und Links hinzufügen. Eure Eingaben bleiben vorerst nur im jeweiligen Browser gespeichert.</p></section>
+<section id="kartenansicht" class="workspace-section">
+      <div class="workspace-head">
+        <div><p class="section-kicker">02 / INTERAKTIVE KARTE</p><h2>Vier Orte. Eure Forschung.</h2><p>Wählt einen Punkt auf der Karte. Die Station öffnet sich rechts – inklusive Materialien, Aufgaben und bearbeitbaren Feldern.</p></div>
+        <div class="workspace-counter"><span id="completed-count">0</span><small>VON 4 STATIONEN<br>LOKAL BEARBEITET</small></div>
+      </div>
+      <div class="workspace">
+        <div class="map-column">
+          <div class="map-topline"><span><span class="live-dot"></span> KARLSRUHE · INNENSTADT</span><button class="small-button" id="fit-map" type="button">Alle Orte zeigen</button></div>
+          <div id="map" role="application" aria-label="Interaktive Karte der ausgewählten historischen Orte in Karlsruhe">
+            <div class="map-fallback">Die Karte wird geladen. Für die Kartendarstellung ist eine Internetverbindung erforderlich.</div>
+          </div>
+          <div class="map-footer"><span class="legend-line"></span> Verbindung der vier Lernstationen (schematisch, <strong>nicht</strong> die vollständige historische Fahrtstrecke)<br><span class="map-disclaimer">Die Pins dienen zunächst der Orientierung. Positionen und Verlauf vor dem Unterricht anhand des Stadtarchivs prüfen.</span></div>
+          <div class="station-menu"><h3>Station auswählen</h3><div id="station-buttons" class="station-buttons" role="group" aria-label="Historische Stationen"></div></div>
+          <div class="map-note"><strong>Historische Einordnung:</strong> Die tatsächliche Schaufahrt führte an weiteren Orten vorbei und endete außerhalb der Innenstadt im Konzentrationslager Kislau. <a href="https://stadtgeschichte.karlsruhe.de/erinnerungskultur/erinnerungskultur-im-oeffentlichen-raum/schaufahrt-1933/orte" target="_blank" rel="noopener noreferrer">Originalroute des Stadtarchivs ↗</a></div>
+        </div>
+
+        <aside class="detail-column" aria-label="Stationsinformationen">
+          <div class="detail-topline"><span id="station-index">STATION 01 / 04</span><span class="chip chip-pending" id="station-status">NOCH NICHT BEARBEITET</span></div>
+          <h3 id="station-title"></h3><p class="station-address" id="station-address"></p>
+          <div class="tab-row" role="tablist" aria-label="Stationsansicht">
+            <button type="button" class="tab active" id="tab-discover" role="tab" aria-selected="true">Entdecken</button>
+            <button type="button" class="tab" id="tab-edit" role="tab" aria-selected="false">Bearbeiten</button>
+          </div>
+          <div id="station-body" aria-live="polite"></div>
+        </aside>
+      </div>
+    </section><div class="after-map"><a class="button button-outline" href="database.html">Weiter zur Database (Platzhalter) ↗</a><a class="text-route-link" href="methodenkoffer.html">Benötigt ihr Unterstützung? Zum Methodenkoffer →</a></div>
+  </main>
+  <footer><span>Karlsruhe erinnert · Bildungsprototyp</span><span>Fiktiver Projektauftrag auf Basis historischer Ereignisse · Kein Angebot der Stadt Karlsruhe</span><a href="https://stadtgeschichte.karlsruhe.de/erinnerungskultur/erinnerungskultur-im-oeffentlichen-raum/schaufahrt-1933" target="_blank" rel="noopener noreferrer">Historische Grundlage: Stadtarchiv Karlsruhe ↗</a></footer>
+  <dialog id="source-dialog" aria-label="Materialansicht"><div class="dialog-shell"><button class="dialog-close" type="button" aria-label="Schließen" id="close-dialog">×</button><div id="dialog-content"></div></div></dialog>
+</body>
+</html>
