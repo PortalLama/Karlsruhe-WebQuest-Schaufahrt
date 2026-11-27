@@ -360,6 +360,12 @@
     if (!state.user) return;
     const form=el("archive-entry-form");
     form.reset(); msg("");
+    if(!item){
+      const stationFilter=el("archive-station-filter").value;
+      if(["1","2","3","4"].includes(stationFilter)){
+        form.elements.namedItem("station").value=stationFilter;
+      }
+    }
     state.editingId=item?.id || null;
     state.editingFile = isFile(item);
     const linkChoice=document.querySelector('input[name="delivery"][value="link"]');
@@ -580,6 +586,10 @@
   }
 
   async function init() {
+    const selectedStation=new URLSearchParams(window.location.search).get("station");
+    if(["1","2","3","4"].includes(selectedStation)){
+      el("archive-station-filter").value=selectedStation;
+    }
     bindEvents();
     setAuthUi();
     setFileAvailability();
