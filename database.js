@@ -313,8 +313,9 @@
     const content=el("archive-detail-content");
     const actions=el("archive-detail-actions");
     content.replaceChildren(); actions.replaceChildren();
-    content.append(make("p","section-kicker",KIND[item.kind] || "MATERIAL"),
-      make("h2","",item.title));
+    const heading=make("h2","",item.title);
+    heading.id="archive-detail-title";
+    content.append(make("p","section-kicker",KIND[item.kind] || "MATERIAL"),heading);
     const dl=make("dl","archive-detail-fields");
     detailLine(dl,"Station",PLACE[item.station] || "Übergreifend");
     detailLine(dl,"Urheber / Verfasser",item.author || "Nicht angegeben");
