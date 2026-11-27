@@ -159,6 +159,15 @@ ein Upload kann fehlschlagen. **Keinen öffentlichen Bucket wählen.**
 3. SQL einfügen und **Run** auswählen.
 4. Es muss eine erfolgreiche Ausführung ohne Fehlermeldung angezeigt werden.
 
+**Hinweis zu SQL-Parserfehlern:** Die Migration verwendet für das erstmalige
+Anlegen der Spalte `storage_path` bewusst `ADD COLUMN storage_path text`
+ohne `IF NOT EXISTS`, weil manche SQL-Parser diese optionale PostgreSQL-
+Syntax nicht verstehen. Deshalb die V2-Migration **nur einmal vollständig**
+ausführen. Wenn die Spalte bereits existiert, nicht erneut ausführen, sondern
+zuerst den tatsächlichen Tabellenstatus im Table Editor überprüfen. Die
+Migration gehört in **SQL Editor → New query**, nicht in den Policy-Editor
+unter Storage.
+
 Die Migration ergänzt das bestehende Materialarchiv um \`storage_path\`,
 macht \`material_url\` für Datei-Einträge optional und erstellt RLS-Richtlinien
 für den privaten Dateispeicher. **Die vorhandenen Links, Metadaten,
