@@ -58,8 +58,18 @@ alter table public.research_materials enable row level security;
 
 -- Die API-Berechtigungen begrenzen zusätzlich die Aktionen nach Rolle.
 revoke all on table public.research_materials from anon, authenticated;
-grant select on table public.research_materials to anon;
-grant select, insert, update, delete on table public.research_materials to authenticated;
+grant select on table public.research_materials to anon, authenticated;
+-- Zugang nur zu den fachlichen Spalten; Status, Eigentümer und Auditfelder
+-- können nie direkt von der Webseite beschrieben werden.
+grant insert (
+  title, kind, station, author, historical_date,
+  source_reference, description, material_url
+) on table public.research_materials to authenticated;
+grant update (
+  title, kind, station, author, historical_date,
+  source_reference, description, material_url
+) on table public.research_materials to authenticated;
+grant delete on table public.research_materials to authenticated;
 
 drop policy if exists "Approved materials are publicly readable" on public.research_materials;
 create policy "Approved materials are publicly readable"
