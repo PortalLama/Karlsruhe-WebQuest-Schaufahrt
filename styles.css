@@ -1226,3 +1226,140 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   font-size:47px;
   margin:10px auto;
 }
+
+
+/* === Kartenstationen V3 · Freigegebene Dateien & Links aus der Database === */
+.approved-archive{
+  margin:23px 0 0;
+  border-top:1px solid #E1DCD5;
+  padding:21px 0 2px;
+}
+.approved-archive-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:9px;
+}
+.approved-archive-head>strong{
+  color:#302D31;
+  font-size:13px;
+  line-height:1.55;
+}
+.archive-refresh-small{
+  display:inline-flex;
+  align-items:center;
+  border:1px solid #D4C9C1;
+  background:#FFFDF9;
+  color:#7E2530;
+  border-radius:6px;
+  padding:6px 9px;
+  font-size:11px;
+  font-weight:750;
+  cursor:pointer;
+}
+.archive-refresh-small:hover{background:#F5EDEA}
+.station-section .approved-archive-status{
+  font-size:12px;
+  line-height:1.65;
+  color:#444046;
+  margin:10px 0 12px;
+}
+.approved-source-list{
+  margin-top:11px;
+}
+.source-card.approved-source-card{
+  position:relative;
+  border:1px solid #DAD0C8;
+  background:#FFFCF8;
+  transition:border-color .15s ease, box-shadow .15s ease;
+}
+.source-card.approved-source-card:hover{
+  border-color:#A72C36;
+  box-shadow:0 6px 17px rgba(100,33,41,.12);
+}
+.approved-source-thumb{
+  height:68px;
+  background:linear-gradient(145deg,#F1E9E0,#E9DDD3);
+  color:#982932;
+  font-size:27px;
+}
+.source-card.approved-source-card strong{
+  color:#302D32;
+  padding:11px 12px 4px;
+  line-height:1.45;
+}
+.source-card.approved-source-card small{
+  color:#4B464B;
+  padding:0 12px;
+}
+.approved-source-tag{
+  display:block;
+  color:#81252F;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.075em;
+  padding:10px 12px 0;
+}
+.approved-archive-link{
+  display:inline-flex;
+  align-items:center;
+  font-size:12px;
+  font-weight:750;
+  color:#9B2B34;
+  margin-top:15px;
+  text-underline-offset:3px;
+  text-decoration:underline;
+}
+.approved-archive-link:hover{color:#7C222B}
+.dialog-shell .approved-dialog-kind{
+  font-weight:750;
+  color:#842730;
+  font-size:12px;
+  margin:0 0 15px;
+}
+.approved-file-preview{
+  background:#F8F3EC;
+  border:1px solid #DED4CA;
+  padding:16px;
+  border-radius:9px;
+  margin-top:16px;
+  text-align:center;
+}
+.approved-file-preview .approved-preview-image{
+  display:block;
+  width:100%;
+  max-height:430px;
+  object-fit:contain;
+  border-radius:6px;
+  background:white;
+}
+.dialog-shell .approved-file-preview a{
+  color:#9A2934;
+  font-size:13px;
+  text-decoration:underline;
+}
+.dialog-shell .approved-file-preview .approved-preview-note{
+  font-size:11px;
+  color:#4F494D;
+  line-height:1.6;
+  margin-top:13px;
+}
+.dialog-shell .approved-file-preview .approved-preview-error{
+  color:#912D38;
+  line-height:1.6;
+  font-size:12px;
+  font-weight:700;
+}
+.dialog-shell .approved-file-preview .approved-preview-pdf{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:23px;
+  line-height:1.4;
+  color:#8F2832;
+  margin:8px 0;
+}
+@media(max-width:700px){
+  .approved-archive{margin-top:18px;padding-top:17px}
+  .approved-archive-head>strong{font-size:12px}
+  .approved-source-thumb{height:64px}
+}
