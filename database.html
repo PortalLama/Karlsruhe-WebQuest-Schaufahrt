@@ -6,10 +6,10 @@
   <meta name="description" content="Gegner oder Feind? – Karlsruher WebQuest zur Schaufahrt vom 16. Mai 1933.">
   <title>Database | Karlsruhe erinnert</title>
   
-  <link rel="stylesheet" href="styles.css?v=archive-v1">
+  <link rel="stylesheet" href="styles.css?v=archive-v2">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
   <script src="supabase-config.js" defer></script>
-  <script src="database.js?v=archive-v1" defer></script>
+  <script src="database.js?v=archive-v2" defer></script>
   
 </head>
 <body>
@@ -131,7 +131,7 @@
 
       <div class="archive-footnote">
         <strong>So funktioniert die Materialsammlung:</strong>
-        <p>Tragt bei euren Funden möglichst Urheber, Entstehungszeit, Fundstelle und eine kurze quellenkritische Einordnung ein. Links zu Bildern, PDFs und Videos sind möglich. Direkte Datei-Uploads werden in einer späteren Ausbaustufe ergänzt.</p>
+        <p>Tragt bei euren Funden möglichst Urheber, Entstehungszeit, Fundstelle und eine kurze quellenkritische Einordnung ein. Links zu Bildern, PDFs und Videos sind möglich. Auch PDF-Dateien und Bilder lassen sich nach der Einrichtung des privaten Dateispeichers hochladen und gemeinsam prüfen.</p>
         <p>Ein Link kann ungültig werden, wenn die externe Datei entfernt wird. Für dauerhafte Archivierung sind Nutzungsrechte und Sicherungskopien gesondert zu klären.</p>
       </div>
     </section>
@@ -174,9 +174,23 @@
           <label class="archive-field-full">Erläuterung und quellenkritische Hinweise <span aria-hidden="true">*</span>
             <textarea name="description" rows="4" required minlength="10" maxlength="1200" placeholder="Was zeigt das Material? Von wem stammt es? Welche Perspektive hat es und wozu ist es nützlich?"></textarea>
           </label>
-          <label class="archive-field-full">Link zum Material (HTTPS) <span aria-hidden="true">*</span>
+          <fieldset class="archive-field-full archive-upload-choice">
+            <legend>Wie möchtet ihr das Material bereitstellen?</legend>
+            <div class="archive-upload-options">
+              <label class="archive-upload-option"><input type="radio" name="delivery" value="link" checked> <span>Externen Link eintragen</span></label>
+              <label class="archive-upload-option"><input type="radio" name="delivery" value="file" id="archive-file-mode" disabled> <span>Datei direkt hochladen</span></label>
+            </div>
+            <p id="archive-upload-state" class="archive-upload-hint">Datei-Uploads werden nach der Einrichtung des privaten Supabase-Speichers verfügbar.</p>
+          </fieldset>
+          <label class="archive-field-full" id="archive-url-area">Link zum Material (HTTPS) <span aria-hidden="true">*</span>
             <input name="material_url" type="url" required maxlength="1800" pattern="https://.*" placeholder="https://…">
           </label>
+          <div class="archive-field-full archive-file-area" id="archive-file-area" hidden>
+            <label for="archive-file-input">Bild oder PDF auswählen <span aria-hidden="true">*</span></label>
+            <input id="archive-file-input" type="file" name="upload_file" accept=".pdf,.png,.jpg,.jpeg,.webp,application/pdf,image/png,image/jpeg,image/webp">
+            <p>PDF, JPEG, PNG oder WebP · maximal 10 MB pro Datei. Vor der Prüfung nur für das einreichende Konto sichtbar.</p>
+            <p class="archive-upload-warning">Bitte keine Namen von Schülerinnen und Schülern, privaten Fotos oder ungeprüften Archivscans hochladen. Bildrechte und Herkunft müssen geklärt sein.</p>
+          </div>
         </div>
         <div class="archive-dialog-actions">
           <button type="button" class="archive-button archive-button-secondary" data-close="archive-entry-dialog">Abbrechen</button>
