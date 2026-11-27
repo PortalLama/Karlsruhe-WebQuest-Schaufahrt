@@ -130,3 +130,5 @@
   .story-section{grid-template-columns:1fr;gap:23px;padding:52px 20px}
   .story-heading h2{font-size:32px}
 }
+
+.story-heading .story-context{font-size:14px;line-height:1.75;color:#617570;margin:0 0 22px;max-width:470px}
