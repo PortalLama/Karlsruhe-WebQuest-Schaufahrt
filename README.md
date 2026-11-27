@@ -11,7 +11,7 @@ Ein **didaktischer Prototyp** für Geschichte Klasse 9/10. Der Auftrag der Stadt
 5. **[Methodenkoffer](methodenkoffer.html)** – Quellenkritik, Argumentationsgerüst, Kooperation, Gestaltung und Feedback; Jean-Claude bislang nur als festes Hilfekonzept.
 6. **[Erinnerungsrundgang](erinnerungsrundgang.html)** – Vorschau für die später freigegebenen vier Gruppenprodukte. Noch keine automatische Veröffentlichung.
 
-Die Navigation funktioniert über eigenständige HTML-Dateien, nicht über Scroll-Anker. Alle Seiten nutzen `styles.css`. `karte.html` lädt zusätzlich Leaflet und `app.js`; `database.html` bindet den Supabase-Browserclient, `supabase-config.js` und `database.js` ein.
+Die Navigation funktioniert über eigenständige HTML-Dateien, nicht über Scroll-Anker. Alle Seiten nutzen `styles.css`. `karte.html` lädt zusätzlich Leaflet, den öffentlichen Supabase-Client, `supabase-config.js` und `app.js`; `database.html` bindet denselben Supabase-Client, `supabase-config.js` und `database.js` ein.
 
 **Database einrichten:** [DATABASE_SETUP.md](DATABASE_SETUP.md) beschreibt den Supabase-Login, Quellenfreigaben und ab V2 den **privaten Bucket `webquest-materials` sowie die neue SQL-Migration**. Bestehende Link-Einträge bleiben funktionsfähig, auch solange die Upload-Migration noch aussteht.
 
