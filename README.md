@@ -85,6 +85,50 @@ Im Projektordner `python -m http.server 8000` starten und `http://localhost:8000
 - Öffentliches Repository: **keine Zugangsdaten, API-Schlüssel, personenbezogenen Schülerdaten oder unveröffentlichten Archivscans hochladen.**
 - Derzeit keine Open-Source-Lizenz festgelegt; Rechte historischer Materialien sind getrennt zu klären.
 
+## Forschungsstationen V3 · automatische Database-Verknüpfung
+
+Die **Historische Karte** liest ausschließlich **freigegebene** Einträge aus
+\`public.research_materials\` über den öffentlichen Supabase-Publishable-Key.
+Dafür ist **keine zusätzliche SQL-Migration und keine neue Tabelle** nötig.
+Die bereits aktiven RLS-Regeln geben anonymen Besuchern nur Einträge mit
+\`review_status = 'approved'\` frei.
+
+- \`station = 1\` → Gefängnis Riefstahlstraße
+- \`station = 2\` → Kanzlei Ludwig Marum
+- \`station = 3\` → Volksfreund-Redaktion
+- \`station = 4\` → Badisches Ständehaus
+- \`station = NULL\` → übergreifende Materialien bleiben in der **Database**;
+  sie werden bewusst keiner konkreten Station automatisch zugeordnet.
+
+Auf \`karte.html\` zeigt **Entdecken → Welche Materialien gibt es?**
+zuerst das bisherige Quellenpaket und die lokal ergänzten Quellenlinks.
+Danach erscheint **Freigegebene Materialien aus der Database** mit Titel,
+Materialart und einzelnen anklickbaren Quellkarten. Es werden nur maximal
+250 neueste freigegebene stationsgebundene Einträge geladen.
+
+- Externe Links öffnen die Originalfundstelle.
+- Bilder und PDFs im privaten Bucket \`webquest-materials\` werden bei
+  Klick über eine **zwei Minuten gültige signierte URL** abgerufen. Bilder
+  zeigen eine Vorschau, PDFs einen Öffnen-Link.
+- Bei Fehlern bleibt das ursprüngliche Quellenpaket verfügbar; die Karte
+  erfordert nicht, dass die Datenbank erreichbar ist.
+- „↻ Aktualisieren“ ruft neue freigegebene Einträge ab; nach Wechsel
+  zurück zum Browser-Tab wird die Liste bei Bedarf automatisch erneuert.
+- Der Database-Link aus einer Station filtert \`database.html?station=N\`
+  und übernimmt die Station bei neu eingereichten Materialien.
+
+**Wichtig:** Individuelle Forschungsnotizen auf der Karte bleiben
+\`localStorage\` und werden **nicht** automatisch mit anderen Geräten
+synchronisiert. Die Quellenverknüpfung ist zunächst nur lesend.
+Der Freigabeprozess bleibt im Supabase Table Editor.
+
+**Test:** Material zu Station 03 hochladen oder verlinken → Status
+\`pending\` überprüfen (auf Karte nicht sichtbar) → im Table Editor
+\`approved\` setzen → Karte öffnen und „↻ Aktualisieren“ klicken →
+Material erscheint nur unter Station 03. Privatfenster prüft den
+anonymen Zugriff auf freigegebene Dateien. Alte Einträge bleiben
+erhalten.
+
 ## Database V2 · Sicherheit bei Datei-Uploads
 
 - Nur PDF, JPEG, PNG und WebP, max. 10 MB je Datei.
