@@ -7,9 +7,9 @@
   <title>Historische Karte | Karlsruhe erinnert</title>
   <link rel="preconnect" href="https://unpkg.com">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=map-v2-20261127">
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
-  <script src="app.js" defer></script>
+  <script src="app.js?v=map-v2-20261127" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#content">Zum Inhalt springen</a>
@@ -50,7 +50,7 @@
           <div id="map" role="application" aria-label="Interaktive Karte der ausgewählten historischen Orte in Karlsruhe">
             <div class="map-fallback">Die Karte wird geladen. Für die Kartendarstellung ist eine Internetverbindung erforderlich.</div>
           </div>
-          <div class="map-footer"><span class="legend-line"></span> Verbindung der vier Lernstationen (schematisch, <strong>nicht</strong> die vollständige historische Fahrtstrecke)<br><span class="map-disclaimer">Die Pins dienen zunächst der Orientierung. Positionen und Verlauf vor dem Unterricht anhand des Stadtarchivs prüfen.</span></div>
+          <div class="map-footer"><span class="legend-line"></span> <strong>Rot gestrichelt:</strong> näherungsweise rekonstruierter Streckenabschnitt zwischen den ausgewählten Erinnerungsorten.<br><span class="map-disclaimer">Vier von acht im Archivplan bezeichneten Orten; Gebäudestandorte und genaue Straßenführung teils angenähert. <a href="https://stadtgeschichte.karlsruhe.de/erinnerungskultur/erinnerungskultur-im-oeffentlichen-raum/schaufahrt-1933/orte" target="_blank" rel="noopener noreferrer">Originalkarte des Stadtarchivs ansehen ↗</a></span></div>
           <div class="station-menu"><h3>Station auswählen</h3><div id="station-buttons" class="station-buttons" role="group" aria-label="Historische Stationen"></div></div>
           <div class="map-note"><strong>Historische Einordnung:</strong> Die tatsächliche Schaufahrt führte an weiteren Orten vorbei und endete außerhalb der Innenstadt im Konzentrationslager Kislau. <a href="https://stadtgeschichte.karlsruhe.de/erinnerungskultur/erinnerungskultur-im-oeffentlichen-raum/schaufahrt-1933/orte" target="_blank" rel="noopener noreferrer">Originalroute des Stadtarchivs ↗</a></div>
         </div>
