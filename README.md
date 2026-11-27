@@ -7,11 +7,13 @@ Ein **didaktischer Prototyp** für Geschichte Klasse 9/10. Der Auftrag der Stadt
 1. **[Startseite](index.html)** – Einführung und Überblick über den Projektweg.
 2. **[Der Auftrag](auftrag.html)** – fiktiver Projektauftrag und vier selbst wählbare Teamrollen.
 3. **[Historische Karte](karte.html)** – interaktive Leaflet-Karte mit vier Stationen, Materiallinks und Bearbeitungsfeldern.
-4. **[Database](database.html)** – **vorerst nur ein Platzhalter** für eine spätere gemeinsame Quellen-, Link- und Dateisammlung. Es gibt noch keine Uploadfunktion.
+4. **[Database](database.html)** – Version 1 der Quellen- und Linkverwaltung mit Suche, Stationsfiltern, Anmeldung, Einreichung und Freigabeprozess. **Die zentrale Speicherung wird erst nach Einrichtung eines eigenen Supabase-Projekts aktiv.** Dateiuploads fehlen weiterhin.
 5. **[Methodenkoffer](methodenkoffer.html)** – Quellenkritik, Argumentationsgerüst, Kooperation, Gestaltung und Feedback; Jean-Claude bislang nur als festes Hilfekonzept.
 6. **[Erinnerungsrundgang](erinnerungsrundgang.html)** – Vorschau für die später freigegebenen vier Gruppenprodukte. Noch keine automatische Veröffentlichung.
 
-Die Navigation funktioniert über eigenständige HTML-Dateien, nicht über Scroll-Anker. Alle Seiten nutzen `styles.css`. Nur `karte.html` lädt zusätzlich Leaflet und `app.js`.
+Die Navigation funktioniert über eigenständige HTML-Dateien, nicht über Scroll-Anker. Alle Seiten nutzen `styles.css`. `karte.html` lädt zusätzlich Leaflet und `app.js`; `database.html` bindet den Supabase-Browserclient, `supabase-config.js` und `database.js` ein.
+
+**Database einrichten:** [DATABASE_SETUP.md](DATABASE_SETUP.md) erklärt die erforderliche manuelle Einrichtung von Supabase, das SQL-Schema mit Row Level Security, Testkonten und Freigaben. Ohne diese Verbindung bleibt die Database bewusst im Vorbereitungsmodus.
 
 ## Kartendesign V2
 
@@ -42,7 +44,7 @@ Archivvorlage: https://stadtgeschichte.karlsruhe.de/erinnerungskultur/erinnerung
 - Vier historische Lernstationen; anklickbare Marker und Materialkarten.
 - Bearbeitbare Notizfelder sowie Links zu externen Quellen/Medien.
 - Eingaben werden **nur im jeweiligen Browser** über `localStorage` gespeichert. Sie sind nicht synchronisiert und gehen beim Löschen von Browserdaten verloren; JSON-Export ist möglich.
-- Keine Anmeldung, keine gemeinsame Datenbank, kein direkter Dateiupload und noch keine Lehrkraft-Freigabe.
+- Eine Anmeldung und zentrale Quellen-/Linkverwaltung sind **vorbereitet**, benötigen aber die **Supabase-Konfiguration**; die Datenbank ist noch nicht live. Noch kein direkter Dateiupload und keine Lehrkraft-Freigabeoberfläche.
 - Weder die Database noch der öffentliche Erinnerungsrundgang veröffentlichen aktuell automatisch Gruppenentwürfe.
 - Jean-Claude ist noch **kein KI-Chatbot**.
 - Die Website sollte vor einem realen Schuleinsatz hinsichtlich Datenschutz, Barrierefreiheit, Quellengenauigkeit und Bildrechten geprüft werden.
