@@ -7,13 +7,13 @@ Ein **didaktischer Prototyp** für Geschichte Klasse 9/10. Der Auftrag der Stadt
 1. **[Startseite](index.html)** – Einführung und Überblick über den Projektweg.
 2. **[Der Auftrag](auftrag.html)** – fiktiver Projektauftrag und vier selbst wählbare Teamrollen.
 3. **[Historische Karte](karte.html)** – interaktive Leaflet-Karte mit vier Stationen, Materiallinks und Bearbeitungsfeldern.
-4. **[Database](database.html)** – Version 1 der Quellen- und Linkverwaltung mit Suche, Stationsfiltern, Anmeldung, Einreichung und Freigabeprozess. **Die zentrale Speicherung wird erst nach Einrichtung eines eigenen Supabase-Projekts aktiv.** Dateiuploads fehlen weiterhin.
+4. **[Database](database.html)** – gemeinsame Quellen- und Linkverwaltung mit Suche, Stationsfiltern, Anmeldung, Einreichung und Freigabeprozess. **V2 ergänzt direkte private Uploads von PDF-/Bilddateien**, die erst nach Einrichten des Buckets und Ausführen der [Storage-Migration](supabase/storage_migration_v2.sql) aktiviert werden.
 5. **[Methodenkoffer](methodenkoffer.html)** – Quellenkritik, Argumentationsgerüst, Kooperation, Gestaltung und Feedback; Jean-Claude bislang nur als festes Hilfekonzept.
 6. **[Erinnerungsrundgang](erinnerungsrundgang.html)** – Vorschau für die später freigegebenen vier Gruppenprodukte. Noch keine automatische Veröffentlichung.
 
 Die Navigation funktioniert über eigenständige HTML-Dateien, nicht über Scroll-Anker. Alle Seiten nutzen `styles.css`. `karte.html` lädt zusätzlich Leaflet und `app.js`; `database.html` bindet den Supabase-Browserclient, `supabase-config.js` und `database.js` ein.
 
-**Database einrichten:** [DATABASE_SETUP.md](DATABASE_SETUP.md) erklärt die erforderliche manuelle Einrichtung von Supabase, das SQL-Schema mit Row Level Security, Testkonten und Freigaben. Ohne diese Verbindung bleibt die Database bewusst im Vorbereitungsmodus.
+**Database einrichten:** [DATABASE_SETUP.md](DATABASE_SETUP.md) beschreibt den Supabase-Login, Quellenfreigaben und ab V2 den **privaten Bucket `webquest-materials` sowie die neue SQL-Migration**. Bestehende Link-Einträge bleiben funktionsfähig, auch solange die Upload-Migration noch aussteht.
 
 ## Kartendesign V2
 
@@ -44,7 +44,7 @@ Archivvorlage: https://stadtgeschichte.karlsruhe.de/erinnerungskultur/erinnerung
 - Vier historische Lernstationen; anklickbare Marker und Materialkarten.
 - Bearbeitbare Notizfelder sowie Links zu externen Quellen/Medien.
 - Eingaben werden **nur im jeweiligen Browser** über `localStorage` gespeichert. Sie sind nicht synchronisiert und gehen beim Löschen von Browserdaten verloren; JSON-Export ist möglich.
-- Eine Anmeldung und zentrale Quellen-/Linkverwaltung sind **vorbereitet**, benötigen aber die **Supabase-Konfiguration**; die Datenbank ist noch nicht live. Noch kein direkter Dateiupload und keine Lehrkraft-Freigabeoberfläche.
+- Gemeinsame Quellen-/Linkverwaltung mit Supabase-Projektkonten. Direkte PDFs und Bilder erst nach zusätzlichem privatem Bucket und V2-Migration; keine Lehrkraft-Freigabeoberfläche.
 - Weder die Database noch der öffentliche Erinnerungsrundgang veröffentlichen aktuell automatisch Gruppenentwürfe.
 - Jean-Claude ist noch **kein KI-Chatbot**.
 - Die Website sollte vor einem realen Schuleinsatz hinsichtlich Datenschutz, Barrierefreiheit, Quellengenauigkeit und Bildrechten geprüft werden.
@@ -84,3 +84,11 @@ Im Projektordner `python -m http.server 8000` starten und `http://localhost:8000
 - [Leaflet](https://leafletjs.com/) und [OpenStreetMap](https://www.openstreetmap.org/) für die Karte.
 - Öffentliches Repository: **keine Zugangsdaten, API-Schlüssel, personenbezogenen Schülerdaten oder unveröffentlichten Archivscans hochladen.**
 - Derzeit keine Open-Source-Lizenz festgelegt; Rechte historischer Materialien sind getrennt zu klären.
+
+## Database V2 · Sicherheit bei Datei-Uploads
+
+- Nur PDF, JPEG, PNG und WebP, max. 10 MB je Datei.
+- Private Supabase-Storage-Bucket mit RLS: Einreichung durch angemeldetes Projektkonto, Ansicht zunächst nur für Eigentümer, Freigabe wie bisher im Supabase-Dashboard.
+- Freigegebene Bilder erhalten eine Vorschau; PDFs sind über kurzlebige signierte Downloadlinks zugänglich.
+- **Nicht** automatisch ausgerollt: Die Datenbankmigration aus [supabase/storage_migration_v2.sql](supabase/storage_migration_v2.sql) muss im existierenden Supabase-Projekt noch durch die Projektverantwortlichen ausgeführt werden.
+- Eine zentrale Speicherung ersetzt keine Sicherungskopien und keine Datenschutz-/Urheberrechtsprüfung.
