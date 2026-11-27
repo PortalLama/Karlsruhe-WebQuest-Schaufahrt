@@ -7,6 +7,7 @@
   <title>Der Auftrag | Karlsruhe erinnert</title>
   
   <link rel="stylesheet" href="styles.css">
+  <script src="rollen.js" defer></script>
   
 </head>
 <body>
@@ -37,25 +38,78 @@
   </header>
   <main id="content">
     <section class="page-hero"><p class="section-kicker">01 / DER AUFTRAG</p><h1>Eine Stadt braucht eure Perspektive.</h1><p>Die Erinnerungsorte sind ausgewählt. Jetzt seid ihr gefragt: Untersucht die Quellen, erklärt die historische Bedeutung und gestaltet einen zugänglichen digitalen Rundgang.</p></section>
-<section class="assignment" id="auftrag">
-      <div class="section-kicker">DER PROJEKTAUFTRAG</div>
-      <div class="assignment-main"><h2>Die Karte ist da.<br><span>Die Geschichte fehlt noch.</span></h2>
-      <p>2023 erinnerten in Karlsruhe temporäre Informationsstelen an die Schaufahrt. Für unser neues Erinnerungsprojekt wurden vier Orte bereits auf einer digitalen Karte markiert. Erste Hinweise und Fundstellen sind vorhanden – die kritische Analyse und eine verständliche mediale Vermittlung aber noch nicht.</p></div>
-      <div class="assignment-tasks"><span class="task-number">01</span><p>Untersucht historische Materialien und ihre Perspektiven.</p><span class="task-number">02</span><p>Entwickelt gemeinsam eine belegte historische Aussage.</p><span class="task-number">03</span><p>Gestaltet einen digitalen Beitrag für eure Station.</p></div>
-    </section>
-<section class="narrative-section">
- <p class="section-kicker">EURE ROLLEN IM TEAM</p><h2>Ein Redaktionsteam. Eine gemeinsame historische Aussage.</h2>
- <p>Verteilt die Rollen selbst. Sie sind <strong>besondere Verantwortlichkeiten</strong>, keine voneinander getrennten Einzelaufgaben. Alle untersuchen Quellen, diskutieren ihre Deutung und entscheiden gemeinsam über das Medienprodukt.</p>
- <div class="role-grid">
-   <article><span class="role-icon">◇</span><h3>Projektleitung</h3><p>Moderiert die Zusammenarbeit und sorgt dafür, dass gemeinsam entschieden wird.</p></article>
-   <article><span class="role-icon">⌕</span><h3>Quellen-Detektiv</h3><p>Fragt nach Herkunft, Absicht, Aussagekraft und Belegen historischer Quellen.</p></article>
-   <article><span class="role-icon">◎</span><h3>Historiker/in</h3><p>Prüft zeitlichen Kontext, Perspektiven und die historische Erklärung.</p></article>
-   <article><span class="role-icon">▣</span><h3>Medienredaktion</h3><p>Achtet auf eine verständliche, angemessene und nachvollziehbare Darstellung.</p></article>
- </div>
- <div class="callout-line"><strong>Gemeinsamer Checkpoint:</strong> Bevor ihr das Medium gestaltet, müsst ihr euch als Gruppe auf eine historische Kernaussage einigen, die ihr durch Quellen belegen könnt.</div>
- <div class="page-actions"><a class="button button-main" href="karte.html">Zur historischen Karte ↗</a><a class="button button-outline" href="methodenkoffer.html">Methodenkoffer ansehen</a></div>
+<section class="assignment assignment-extended" id="auftrag">
+  <div class="section-kicker assignment-side-label">DER PROJEKTAUFTRAG</div>
+  <div class="assignment-main">
+    <h2>Die Karte ist da.<br><span>Die Geschichte fehlt noch.</span></h2>
+    <p>2023 erinnerten in Karlsruhe temporäre Informationsstelen an die Schaufahrt. Für unser neues Erinnerungsprojekt wurden vier Orte bereits auf einer digitalen Karte markiert. Erste Hinweise und Fundstellen sind vorhanden – die kritische Analyse und eine verständliche mediale Vermittlung aber noch nicht.</p>
+    <p><strong>Bildet Forschungsteams und übernehmt jeweils einen der vier historischen Orte.</strong> Untersucht die vorhandenen Quellen, recherchiert nach weiteren Materialien und findet heraus, was damals geschah und welche Botschaft die Nationalsozialisten mit der öffentlichen Verfolgung vermitteln wollten.</p>
+    <p>Entwickelt anschließend einen eigenen digitalen Beitrag. Ob Kurzvideo, kommentierte Bildergalerie, Präsentation oder ein anderes geeignetes Medium – ihr entscheidet, wie ihr eure Erkenntnisse vermitteln möchtet. Am Ende werden eure vier Beiträge der Klasse zu einem gemeinsamen Erinnerungsrundgang durch Karlsruhe zusammengeführt.</p>
+  </div>
+  <aside class="assignment-tasks" aria-label="Die drei Etappen eures Auftrags">
+    <span class="task-number">01</span><p><strong>Erforschen</strong><br>Quellen untersuchen und weitere Materialien recherchieren.</p>
+    <span class="task-number">02</span><p><strong>Einordnen</strong><br>Eine historische Aussage gemeinsam entwickeln und belegen.</p>
+    <span class="task-number">03</span><p><strong>Vermitteln</strong><br>Einen digitalen Beitrag gestalten und zum Rundgang beitragen.</p>
+  </aside>
+</section>
+<section class="core-question-section" aria-labelledby="main-research-question">
+  <div class="core-question-inner">
+    <p class="core-question-label">UNSERE WICHTIGSTE FRAGE AN EUCH</p>
+    <h2 id="main-research-question">Warum führten die Nationalsozialisten ihre politischen Gegner öffentlich durch Karlsruhe und was können wir daraus über den Umgang mit politischen Gegnern heute lernen?</h2>
+    <p class="core-question-final">Die Geschichte liegt in euren Händen. Helft uns, sie sichtbar zu machen!</p>
+  </div>
+</section>
+<section class="narrative-section roles-section">
+  <p class="section-kicker">EURE ROLLEN IM TEAM</p>
+  <h2>Ein Redaktionsteam. Eine gemeinsame historische Aussage.</h2>
+  <p>Verteilt die vier Rollen innerhalb eures Teams. <strong>Alle recherchieren, analysieren und gestalten gemeinsam.</strong> Die Rollen helfen euch dabei, unterschiedliche Aufgaben im Blick zu behalten und wichtige Entscheidungen zusammen zu treffen.</p>
+  <p class="roles-hint">Klickt auf eine Rolle, um mehr über ihre Aufgaben zu erfahren.</p>
+  <div class="role-grid role-button-grid">
+    <button class="role-card" type="button" data-role="lead" aria-haspopup="dialog" aria-controls="role-dialog" aria-label="Projektleitung: Aufgaben und Beschreibung öffnen">
+  <span class="role-motif"><svg aria-hidden="true" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 13h20a4 4 0 0 1 4 4v32a4 4 0 0 1-4 4H22a4 4 0 0 1-4-4V17a4 4 0 0 1 4-4Z"/><path d="M27 13c0-4 10-4 10 0M26 27l3 3 6-7M26 41h13M26 46h13"/></svg></span>
+  <span class="role-name">Projektleitung</span>
+  <span class="role-short">Den Überblick behalten und gemeinsam entscheiden</span>
+  <span class="role-view">Rolle entdecken <span aria-hidden="true">↗</span></span>
+</button>
+<button class="role-card" type="button" data-role="sources" aria-haspopup="dialog" aria-controls="role-dialog" aria-label="Quellen-Detektiv: Aufgaben und Beschreibung öffnen">
+  <span class="role-motif"><svg aria-hidden="true" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10h26l8 8v17M41 10v9h8M23 23h18M23 31h12"/><circle cx="37" cy="41" r="11"/><path d="m45 49 9 9"/></svg></span>
+  <span class="role-name">Quellen-Detektiv</span>
+  <span class="role-short">Belegen, prüfen und genau hinschauen</span>
+  <span class="role-view">Rolle entdecken <span aria-hidden="true">↗</span></span>
+</button>
+<button class="role-card" type="button" data-role="history" aria-haspopup="dialog" aria-controls="role-dialog" aria-label="Historiker/in: Aufgaben und Beschreibung öffnen">
+  <span class="role-motif"><svg aria-hidden="true" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 15c10-4 18-3 23 2v37c-5-5-13-6-23-2V15ZM55 15c-10-4-18-3-23 2v37c5-5 13-6 23-2V15Z"/><path d="M18 26h8M18 33h8M38 26h8M38 33h8"/></svg></span>
+  <span class="role-name">Historiker/in</span>
+  <span class="role-short">Ereignisse einordnen und Perspektiven abgleichen</span>
+  <span class="role-view">Rolle entdecken <span aria-hidden="true">↗</span></span>
+</button>
+<button class="role-card" type="button" data-role="media" aria-haspopup="dialog" aria-controls="role-dialog" aria-label="Medienredaktion: Aufgaben und Beschreibung öffnen">
+  <span class="role-motif"><svg aria-hidden="true" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="24" width="44" height="29" rx="3"/><path d="M10 24V14l41-7 3 15-44 8M18 12l9 15M33 10l9 15"/><path d="m28 33 12 7-12 7V33Z" fill="currentColor" stroke="none"/></svg></span>
+  <span class="role-name">Medienredaktion</span>
+  <span class="role-short">Geschichte verständlich und ansprechend erzählen</span>
+  <span class="role-view">Rolle entdecken <span aria-hidden="true">↗</span></span>
+</button>
+  </div>
+  <div class="callout-line"><strong>Gemeinsamer Checkpoint:</strong> Bevor ihr das Medium gestaltet, einigt ihr euch auf eine Unterleitfrage und eine historische Kernaussage. Prüft gemeinsam, mit welchen Quellen ihr eure Aussage belegen könnt. Jede Person im Team sollte sie erklären können.</div>
+  <div class="page-actions"><a class="button button-main" href="karte.html">Zur historischen Karte ↗</a><a class="button button-outline" href="methodenkoffer.html">Methodenkoffer ansehen</a></div>
 </section>
   </main>
+  <dialog class="role-dialog" id="role-dialog" aria-labelledby="role-dialog-title" aria-describedby="role-dialog-intro">
+  <div class="role-dialog-inner">
+    <button class="role-dialog-close" type="button" id="role-dialog-close" aria-label="Rollenfenster schließen">×</button>
+    <div class="role-dialog-top">
+      <span class="section-kicker">DEINE ROLLE IM FORSCHUNGSTEAM</span>
+      <span class="role-dialog-count" id="role-dialog-count"></span>
+    </div>
+    <div class="role-dialog-heading"><span class="role-dialog-icon" id="role-dialog-icon"></span><h2 id="role-dialog-title"></h2></div>
+    <p id="role-dialog-intro" class="role-dialog-intro"></p>
+    <h3>Deine besonderen Aufgaben</h3>
+    <ul class="role-dialog-tasks" id="role-dialog-tasks"></ul>
+    <div class="role-dialog-tip"><strong>Eine Frage, die du im Team stellen kannst:</strong><p id="role-dialog-question"></p></div>
+    <p class="role-dialog-foot">Wichtig: Diese Verantwortung ergänzt eure gemeinsame Arbeit. Quellen untersuchen, historische Aussagen diskutieren und den Beitrag gestalten könnt ihr nur zusammen.</p>
+    <button class="role-dialog-done" type="button" id="role-dialog-done">Verstanden – zurück zum Auftrag</button>
+  </div>
+</dialog>
   <footer><span>Karlsruhe erinnert · WebQuest Geschichte 9/10</span><span>Unabhängiges Unterrichtsprojekt · keine amtliche Veröffentlichung der Stadt Karlsruhe</span><a href="https://stadtgeschichte.karlsruhe.de/erinnerungskultur/erinnerungskultur-im-oeffentlichen-raum/schaufahrt-1933" target="_blank" rel="noopener noreferrer">Historische Grundlage: Stadtarchiv Karlsruhe ↗</a></footer>
   
 </body>
