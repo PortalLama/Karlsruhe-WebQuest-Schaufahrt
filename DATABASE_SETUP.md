@@ -122,3 +122,110 @@ historischer Scans sind Urheber- und Nutzungsrechte zu prüfen.
 - [Supabase API-Schlüssel](https://supabase.com/docs/guides/getting-started/api-keys)
 - [Supabase JavaScript](https://supabase.com/docs/reference/javascript/installing)
 - [Supabase Login](https://supabase.com/docs/reference/javascript/auth-signinwithpassword)
+
+
+---
+
+## Database V2 – Bilder und PDFs direkt hochladen
+
+**Wichtig:** Die Website ist schon entsprechend programmiert. Die folgende
+neue SQL-Migration wurde **noch nicht automatisch in deinem Supabase-Projekt
+ausgeführt**. Bis dahin funktionieren die bisherigen Links unverändert;
+der Datei-Modus ist absichtlich deaktiviert.
+
+### Schritt 1: Privaten Speicherbereich anlegen
+
+1. Supabase Dashboard → dein Projekt → **Storage**.
+2. **New bucket / Create bucket** auswählen.
+3. Bucket-Name **exakt \`webquest-materials\`** eingeben.
+4. **Public bucket ausgeschaltet lassen** – der Bucket muss **private** sein.
+5. Maximale Dateigröße **10 MB**.
+6. Erlaubte MIME-Formate:
+   - \`application/pdf\`
+   - \`image/jpeg\`
+   - \`image/png\`
+   - \`image/webp\`
+7. Speichern.
+
+Ohne private Bucket-Konfiguration lässt sich der Prüfprozess umgehen oder
+ein Upload kann fehlschlagen. **Keinen öffentlichen Bucket wählen.**
+
+### Schritt 2: Zusätzliche Datenbankregeln aktivieren
+
+1. Auf GitHub die neue Datei
+   [supabase/storage_migration_v2.sql](supabase/storage_migration_v2.sql)
+   öffnen und deren gesamten Inhalt kopieren.
+2. In Supabase **SQL Editor → New query** öffnen.
+3. SQL einfügen und **Run** auswählen.
+4. Es muss eine erfolgreiche Ausführung ohne Fehlermeldung angezeigt werden.
+
+Die Migration ergänzt das bestehende Materialarchiv um \`storage_path\`,
+macht \`material_url\` für Datei-Einträge optional und erstellt RLS-Richtlinien
+für den privaten Dateispeicher. **Die vorhandenen Links, Metadaten,
+Anmeldungen und Freigaben bleiben erhalten.**
+
+### Schritt 3: Testupload
+
+1. Die [Database](database.html) öffnen (ggf. Strg+F5).
+2. Mit dem Projektkonto anmelden.
+3. **+ Material hinzufügen** anklicken.
+4. **Datei direkt hochladen** wählen.
+5. Ein unkritisches eigenes Testbild oder eine selbst erstellte PDF
+   mit **höchstens 10 MB** wählen.
+6. Titel, Station, Fundstelle und quellenkritische Beschreibung ausfüllen.
+7. **Zur Prüfung einreichen**.
+8. Unter **Anzeige → Meine Einreichungen** den neuen Datensatz prüfen.
+9. Das Material sollte als **Zur Prüfung eingereicht** erscheinen;
+   die Datei kann vom einreichenden Konto angesehen werden.
+10. Als Administrator im Supabase **Table Editor** die Tabelle
+    \`public.research_materials\` öffnen und in der Zeile des Materials
+    \`review_status\` von \`pending\` auf \`approved\` ändern.
+11. In einem privaten Browserfenster ohne Anmeldung prüfen, ob die
+    Datei über die freigegebene Quellenkarte geöffnet werden kann.
+
+Bilder erhalten eine Vorschau im Detailfenster; PDFs lassen sich von dort
+in einem neuen Browsertab öffnen. Die Dateien werden über **zeitlich
+begrenzte, signierte URLs** ausgeliefert, statt als öffentliche Dateien
+im Bucket zu liegen. Die URLs gelten jeweils rund 2 Minuten und können
+durch erneutes Öffnen der Details neu erstellt werden.
+
+### Welche Dateien gehen?
+
+- PDF, JPG/JPEG, PNG, WebP; maximal 10 MB.
+- Kein direkter Video-/Audio-Upload.
+- Die Website prüft Dateisignatur, Dateiendung und Größe.
+- Zusätzlich müssen Dateigröße und MIME-Typ **im privaten Supabase-Bucket**
+  eingeschränkt sein. Diese Client-Prüfung allein bietet keine Sicherheit.
+- Dateien können nach Einreichung nicht direkt ausgetauscht werden; ein
+  noch nicht freigegebener Beitrag kann gelöscht und neu erstellt werden.
+- **Speichert keine Schülernamen, privaten Fotografien oder unrechtmäßig
+  kopierten Archivquellen**.
+
+### Wenn etwas nicht funktioniert
+
+| Problem | Prüfung |
+| --- | --- |
+| „Datei direkt hochladen“ ist grau | \`storage_path\` ist noch nicht verfügbar; Migration im SQL Editor durchführen und Seite aktualisieren |
+| Upload: „Bucket not found“ | Bucket exakt \`webquest-materials\` erstellen |
+| Fehler 403 / „row-level security“ | Projektkonto angemeldet? SQL-Migration vollständig ausgeführt? Bucket privat und richtig benannt? |
+| MIME-/Größenfehler | PDF/JPEG/PNG/WebP und höchstens 10 MB; erlaubte MIME-Typen und Limit im Bucket prüfen |
+| Datei sichtbar im Account, aber nicht öffentlich | Datensatz erst im Dashboard auf \`approved\` setzen |
+| Link nach einiger Zeit ungültig | Detailansicht erneut öffnen: signierte URLs laufen bewusst ab |
+| Alte Materialien weiterhin sichtbar, Datei-Modus aber deaktiviert | Das ist beabsichtigte Abwärtskompatibilität, solange die Migration fehlt |
+
+### Was noch fehlt?
+
+- Automatische Viren-/Malware-Prüfung von Uploads.
+- Eine eigene Lehrkraft-Freigabeoberfläche außerhalb des Supabase-Dashboards.
+- Anonyme Gruppen-Accounts / schuldatenschutzrechtlich geprüfte Identitäten.
+- Automatische Übernahme freigegebener Dateien in die Kartenstationen.
+- Versionierung, automatisches Backup und langfristige Archivierung.
+- Genaue Rechteprüfung historischer Scans und Fotomaterialien.
+
+Für den produktiven Einsatz mit Minderjährigen muss der Datenschutz mit
+der Schule abgestimmt werden. Supabase läuft nicht automatisch in einer
+für die Schule zulässigen Datenverarbeitungskonfiguration.
+
+**Technik:** [Supabase Storage Policies](https://supabase.com/docs/guides/storage/security/access-control) ·
+[Private Buckets](https://supabase.com/docs/guides/storage/buckets/creating-buckets) ·
+[Signierte Downloads](https://supabase.com/docs/guides/storage/serving/downloads)
