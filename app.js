@@ -1,15 +1,15 @@
 "use strict";
 
 /*
- * Karlsruher WebQuest · Prototyp 0.1
- * Die Koordinaten und die Verbindungslinie sind ORIENTIERUNGSWERTE.
- * Die eigentliche Schaufahrt-Route anhand des Stadtarchivs rekonstruieren.
+ * Karlsruher WebQuest · Kartenlayout V2
+ * Die Streckenführung ist näherungsweise aus dem Archivplan übertragen,
+ * jedoch noch keine vermessene oder vollständig gesicherte Fahrtlinie.
  * Alle Einträge liegen vorerst ausschließlich im Browser (localStorage).
  */
 const ARCHIVE_ROOT = "https://stadtgeschichte.karlsruhe.de/erinnerungskultur/erinnerungskultur-im-oeffentlichen-raum/schaufahrt-1933";
 const STATIONS = [
   {
-    id:"gefängnis", name:"Gefängnis Riefstahlstraße", short:"Gefängnis", address:"Riefstahlstraße 9, Karlsruhe", coordinates:[49.0129,8.3983],
+    id:"gefängnis", name:"Gefängnis Riefstahlstraße", short:"Gefängnis", address:"Riefstahlstraße 9, Karlsruhe", coordinates:[49.013674,8.385422],
     where:"Hier befand sich 1933 ein Gefängnis, in dem politische Gegner der Nationalsozialisten festgehalten wurden.",
     happened:"Am 16. Mai 1933 begann die öffentliche Vorführung von sieben inhaftierten Sozialdemokraten. Die Gefangenen wurden auf einem offenen Wagen durch die Stadt gefahren.",
     question:"Welche Bedeutung hatte staatliche Gewalt für den Umgang mit politischen Gegnern?",
@@ -20,7 +20,7 @@ const STATIONS = [
     ]
   },
   {
-    id:"marum", name:"Kanzlei Ludwig Marum", short:"Kanzlei Marum", address:"Kaiserstraße 176, Karlsruhe", coordinates:[49.0105,8.3986],
+    id:"marum", name:"Kanzlei Ludwig Marum", short:"Kanzlei Marum", address:"Kaiserstraße 176, Karlsruhe", coordinates:[49.010300,8.391900],
     where:"Hier lag die Kanzlei von Ludwig Marum. Er war Rechtsanwalt und sozialdemokratischer Politiker.",
     happened:"Die Nationalsozialisten führten die Gefangenen an Marums Kanzlei vorbei. Marum befand sich selbst unter den sieben öffentlich Vorgeführten.",
     question:"Warum demütigten die Nationalsozialisten politische Gegner öffentlich?",
@@ -31,7 +31,7 @@ const STATIONS = [
     ]
   },
   {
-    id:"volksfreund", name:"Redaktion des Volksfreund", short:"Volksfreund", address:"Waldstraße 28, Karlsruhe", coordinates:[49.0095,8.3962],
+    id:"volksfreund", name:"Redaktion des Volksfreund", short:"Volksfreund", address:"Waldstraße 28, Karlsruhe", coordinates:[49.010650,8.396950],
     where:"Hier befanden sich Redaktion und Druckerei der sozialdemokratischen Zeitung „Volksfreund“.",
     happened:"Die Zeitung wurde 1933 verboten. Auch an ihrem ehemaligen Verlagsgebäude führte die Schaufahrt vorbei.",
     question:"Wie entstanden nationalsozialistische Feindbilder über politische Gegner?",
@@ -42,7 +42,7 @@ const STATIONS = [
     ]
   },
   {
-    id:"ständehaus", name:"Badisches Ständehaus", short:"Ständehaus", address:"Friedrichsplatz, Karlsruhe", coordinates:[49.0084,8.4013],
+    id:"ständehaus", name:"Badisches Ständehaus", short:"Ständehaus", address:"Friedrichsplatz, Karlsruhe", coordinates:[49.008757,8.400328],
     where:"Das Badische Ständehaus war ein zentraler Ort der parlamentarischen Demokratie in Baden.",
     happened:"Am 16. Mai 1933 trat der nach nationalsozialistischen Vorgaben umgebildete badische Landtag zusammen. Die Schaufahrt führte am Ständehaus vorbei.",
     question:"Welche Botschaft vermittelte die öffentliche Vorführung im Umfeld des Parlaments?",
@@ -53,6 +53,55 @@ const STATIONS = [
     ]
   }
 ];
+
+/*
+ * Die Stadtarchivkarte belegt die Stationen und ihre Reihenfolge, liefert aber
+ * keine maschinenlesbare Polylinie. Dieses Zwischenstück wird deshalb bewusst
+ * als NÄHERUNGSWEISE REKONSTRUKTION gezeigt.
+ *
+ * Erste Orte laut Stadtarchiv:
+ * 1. Riefstahlstraße 9 (Gefängnis)
+ * 2. Kaiserstraße 176 (Kanzlei Marum)
+ * 3. Waldstraße 28 (Volksfreund)
+ * 4. Friedrichsplatz (Ständehaus)
+ *
+ * Die Schaufahrt führte danach an weiteren demokratischen Institutionen vorbei
+ * und endete im KZ Kislau. Die vier Stationen sind kein vollständiger Rundweg.
+ *
+ * Koordinaten der Haltepunkte:
+ * JVA-Karlsruhe 49.013674, 8.385422 (Outdooractive);
+ * Kanzlei Kaiserstraße 176 ca. 49.0103, 8.3919 (Limehome/OSM);
+ * Volksfreund Waldstraße 28: geographische Annäherung an die Archivposition;
+ * Ständehaus ca. 49.008757, 8.400328 (Denkmal-/Kartendokumentation).
+ */
+const ROUTE_GUIDE = [
+  [49.013674,8.385422], // Gefängnis Riefstahlstraße
+  [49.013100,8.385490], // Riefstahlstraße Richtung Süden (annähernd)
+  [49.011850,8.385770], // Weiter Richtung Kaiserstraße (annähernd)
+  [49.010650,8.386450], // Nähe Mühlburger Tor (annähernd)
+  [49.010510,8.388370], // Kaiserstraße westlicher Abschnitt
+  [49.010300,8.391900], // Kanzlei Marum
+  [49.010040,8.394180], // Europaplatz/Kaiserstraße
+  [49.009850,8.396850], // Kaiserstraße auf Höhe Waldstraße (Volksfreund)
+  [49.009710,8.398250], // Kaiserstraße weiter nach Osten
+  [49.009600,8.399840], // Kaiserstraße / Ritterstraße (annähernd)
+  [49.009140,8.400090], // Südliche Richtung Friedrichsplatz
+  [49.008757,8.400328]  // Ständehaus
+];
+
+/* Dokument-/Gebäudezeichen sind eigene SVG-Piktogramme, keine Archivabbildungen. */
+const MARKER_SYMBOLS = [
+  '<rect x="7" y="3" width="18" height="25" rx="1.5"/><path d="M13 3v25M19 3v25M7 11h18M7 20h18"/>',
+  '<path d="M16 4v23M8 9h16M8 9l-5 10h10L8 9ZM24 9l-5 10h10L24 9ZM9 28h14"/>',
+  '<rect x="4" y="4" width="24" height="24" rx="2"/><path d="M9 10h14M9 15h14M9 20h6M19 20h4M9 24h14"/>',
+  '<path d="M3 11 16 4l13 7H3ZM7 13v13M13 13v13M19 13v13M25 13v13M4 28h24"/>'
+];
+function markerHtml(i) {
+  return '<span class="memorial-pin" aria-hidden="true">'
+       + '<svg class="memorial-symbol" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">'
+       + MARKER_SYMBOLS[i] + '</svg>'
+       + '<span class="memorial-number">' + String(i+1).padStart(2,"0") + '</span></span>';
+}
 
 const STORAGE_KEY = "schaufahrt-webquest-v01";
 const DEFAULT_WORK = () => ({question:"",observation:"",analysis:"",message:"",mediaUrl:"",mediaLabel:"",sourceUrl:"",sourceLabel:""});
@@ -238,19 +287,42 @@ function setupMap(){
     return;
   }
   mapHolder.replaceChildren();
-  map=L.map("map",{scrollWheelZoom:false,zoomControl:true}).setView([49.0098,8.3983],14);
+  map=L.map("map",{scrollWheelZoom:false,zoomControl:true,preferCanvas:true}).setView([49.011,8.392],14);
+
+  /*
+   * Bewährte OSM-Kacheln: über CSS farblich reduziert.
+   * So entsteht ein weiß-beigefarbener Kartenstil ohne externes Tile-API-Konto.
+   * Die OpenStreetMap-Attribution bleibt dauerhaft sichtbar.
+   */
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{
     maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende'
   }).addTo(map);
-  routeObject=L.polyline(STATIONS.map(s=>s.coordinates),{color:"#994a3d",weight:4,opacity:.85,dashArray:"9,8"}).addTo(map);
+
+  routeObject=L.polyline(ROUTE_GUIDE,{
+    color:"#A72C36",weight:4.5,opacity:.88,dashArray:"10,7",
+    lineCap:"round",lineJoin:"round",interactive:false
+  }).addTo(map);
+
+  // Die Symbol-Marker bleiben getrennt von der Fahrtlinie; manche Gebäude
+  // liegen neben dem Straßenraum, den der historische Wagen passierte.
   STATIONS.forEach((station,i)=>{
     const marker=L.marker(station.coordinates,{
-      icon:L.divIcon({className:"station-marker",html:String(i+1).padStart(2,"0"),iconSize:[34,34],iconAnchor:[17,17]})
-    }).addTo(map).bindTooltip(station.short,{direction:"top",offset:[0,-15]});
+      keyboard:true,
+      title:station.name,
+      alt:"Station "+(i+1)+": "+station.name,
+      icon:L.divIcon({
+        className:"station-marker-v2",
+        html:markerHtml(i),
+        iconSize:[50,65],
+        iconAnchor:[25,62],
+        tooltipAnchor:[0,-52]
+      })
+    }).addTo(map).bindTooltip(station.short,{direction:"top",offset:[0,-14]});
     marker.on("click",()=>choose(i));
     markerObjects.push(marker);
   });
-  map.fitBounds(routeObject.getBounds().pad(.28),{maxZoom:15});
+  const fit=L.latLngBounds([...ROUTE_GUIDE,...STATIONS.map(s=>s.coordinates)]);
+  map.fitBounds(fit.pad(.14),{maxZoom:15,padding:[28,28]});
 }
 function setup(){
   const buttons=byId("station-buttons");
@@ -261,7 +333,7 @@ function setup(){
   });
   byId("tab-discover").addEventListener("click",()=>{activeTab="discover";render()});
   byId("tab-edit").addEventListener("click",()=>{activeTab="edit";render()});
-  byId("fit-map").addEventListener("click",()=>{if(map&&routeObject)map.fitBounds(routeObject.getBounds().pad(.28),{maxZoom:15})});
+  byId("fit-map").addEventListener("click",()=>{if(map&&routeObject){const fit=L.latLngBounds([...ROUTE_GUIDE,...STATIONS.map(s=>s.coordinates)]);map.fitBounds(fit.pad(.14),{maxZoom:15,padding:[28,28]});}});
   byId("close-dialog").addEventListener("click",()=>byId("source-dialog").close());
   byId("source-dialog").addEventListener("click",e=>{if(e.target===byId("source-dialog"))byId("source-dialog").close()});
   setupMap();render();
