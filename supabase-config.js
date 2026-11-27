@@ -7,6 +7,6 @@
  * Wert in GitHub/Website-Dateien verwenden!
  */
 window.WEBQUEST_DB_CONFIG = Object.freeze({
-  url: "",
-  publishableKey: ""
+  url: "https://yrtbjhglrazfeqcrbpur.supabase.co",
+  publishableKey: "sb_publishable_6lCpYUUDaiYO424RD3fgow_uwGa19Kr"
 });
