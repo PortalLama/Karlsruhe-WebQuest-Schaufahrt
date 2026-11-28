@@ -366,6 +366,10 @@
       if(["1","2","3","4"].includes(stationFilter)){
         form.elements.namedItem("station").value=stationFilter;
       }
+      const kindFilter=el("archive-type-filter").value;
+      if(Object.hasOwn(KIND,kindFilter)){
+        form.elements.namedItem("kind").value=kindFilter;
+      }
     }
     state.editingId=item?.id || null;
     state.editingFile = isFile(item);
@@ -587,9 +591,14 @@
   }
 
   async function init() {
-    const selectedStation=new URLSearchParams(window.location.search).get("station");
+    const parameters=new URLSearchParams(window.location.search);
+    const selectedStation=parameters.get("station");
     if(["1","2","3","4"].includes(selectedStation)){
       el("archive-station-filter").value=selectedStation;
+    }
+    const selectedKind=parameters.get("kind");
+    if(Object.hasOwn(KIND,selectedKind)){
+      el("archive-type-filter").value=selectedKind;
     }
     bindEvents();
     setAuthUi();
