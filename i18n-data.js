@@ -1154,5 +1154,245 @@ window.WQ_TRANSLATIONS = [
     "Methodenkoffer öffnen",
     "Open the Research Toolkit",
     "Hilfe öffnen"
+  ],
+  [
+    "Du behältst den Überblick über euren Forschungsauftrag und hilfst dabei, dass alle Teammitglieder zu Wort kommen. Du bist nicht die Person, die allein entscheidet – du unterstützt eure gemeinsamen Entscheidungen.",
+    "You keep track of the research assignment and make sure everyone can contribute. You are not the sole decision-maker; you help your team make decisions together.",
+    "Du hilfst der Gruppe bei der Planung. Achte darauf, dass alle mitreden. Du entscheidest nicht allein."
+  ],
+  [
+    "Besprecht zu Beginn, welchen der vier Orte ihr untersuchen möchtet, und haltet fest, welche Frage euch besonders interessiert.",
+    "At the start, discuss which of the four sites you will investigate and agree on a question that interests you.",
+    "Sprecht gemeinsam: Welchen Ort erforschen wir? Welche Frage haben wir?"
+  ],
+  [
+    "Achte darauf, dass die Gruppe ihre Arbeitsschritte gemeinsam plant: Quellen sichten, historische Aussage formulieren, Beitrag gestalten und überprüfen.",
+    "Make sure your team plans its steps together: examine sources, develop a historical interpretation, create the contribution, and check the result.",
+    "Plant gemeinsam: Quellen ansehen, Geschichte erklären, Beitrag gestalten und prüfen."
+  ],
+  [
+    "Frage regelmäßig nach, ob alle die bisherigen Erkenntnisse verstanden haben und ob noch Widersprüche oder offene Fragen bestehen.",
+    "Regularly check whether everyone understands your findings and whether any contradictions or questions remain.",
+    "Frag immer wieder: Haben alle verstanden, was wir herausgefunden haben?"
+  ],
+  [
+    "Moderiert gemeinsam die Entscheidungen: Welche Quellen sind geeignet? Welche Botschaft soll euer Medienbeitrag vermitteln?",
+    "Discuss your decisions together: Which sources are useful? What message should your media contribution convey?",
+    "Entscheidet gemeinsam: Welche Quellen brauchen wir? Was wollen wir zeigen?"
+  ],
+  [
+    "Sorge vor der Abgabe dafür, dass ihr die Qualitätscheckliste durchgeht und jedes Teammitglied den fertigen Beitrag erklären kann.",
+    "Before submitting, work through the quality checklist and make sure every team member can explain the finished contribution.",
+    "Prüft euren Beitrag vor der Abgabe. Alle sollen ihn erklären können."
+  ],
+  [
+    "Sind wir uns einig, was wir zeigen wollen – und können alle erklären, warum?",
+    "Do we agree on what we want to show, and can everyone explain why?",
+    "Wissen wir alle, was wir zeigen wollen?"
+  ],
+  [
+    "Du achtest besonders darauf, dass eure Erkenntnisse wirklich auf historischen Quellen beruhen. Du hilfst deinem Team, Quellen sorgfältig zu untersuchen, statt Darstellungen oder Propaganda ungeprüft zu übernehmen.",
+    "You make sure that your conclusions are based on historical evidence. Help your team examine sources carefully rather than accepting later accounts or propaganda without question.",
+    "Du prüfst besonders die Quellen. Quellen können alte Texte, Briefe oder Bilder sein. Fragt immer: Können wir ihnen vertrauen?"
+  ],
+  [
+    "Prüft gemeinsam bei jedem Material: Wer hat es wann, wo, für wen und mit welcher möglichen Absicht erstellt?",
+    "For each source, ask together: Who created it? When and where? For whom? And why?",
+    "Fragt: Wer hat die Quelle gemacht? Wann? Wo? Für wen? Warum?"
+  ],
+  [
+    "Unterscheidet historische Originalquellen von späteren Darstellungen. Gerade nationalsozialistische Presseberichte zeigen auch die Perspektive und Ziele der Verfasser.",
+    "Distinguish sources from the time from later historical accounts. Nazi newspaper articles also reflect the writers' viewpoints and goals.",
+    "Unterscheidet: Stammt der Text von 1933? Oder hat ihn jemand später geschrieben? NS-Zeitungen wollten die Menschen beeinflussen."
+  ],
+  [
+    "Suche mit deinem Team nach ergänzenden Materialien und notiert für jeden Fund möglichst Titel, Datum, Urheber und Fundstelle oder Archivsignatur.",
+    "Find additional materials with your team and record each item's title, date, creator, and source reference or archive identifier.",
+    "Sucht weitere Quellen. Schreibt dazu: Titel, Datum, Verfasser und Fundstelle."
+  ],
+  [
+    "Markiere zusammen mit den anderen konkrete Textstellen oder Bilddetails, die eure historische Aussage belegen – und besprecht, was die Quelle offenlässt.",
+    "Together, identify passages or image details that support your historical interpretation. Also discuss what the source does not tell you.",
+    "Zeigt die Stelle im Text oder Bild, die eure Aussage unterstützt. Fragt auch: Was sagt die Quelle nicht?"
+  ],
+  [
+    "Kontrolliere vor der Veröffentlichung, ob die wichtigsten Aussagen durch nachvollziehbare Belege gedeckt sind und Materialien verwendet werden dürfen.",
+    "Before publication, check that key claims have clear evidence and that you have permission to use the materials.",
+    "Prüft am Ende: Haben wir Belege? Dürfen wir die Bilder und Texte benutzen?"
+  ],
+  [
+    "Woher wissen wir das genau – und welche Grenzen hat unsere Quelle?",
+    "How exactly do we know this, and what are the limits of our source?",
+    "Woher wissen wir das? Was wissen wir noch nicht?"
+  ],
+  [
+    "Du behältst den historischen Zusammenhang im Blick: Was geschah 1933 bereits vor der Schaufahrt, wer war betroffen und weshalb hatte die öffentliche Vorführung gerade an diesem Ort eine besondere Bedeutung?",
+    "You focus on the historical context: What had already happened in 1933, who was affected, and why was the public display at this particular place significant?",
+    "Du erklärst die Geschichte: Was passierte 1933? Wer war betroffen? Warum war gerade dieser Ort wichtig?"
+  ],
+  [
+    "Ordnet die Ereignisse zeitlich ein: Welche Maßnahmen gegen politische Gegner gab es im Frühjahr 1933 bereits?",
+    "Put events in order: What measures against political opponents were already in place in spring 1933?",
+    "Was passierte vor der Schaufahrt? Wie gingen die Nationalsozialisten schon vorher gegen Gegner vor?"
+  ],
+  [
+    "Untersucht, welche Bedeutung euer Ort vor der nationalsozialistischen Machtübernahme für Politik, Öffentlichkeit oder Demokratie hatte.",
+    "Investigate the site's political or democratic significance before the Nazi takeover.",
+    "Warum war euer Ort wichtig? Was hatte er mit Politik oder Demokratie zu tun?"
+  ],
+  [
+    "Vergleicht Perspektiven: Wie wurden die Gefangenen dargestellt, wie erlebten Betroffene die Verfolgung und was lässt sich über Zuschauende belegen?",
+    "Compare viewpoints: How were prisoners portrayed? How did victims experience persecution? What can sources actually tell us about spectators?",
+    "Fragt: Was sagten die Nationalsozialisten? Wie erlebten die Gefangenen die Fahrt? Was wissen wir über die Zuschauer?"
+  ],
+  [
+    "Formuliert gemeinsam eine Erklärung dafür, welche Botschaft die Nationalsozialisten mit der öffentlichen Demütigung verbreiten wollten.",
+    "Explain together what message the National Socialists wanted to communicate by publicly humiliating their opponents.",
+    "Erklärt gemeinsam: Warum stellten die Nationalsozialisten ihre Gegner öffentlich bloß?"
+  ],
+  [
+    "Achte beim Gegenwartsvergleich darauf, historische Unterschiede nicht zu verwischen: Staatlich organisierte Verfolgung in der NS-Diktatur ist nicht einfach dasselbe wie politische Konflikte oder Straftaten in einem heutigen Rechtsstaat.",
+    "When making comparisons with today, preserve historical differences. State-organized persecution under Nazi dictatorship is not the same as political conflict or individual crimes in a modern constitutional democracy.",
+    "Vergleicht die Geschichte vorsichtig mit heute. Damals verfolgte der Staat seine Gegner. Heute gibt es andere Gesetze und Rechte. Das ist ein wichtiger Unterschied."
+  ],
+  [
+    "Warum war dieser Ort 1933 bedeutsam – und welche Erklärung ist durch unsere Belege gedeckt?",
+    "Why did this site matter in 1933, and which explanation is supported by our evidence?",
+    "Warum war der Ort wichtig? Was zeigen unsere Quellen?"
+  ],
+  [
+    "Du achtest besonders darauf, dass eure historischen Erkenntnisse verständlich, sorgfältig und ansprechend vermittelt werden. Du bestimmst das Medium nicht allein – alle wählen gemeinsam aus und gestalten mit.",
+    "You help communicate your historical findings clearly, accurately, and engagingly. You do not choose the format alone: everyone contributes.",
+    "Du hilfst dabei, euren Beitrag verständlich zu gestalten. Alle entscheiden gemeinsam über das Video, die Bilder oder die Präsentation."
+  ],
+  [
+    "Besprecht gemeinsam, ob ihr eure Station als Kurzvideo, kommentierte Bildergalerie, Präsentation oder in einer anderen geeigneten Form umsetzen möchtet.",
+    "Decide together whether to use a short video, annotated gallery, presentation, or another suitable format.",
+    "Wählt zusammen: Video, Bilder-Galerie oder Präsentation?"
+  ],
+  [
+    "Entwickelt zusammen einen kurzen Ablaufplan: Wie führt ihr zum Ort hin, welche Quelle zeigt ihr und wie erklärt ihr ihre Bedeutung?",
+    "Create a short plan together: How will you introduce the site, which source will you show, and how will you explain its meaning?",
+    "Plant euren Beitrag: Welchen Ort zeigt ihr? Welche Quelle? Wie erklärt ihr sie?"
+  ],
+  [
+    "Achte darauf, dass eine Person ohne Vorwissen die Erklärung versteht. Fachbegriffe brauchen eine knappe und richtige Erläuterung.",
+    "Make sure someone without prior knowledge can understand your explanation. Define historical terms briefly and accurately.",
+    "Erklärt schwierige Wörter. Auch jemand ohne Vorwissen soll euren Beitrag verstehen."
+  ],
+  [
+    "Prüft Bildausschnitte, Quellenbeschriftungen, Lesbarkeit, Ton, Untertitel und die Rechte an verwendeten Materialien.",
+    "Check image selection, source captions, readability, sound, subtitles, and permission to use all materials.",
+    "Prüft Bilder, Texte, Ton und Untertitel. Dürft ihr alle Materialien verwenden?"
+  ],
+  [
+    "Organisiere mit den anderen einen abschließenden Redaktionscheck: Ist die Aussage verständlich, quellenbelegt und im Umgang mit den Verfolgten respektvoll?",
+    "With your team, check the final contribution: Is the claim clear and supported by sources? Are those who were persecuted treated respectfully?",
+    "Prüft gemeinsam: Ist alles verständlich? Gibt es Belege? Sprecht ihr respektvoll über die verfolgten Menschen?"
+  ],
+  [
+    "Versteht jemand aus einer anderen Klasse unseren Beitrag – und erkennt, welche Quelle unsere Aussage stützt?",
+    "Can someone from another class understand our contribution and see which source supports our claim?",
+    "Versteht eine andere Klasse unseren Beitrag?"
+  ],
+  [
+    "Hier befand sich 1933 ein Gefängnis, in dem politische Gegner der Nationalsozialisten festgehalten wurden.",
+    "In 1933, this was a prison where political opponents of the National Socialists were detained.",
+    "Hier gab es 1933 ein Gefängnis. Die Nationalsozialisten sperrten hier politische Gegner ein."
+  ],
+  [
+    "Am 16. Mai 1933 begann die öffentliche Vorführung von sieben inhaftierten Sozialdemokraten. Die Gefangenen wurden auf einem offenen Wagen durch die Stadt gefahren.",
+    "On 16 May 1933, seven imprisoned Social Democrats were publicly displayed. They were driven through the city on an open vehicle.",
+    "Am 16. Mai 1933 brachten die Nationalsozialisten sieben gefangene Sozialdemokraten auf einen offenen Wagen. Sie fuhren mit ihnen durch Karlsruhe. Alle konnten sie sehen."
+  ],
+  [
+    "Welche Bedeutung hatte staatliche Gewalt für den Umgang mit politischen Gegnern?",
+    "What role did state violence play in the persecution of political opponents?",
+    "Warum nutzten die Nationalsozialisten Gewalt gegen politische Gegner?"
+  ],
+  [
+    "Was bedeutete der NS-Begriff „Schutzhaft“?",
+    "What did the Nazi term “protective custody” mean?",
+    "Was meinten die Nationalsozialisten mit „Schutzhaft“?"
+  ],
+  [
+    "Welche Rolle spielten Polizei und Behörden?",
+    "What role did the police and authorities play?",
+    "Was machten Polizei und Behörden?"
+  ],
+  [
+    "Hier lag die Kanzlei von Ludwig Marum. Er war Rechtsanwalt und sozialdemokratischer Politiker.",
+    "Ludwig Marum's law office was located here. He was a lawyer and a Social Democratic politician.",
+    "Hier arbeitete Ludwig Marum als Rechtsanwalt. Er war auch Politiker der SPD."
+  ],
+  [
+    "Die Nationalsozialisten führten die Gefangenen an Marums Kanzlei vorbei. Marum befand sich selbst unter den sieben öffentlich Vorgeführten.",
+    "The National Socialists drove the prisoners past Marum's own law office. Marum was one of the seven men on public display.",
+    "Der Wagen fuhr an Marums Arbeitsort vorbei. Marum war selbst einer der sieben Gefangenen."
+  ],
+  [
+    "Warum demütigten die Nationalsozialisten politische Gegner öffentlich?",
+    "Why did the National Socialists publicly humiliate their political opponents?",
+    "Warum wollten die Nationalsozialisten ihre Gegner vor anderen Menschen bloßstellen?"
+  ],
+  [
+    "Weshalb könnte gerade dieser Ort ausgewählt worden sein?",
+    "Why might this particular place have been chosen?",
+    "Warum fuhren sie an diesem Ort vorbei?"
+  ],
+  [
+    "Was erzählen Täter- und Betroffenenquellen jeweils?",
+    "What do perpetrators' and victims' sources tell us?",
+    "Was erzählen die Täter? Was erzählen die Betroffenen?"
+  ],
+  [
+    "Hier befanden sich Redaktion und Druckerei der sozialdemokratischen Zeitung „Volksfreund“.",
+    "This building housed the editorial office and printing facilities of the Social Democratic newspaper Volksfreund.",
+    "Hier wurde die Zeitung „Volksfreund“ geschrieben und gedruckt. Sie gehörte zur SPD."
+  ],
+  [
+    "Die Zeitung wurde 1933 verboten. Auch an ihrem ehemaligen Verlagsgebäude führte die Schaufahrt vorbei.",
+    "The newspaper was banned in 1933. The parade also passed its former publishing building.",
+    "1933 verboten die Nationalsozialisten die Zeitung. Der Wagen fuhr auch an ihrem Gebäude vorbei."
+  ],
+  [
+    "Wie entstanden nationalsozialistische Feindbilder über politische Gegner?",
+    "How did the National Socialists create hostile images of their political opponents?",
+    "Wie stellten die Nationalsozialisten ihre Gegner als Feinde dar?"
+  ],
+  [
+    "Wie wurden Sozialdemokraten in der NS-Presse bezeichnet?",
+    "How did Nazi newspapers describe Social Democrats?",
+    "Welche Wörter benutzten NS-Zeitungen für Sozialdemokraten?"
+  ],
+  [
+    "Was bedeutete das Verbot oppositioneller Zeitungen?",
+    "What was the effect of banning opposition newspapers?",
+    "Was änderte sich, als andere Zeitungen verboten wurden?"
+  ],
+  [
+    "Das Badische Ständehaus war ein zentraler Ort der parlamentarischen Demokratie in Baden.",
+    "The Baden Ständehaus was an important site of parliamentary democracy.",
+    "Das Ständehaus war ein wichtiger Ort für die Demokratie in Baden. Dort arbeiteten Abgeordnete."
+  ],
+  [
+    "Am 16. Mai 1933 trat der nach nationalsozialistischen Vorgaben umgebildete badische Landtag zusammen. Die Schaufahrt führte am Ständehaus vorbei.",
+    "On 16 May 1933, Baden's parliament met after being reshaped under Nazi rules. The parade passed the parliament building.",
+    "Am 16. Mai 1933 traf sich der badische Landtag. Die Nationalsozialisten hatten ihn bereits verändert. Der Wagen fuhr am Ständehaus vorbei."
+  ],
+  [
+    "Welche Botschaft vermittelte die öffentliche Vorführung im Umfeld des Parlaments?",
+    "What message did the public parade convey near the parliament building?",
+    "Warum zeigten die Nationalsozialisten die Gefangenen gerade vor dem Parlament?"
+  ],
+  [
+    "Weshalb war der 16. Mai 1933 als Datum bedeutsam?",
+    "Why was 16 May 1933 significant?",
+    "Was passierte noch am 16. Mai 1933?"
+  ],
+  [
+    "Welche Bedeutung hatte der Ort für die Demokratie?",
+    "Why was the site important to democracy?",
+    "Warum war das Gebäude wichtig für die Demokratie?"
   ]
 ];
