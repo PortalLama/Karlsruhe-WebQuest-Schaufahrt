@@ -85,6 +85,62 @@ Im Projektordner `python -m http.server 8000` starten und `http://localhost:8000
 - Öffentliches Repository: **keine Zugangsdaten, API-Schlüssel, personenbezogenen Schülerdaten oder unveröffentlichten Archivscans hochladen.**
 - Derzeit keine Open-Source-Lizenz festgelegt; Rechte historischer Materialien sind getrennt zu klären.
 
+
+## Damals und heute · Gegenwartsbezug (V4)
+
+Die WebQuest hat einen **vierten Projektabschnitt „Vergleichen“**. Nach der
+historischen Quellenanalyse arbeitet jede Gruppe an genau einem zu ihrer
+Forschungsstation passenden Gegenwartsfall:
+
+1. Gefängnis Riefstahlstraße → Angriff auf Matthias Ecke (2024), politische
+   Gewalt und staatlicher Schutz
+2. Kanzlei Ludwig Marum → öffentliche Demütigung, persönliche Einschüchterung
+   und Schutzmöglichkeiten
+3. Volksfreund-Redaktion → Pressefreiheit, politische Debatten und Grenzen
+   zwischen Kritik und persönlicher Herabsetzung
+4. Badisches Ständehaus → friedliche Demonstrationen, Versammlungsfreiheit
+   und der Unterschied zur erzwungenen NS-Schaufahrt
+
+Der Kartenreiter **„Heute“** zeigt zu jedem Fall eine kurze Darstellung,
+überprüfbare externe Quellenlinks und drei lokale Antwortfelder:
+**Gemeinsamkeit, grundlegender Unterschied, Schlussfolgerung**. Die
+Antworten verwenden weiterhin denselben Browser-Speicher
+\`schaufahrt-webquest-v01\` und sind Teil des JSON-Exports. Bestehende
+Notizen und Dateien bleiben erhalten.
+
+Im [Methodenkoffer](methodenkoffer.html#demokratie-kompass) gibt es einen
+**Demokratie-Kompass** mit fünf Vergleichskriterien (Akteure, Handlung,
+Absicht, Rechte, staatliche Reaktion). Der
+[Erinnerungsrundgang](erinnerungsrundgang.html) fordert ein eigenes
+Gegenwartsfenster als Bestandteil jedes geprüften Gruppenbeitrags. Er
+veröffentlicht noch keine lokalen Entwürfe automatisch.
+
+### Database: neue Materialart
+
+\`kind='gegenwart'\` trennt aktuelle Materialien von historischen
+Originalquellen. Die Webseite, Filter, Einreichung und Darstellung auf
+der Karte sind vorbereitet. Die Erweiterung des bestehenden
+PostgreSQL-CHECKs muss jedoch **einmalig im Supabase SQL Editor**
+ausgeführt werden: [supabase/gegenwart_migration_v3.sql](supabase/gegenwart_migration_v3.sql).
+Weitere Schritte und ein Testablauf stehen in
+[DATABASE_SETUP.md](DATABASE_SETUP.md).
+
+Die bisherige Quellenansicht der Karte blendet \`kind='gegenwart'\` aus;
+die neuen freigegebenen Materialien erscheinen ausschließlich unter
+**„Heute“**. Alle bekannten Supabase-RLS- und Freigabeprozesse bleiben
+erhalten. Ohne diese Migration funktionieren historische Quellen und
+die übrige WebQuest weiterhin.
+
+### Geschichtsdidaktische Abgrenzung
+
+Ein Gegenwartsbezug bedeutet **keine Gleichsetzung** der NS-Diktatur mit
+dem heutigen demokratischen Rechtsstaat. Die Schülerinnen und Schüler
+erklären den Unterschied zwischen staatlich organisierter Verfolgung
+und Straftaten einzelner Personen sowie die Bedeutung von
+Meinungsfreiheit, Versammlungsfreiheit und pluralistischer Debatte.
+Kontroverse Fragen werden im Sinne des Beutelsbacher Konsenses
+ergebnisoffen analysiert; Menschenrechte sind keine beliebige Option.
+
 ## Sprache umschalten · Deutsch / English / Einfache Sprache
 
 Auf **allen sechs Seiten** befindet sich in der Kopfzeile ein Sprachmenü
