@@ -17,7 +17,8 @@
     darstellung: "Historische Darstellung",
     bild: "Bild / Fotografie",
     video: "Video / Audio",
-    link: "Weiterführender Link"
+    link: "Weiterführender Link",
+    gegenwart: "Gegenwartsmaterial"
   });
   const PLACE = Object.freeze({
     1: "01 – Gefängnis Riefstahlstraße",
