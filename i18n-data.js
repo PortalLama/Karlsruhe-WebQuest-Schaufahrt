@@ -2914,5 +2914,20 @@ window.WQ_TRANSLATIONS = [
     "Historische Notizen bearbeiten",
     "Edit Historical Notes",
     "Notizen zur Geschichte ansehen"
+  ],
+  [
+    "Erkundet vier Orte, untersucht historische Quellen und vergleicht 1933 mit heute.",
+    "Explore four sites, examine historical sources, and compare 1933 with the present.",
+    "Seht euch vier Orte und alte Quellen an. Vergleicht 1933 mit heute."
+  ],
+  [
+    "Gemeinsames Archiv für historische Quellen, Gegenwartsmaterialien, Bilder und Links.",
+    "Shared archive of historical sources, present-day materials, images, and links.",
+    "Hier sammelt ihr alte Quellen, Berichte von heute, Bilder und Links."
+  ],
+  [
+    "Materialsammlung öffnen ↗",
+    "Open Material Archive ↗",
+    "Materialien ansehen ↗"
   ]
 ];
