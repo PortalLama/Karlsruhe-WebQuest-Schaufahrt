@@ -32,10 +32,11 @@
     ? state.assignments.find(item => item.owner_id === state.user.id)
     : null;
   const assignedTo = station => state.assignments.find(item => item.station_id === station);
-  const translation = value => window.WQ_LANGUAGE?.t(value) || value;
-
+  // Immer deutsche Quelltexte einsetzen. Das zentrale i18n-Skript
+  // übersetzt DOM-Textknoten und kann so beim Sprachenwechsel wieder
+  // korrekt zur deutschen Originalfassung zurückkehren.
   function setText(node, value) {
-    if (node) node.textContent = translation(value);
+    if (node) node.textContent = value;
   }
 
   function renderBadges() {
