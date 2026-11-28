@@ -2209,5 +2209,100 @@ window.WQ_TRANSLATIONS = [
     "Datei",
     "File",
     "Datei"
+  ],
+  [
+    "Ortsdokumentation",
+    "Site Documentation",
+    "Informationen zum Ort"
+  ],
+  [
+    "Stadtarchiv",
+    "City Archive",
+    "Stadtarchiv"
+  ],
+  [
+    "Geprüft",
+    "Approved",
+    "Geprüft"
+  ],
+  [
+    "Für alle sichtbar",
+    "Visible to Everyone",
+    "Alle können es sehen"
+  ],
+  [
+    "Lokaler Arbeitsstand, nicht veröffentlicht oder fachlich geprüft.",
+    "Local draft, not published or historically reviewed.",
+    "Eure Notizen sind noch nicht veröffentlicht und nicht geprüft."
+  ],
+  [
+    "Vorschau des Materials: ",
+    "Preview of Material: ",
+    "Vorschau des Materials: "
+  ],
+  [
+    "Löschen nicht möglich: ",
+    "Unable to Delete: ",
+    "Löschen geht nicht: "
+  ],
+  [
+    "Eintrag gelöscht, aber die Datei konnte noch nicht aus dem Speicher entfernt werden: ",
+    "Entry Deleted, but the File Could Not Be Removed from Storage: ",
+    "Der Beitrag wurde gelöscht. Die Datei ist vielleicht noch gespeichert: "
+  ],
+  [
+    "Datei-Upload fehlgeschlagen: ",
+    "File Upload Failed: ",
+    "Die Datei konnte nicht hochgeladen werden: "
+  ],
+  [
+    ". Bitte privaten Bucket und Storage-Richtlinien prüfen.",
+    ". Check the Private Bucket and Storage Access Rules.",
+    ". Bitte fragt eure Lehrkraft. Der Datei-Speicher muss geprüft werden."
+  ],
+  [
+    "Speichern fehlgeschlagen: ",
+    "Save Failed: ",
+    "Speichern hat nicht funktioniert: "
+  ],
+  [
+    "Die hochgeladene Datei muss eventuell im Supabase-Dashboard aufgeräumt werden.",
+    "The uploaded file may need to be removed in the Supabase Dashboard.",
+    "Die Lehrkraft muss die Datei vielleicht noch aus dem Speicher löschen."
+  ],
+  [
+    "Bitte SQL-Schema, Projektkonfiguration und Zugriffsrechte prüfen. ",
+    "Check the SQL Schema, Project Configuration, and Access Rules. ",
+    "Bitte fragt die Lehrkraft. Die Datenbank-Einstellungen müssen geprüft werden. "
+  ],
+  [
+    "Anmeldung fehlgeschlagen. Prüfe E-Mail, Passwort und Projektfreigabe. ",
+    "Sign-In Failed. Check Email, Password, and Project Access. ",
+    "Die Anmeldung hat nicht funktioniert. Prüft eure Zugangsdaten. "
+  ],
+  [
+    "Abmelden fehlgeschlagen: ",
+    "Sign-Out Failed: ",
+    "Abmelden ging nicht: "
+  ],
+  [
+    "Supabase-Projekt und Konfiguration überprüfen. ",
+    "Check the Supabase Project and Configuration. ",
+    "Bitte die Datenbank-Einstellungen prüfen. "
+  ],
+  [
+    "Datei kann nicht geöffnet werden. Prüfe die Storage-Richtlinien und die Freigabe. ",
+    "Unable to Open the File. Check Storage Permissions and Approval. ",
+    "Die Datei lässt sich nicht öffnen. Prüft die Freigabe. "
+  ],
+  [
+    "Keine Datei-URL erhalten",
+    "No File Link Received",
+    "Kein Datei-Link vorhanden"
+  ],
+  [
+    "übergreifend",
+    "general",
+    "für alle Orte"
   ]
 ];
