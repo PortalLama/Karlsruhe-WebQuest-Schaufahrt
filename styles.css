@@ -1482,3 +1482,30 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   stroke-linecap:round;
   stroke-linejoin:round;
 }
+
+
+/* === Fix 4K / ultrawide: Einleitungsspalte der Startseite ===
+ * Die globale intro-copy-Regel kombiniert max-width:790px mit einem
+ * am Viewport ausgerichteten Innenabstand. Bei 4K kann dieser
+ * Innenabstand größer als 790px werden und den Fließtext auf
+ * wenige Pixel zusammendrücken. Hier nur die breite Foto-Startseite
+ * korrigieren, ohne das Mobil-Layout oder andere Seiten zu verändern.
+ */
+@media (min-width:1101px){
+  .intro.intro-photo{
+    grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
+  }
+  .intro.intro-photo .intro-copy{
+    box-sizing:border-box;
+    min-width:0;
+    width:100%;
+    max-width:none;
+    padding-left:clamp(48px,5vw,150px);
+    padding-right:clamp(30px,3vw,72px);
+  }
+  .intro.intro-photo .intro-lead,
+  .intro.intro-photo .intro-sub{
+    max-width:690px;
+    overflow-wrap:normal;
+  }
+}
