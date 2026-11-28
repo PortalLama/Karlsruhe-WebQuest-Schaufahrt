@@ -2634,5 +2634,285 @@ window.WQ_TRANSLATIONS = [
     "Die Ergebnisse werden erst nach fachlicher Prüfung veröffentlicht. Eure lokalen Vergleichsnotizen aus der Karte erscheinen hier nicht automatisch.",
     "The results will be published only after review. Local comparison notes from the map do not appear here automatically.",
     "Die Lehrkraft prüft die Beiträge vor der Veröffentlichung. Eure Notizen auf der Karte erscheinen hier nicht von allein."
+  ],
+  [
+    "1933 UND HEUTE",
+    "1933 AND TODAY",
+    "1933 UND HEUTE"
+  ],
+  [
+    "Politische Gegner – damals und heute",
+    "Political Opponents – Then and Now",
+    "Politische Gegner – damals und heute"
+  ],
+  [
+    "Untersucht einen Fall von heute. Nennt eine Gemeinsamkeit und einen grundlegenden Unterschied. Die Verfolgung in einer NS-Diktatur ist nicht mit einem heutigen Rechtsstaat gleichzusetzen.",
+    "Examine a present-day case. Identify one similarity and one fundamental difference. Persecution under the Nazi dictatorship cannot be equated with events in a modern constitutional democracy.",
+    "Untersucht einen Fall von heute. Was ist ähnlich? Was ist anders? Die NS-Diktatur war kein demokratischer Rechtsstaat."
+  ],
+  [
+    "FALL A · POLITISCHE GEWALT",
+    "CASE A · POLITICAL VIOLENCE",
+    "FALL A · GEWALT GEGEN POLITIKER"
+  ],
+  [
+    "FALL A · PERSÖNLICHE EINSCHÜCHTERUNG",
+    "CASE A · PERSONAL INTIMIDATION",
+    "FALL A · MENSCHEN EINSCHÜCHTERN"
+  ],
+  [
+    "FALL C · MEDIEN UND DEBATTEN",
+    "CASE C · MEDIA AND DEBATES",
+    "FALL C · MEDIEN UND STREIT"
+  ],
+  [
+    "FALL B · DEMONSTRATIONEN",
+    "CASE B · DEMONSTRATIONS",
+    "FALL B · DEMONSTRATIONEN"
+  ],
+  [
+    "Angriff auf Matthias Ecke (2024)",
+    "Attack on Matthias Ecke (2024)",
+    "Angriff auf Matthias Ecke (2024)"
+  ],
+  [
+    "Am 3. Mai 2024 wurde der SPD-Politiker Matthias Ecke beim Aufhängen von Wahlplakaten in Dresden angegriffen und schwer verletzt. Der Angriff war eine Gewalttat gegen einen politisch engagierten Menschen.",
+    "On 3 May 2024, SPD politician Matthias Ecke was attacked and seriously injured while putting up election posters in Dresden. The assault targeted someone engaged in politics.",
+    "Am 3. Mai 2024 griffen Menschen den SPD-Politiker Matthias Ecke in Dresden an. Er hängte Wahlplakate auf. Er wurde schwer verletzt."
+  ],
+  [
+    "1933 organisierten die nationalsozialistischen Machthaber die öffentliche Demütigung und Verschleppung politischer Gegner. Heute ist eine solche Gewalttat verboten. Polizei und Justiz müssen dagegen vorgehen.",
+    "In 1933, Nazi rulers organized the public humiliation and detention of political opponents. Today, such violence is illegal; police and courts are required to act against it.",
+    "1933 organisierten die Nationalsozialisten selbst die Verfolgung. Heute ist so eine Gewalttat verboten. Polizei und Gerichte müssen Menschen schützen."
+  ],
+  [
+    "Wer übte 1933 Gewalt aus? Wer übte sie 2024 aus – und welche Rolle spielt der demokratische Rechtsstaat?",
+    "Who used violence in 1933? Who did so in 2024, and what is the role of democratic institutions and the rule of law?",
+    "Wer übte 1933 Gewalt aus? Wer tat das 2024? Was macht der Staat heute?"
+  ],
+  [
+    "bpb · Angriff auf Matthias Ecke (2024)",
+    "bpb · Attack on Matthias Ecke (2024)",
+    "bpb · Angriff auf Matthias Ecke"
+  ],
+  [
+    "Kurzbericht als Gegenwartsdarstellung; Erscheinungsdatum und Perspektive beachten",
+    "Short contemporary news summary; note the publication date and perspective",
+    "Kurzer Bericht von heute. Achtet auf das Datum."
+  ],
+  [
+    "Wenn politische Gegner angegriffen werden",
+    "When Political Opponents Are Attacked",
+    "Wenn Menschen wegen Politik angegriffen werden"
+  ],
+  [
+    "Der Angriff auf Matthias Ecke im Wahlkampf 2024 zeigt, dass Menschen wegen ihres politischen Engagements eingeschüchtert und körperlich angegriffen werden können.",
+    "The attack on Matthias Ecke during the 2024 election campaign shows that people can face intimidation and violence because of their political engagement.",
+    "Der Angriff auf Matthias Ecke zeigt: Manche Menschen werden wegen ihrer politischen Arbeit bedroht oder verletzt."
+  ],
+  [
+    "Ludwig Marum war 1933 selbst Gefangener und wurde gezielt an seiner eigenen Kanzlei vorgeführt. Ein heutiger Gewalttäter handelt dagegen nicht im Namen des demokratischen Rechtsstaats.",
+    "In 1933, Ludwig Marum was a prisoner and was deliberately paraded past his own law office. A violent offender today, by contrast, does not act on behalf of the democratic state.",
+    "Ludwig Marum war 1933 Gefangener. Die Nationalsozialisten zeigten ihn vor seinem Arbeitsplatz. Ein Gewalttäter heute handelt nicht im Namen unseres demokratischen Staates."
+  ],
+  [
+    "Was soll eine öffentliche Demütigung oder Bedrohung bewirken? Welche Schutzmöglichkeiten gibt es heute?",
+    "What is public humiliation or intimidation meant to achieve? What protections exist today?",
+    "Warum stellen Menschen andere bloß oder bedrohen sie? Wie können Menschen heute geschützt werden?"
+  ],
+  [
+    "Fragen zu politischer Einschüchterung und Schutz vor Gewalt",
+    "Questions about political intimidation and protection from violence",
+    "Lest über Drohungen gegen Politiker und den Schutz vor Gewalt."
+  ],
+  [
+    "Grundgesetz · Grundrechte und Rechtsstaat",
+    "Basic Law · Fundamental Rights and Rule of Law",
+    "Grundgesetz · Unsere Rechte"
+  ],
+  [
+    "Rechtlicher Maßstab für den Gegenwartsvergleich",
+    "Legal framework for comparing the present and the past",
+    "Hier stehen die Rechte in Deutschland heute."
+  ],
+  [
+    "Politische Kritik oder persönliche Herabsetzung?",
+    "Political Criticism or Personal Abuse?",
+    "Kritik an Politik oder Angriff auf Menschen?"
+  ],
+  [
+    "Politische Parteien dürfen sich in einer Demokratie widersprechen und scharf kritisieren. Fernsehdiskussionen, Zeitungen und soziale Medien prägen, wie wir politische Gegner wahrnehmen.",
+    "In a democracy, parties may disagree and strongly criticize one another. Television debates, newspapers, and social media influence how we see political opponents.",
+    "In einer Demokratie dürfen Parteien streiten. Sie dürfen sich kritisieren. Fernsehen, Zeitungen und soziale Medien beeinflussen unser Bild von Politikern."
+  ],
+  [
+    "Die Zeitung Volksfreund wurde 1933 verboten. Heute schützt Artikel 5 des Grundgesetzes grundsätzlich die Meinungs- und Pressefreiheit. Sachliche Kritik und persönliche Angriffe sind bei der Analyse zu unterscheiden.",
+    "The Volksfreund newspaper was banned in 1933. Today, Article 5 of Germany's Basic Law protects freedom of expression and the press. Distinguish criticism of ideas from personal attacks.",
+    "1933 verboten die Nationalsozialisten die Zeitung Volksfreund. Heute sind Meinungsfreiheit und Pressefreiheit im Grundgesetz geschützt. Kritik an einer Meinung ist etwas anderes als ein persönlicher Angriff."
+  ],
+  [
+    "Wann kritisieren Medien eine politische Position? Wann werden Menschen persönlich herabgesetzt oder als Feinde dargestellt?",
+    "When do media criticize a political position? When are people personally demeaned or portrayed as enemies?",
+    "Kritisieren Medien eine politische Meinung? Oder machen sie Menschen schlecht?"
+  ],
+  [
+    "bpb · Mitreden können: Politisch diskutieren",
+    "bpb · Taking Part in Political Debate",
+    "bpb · Gut über Politik streiten"
+  ],
+  [
+    "Material zur politischen Streitkultur; ordnet persönliche Angriffe ein",
+    "Material about democratic debate and how to assess personal attacks",
+    "Hier lernt ihr, wie man fair über Politik streitet."
+  ],
+  [
+    "Grundgesetz · Artikel 5",
+    "Basic Law · Article 5",
+    "Grundgesetz · Artikel 5"
+  ],
+  [
+    "Meinungs- und Pressefreiheit: Den vollständigen Gesetzestext prüfen",
+    "Freedom of expression and the press; consult the full legal text",
+    "Hier steht etwas über Meinungsfreiheit und Pressefreiheit."
+  ],
+  [
+    "Protest für Demokratie und gegen Gewalt (2024)",
+    "Protests for Democracy and Against Violence (2024)",
+    "Demonstrationen gegen Gewalt (2024)"
+  ],
+  [
+    "Nach dem Angriff auf Matthias Ecke demonstrierten Menschen im Mai 2024 in Dresden und Berlin gegen politische Gewalt und für die Demokratie.",
+    "After Matthias Ecke was attacked, people demonstrated in Dresden and Berlin in May 2024 against political violence and in support of democracy.",
+    "Nach dem Angriff auf Matthias Ecke gingen Menschen in Dresden und Berlin auf die Straße. Sie demonstrierten gegen Gewalt und für die Demokratie."
+  ],
+  [
+    "1933 diente die staatlich organisierte Schaufahrt der Einschüchterung. Eine heutige friedliche Demonstration kann dagegen Ausdruck des Grundrechts auf Versammlungsfreiheit sein.",
+    "The state-organized public parade of 1933 was designed to intimidate. A peaceful demonstration today, by contrast, can exercise the fundamental right to freedom of assembly.",
+    "1933 wollten die Nationalsozialisten Menschen einschüchtern. Heute darf man friedlich demonstrieren. Das ist ein wichtiges Grundrecht."
+  ],
+  [
+    "Was unterscheidet die erzwungene Schaufahrt 1933 von einer freiwilligen friedlichen Demonstration heute?",
+    "What distinguishes the forced parade in 1933 from a voluntary, peaceful demonstration today?",
+    "Was ist anders an einer erzwungenen Fahrt 1933 und einer freiwilligen Demonstration heute?"
+  ],
+  [
+    "Deutschlandfunk · Demonstrationen nach dem Angriff (05.05.2024)",
+    "Deutschlandfunk · Demonstrations After the Attack (5 May 2024)",
+    "Deutschlandfunk · Demonstrationen nach dem Angriff"
+  ],
+  [
+    "Nachrichtenbericht über die Proteste 2024",
+    "News report about the 2024 demonstrations",
+    "Bericht über Demonstrationen im Jahr 2024"
+  ],
+  [
+    "Deutscher Bundestag · Artikel 8 Grundgesetz",
+    "German Bundestag · Article 8 of the Basic Law",
+    "Deutscher Bundestag · Artikel 8"
+  ],
+  [
+    "Grundrecht auf friedliche Versammlungen",
+    "Fundamental right to peaceful assembly",
+    "Recht auf friedliche Demonstrationen"
+  ],
+  [
+    "Gegenwartsmaterialien prüfen",
+    "Examine Present-day Materials",
+    "Materialien von heute prüfen"
+  ],
+  [
+    "Gegenwartsmaterial · geprüft",
+    "Present-day Material · Approved",
+    "Material von heute · geprüft"
+  ],
+  [
+    "Weitere geprüfte Gegenwartsmaterialien aus der Database",
+    "More Approved Present-day Materials from the Database",
+    "Mehr geprüfte Materialien von heute"
+  ],
+  [
+    "Die Database ist momentan nicht erreichbar. Die redaktionell ausgewählten Links oben bleiben verfügbar.",
+    "The Database is currently unavailable. The selected links above remain accessible.",
+    "Die Material-Sammlung ist gerade nicht erreichbar. Die Links oben gehen trotzdem."
+  ],
+  [
+    "Für diese Station sind noch keine zusätzlichen Gegenwartsmaterialien freigegeben.",
+    "No Additional Present-day Materials Have Been Approved for This Station.",
+    "Für diesen Ort gibt es noch keine neuen Materialien von heute."
+  ],
+  [
+    "Gegenwartsmaterial zur Database hinzufügen ↗",
+    "Add Present-day Material to the Database ↗",
+    "Material von heute hinzufügen ↗"
+  ],
+  [
+    "EURE VERGLEICHSFRAGE",
+    "YOUR COMPARISON QUESTION",
+    "EURE FRAGE"
+  ],
+  [
+    "Lest die Gegenwartsquelle. Vergleicht mit euren historischen Quellen. Belegt eure Aussagen und achtet darauf, wer handelt und welche Rechte gelten.",
+    "Read the present-day source. Compare it with your historical sources. Support your conclusions and consider who acts and which rights apply.",
+    "Lest den Text über heute. Vergleicht mit euren Quellen von 1933. Wer handelt? Welche Rechte gibt es?"
+  ],
+  [
+    "Zum Demokratie-Kompass ↗",
+    "Go to the Democracy Compass ↗",
+    "Hilfe zum Vergleichen ↗"
+  ],
+  [
+    "Vergleicht kritisch",
+    "Make a Critical Comparison",
+    "Vergleicht genau"
+  ],
+  [
+    "Haltet eure Antworten gemeinsam fest. Sie werden wie die übrigen Kartennotizen nur in diesem Browser gespeichert.",
+    "Write down your answers together. Like your other map notes, they are saved only in this browser.",
+    "Schreibt eure Antworten gemeinsam auf. Sie bleiben auf diesem Gerät."
+  ],
+  [
+    "Eine Gemeinsamkeit",
+    "One Similarity",
+    "Was ist ähnlich?"
+  ],
+  [
+    "In beiden Fällen …",
+    "In Both Cases …",
+    "In beiden Fällen …"
+  ],
+  [
+    "Ein grundlegender Unterschied",
+    "One Fundamental Difference",
+    "Was ist anders?"
+  ],
+  [
+    "Anders als 1933 …",
+    "Unlike in 1933 …",
+    "Anders als 1933 …"
+  ],
+  [
+    "Unsere Schlussfolgerung für die Demokratie",
+    "Our Conclusion for Democracy",
+    "Was bedeutet das für die Demokratie?"
+  ],
+  [
+    "Für eine Demokratie bedeutet das …",
+    "For a Democracy, This Means …",
+    "Für die Demokratie bedeutet das …"
+  ],
+  [
+    "Euer Gegenwartsvergleich",
+    "Your Present-day Comparison",
+    "Euer Vergleich mit heute"
+  ],
+  [
+    "Wichtig: Staatlich organisierte Verfolgung in der NS-Diktatur ist nicht dasselbe wie politische Konflikte oder einzelne Straftaten in einem demokratischen Rechtsstaat.",
+    "Important: State-organized persecution in the Nazi dictatorship is not the same as political conflicts or individual crimes in a democratic state governed by law.",
+    "Wichtig: Die Nationalsozialisten verfolgten Gegner mit staatlicher Macht. Das ist nicht dasselbe wie einzelne Gewalttaten heute."
+  ],
+  [
+    "Historische Notizen bearbeiten",
+    "Edit Historical Notes",
+    "Notizen zur Geschichte ansehen"
   ]
 ];
