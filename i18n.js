@@ -168,7 +168,7 @@
     const globe=document.createElement("span");
     globe.className="language-picker-icon";
     globe.setAttribute("aria-hidden","true");
-    globe.textContent="◎";
+    globe.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 2.4 4.5 5.4 4.5 9s-1.5 6.6-4.5 9M12 3C9 5.4 7.5 8.4 7.5 12s1.5 6.6 4.5 9"/></svg>';
     const select=document.createElement("select");
     select.id="webquest-language";
     select.className="language-picker-select";
