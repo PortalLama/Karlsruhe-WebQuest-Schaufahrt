@@ -594,5 +594,565 @@ window.WQ_TRANSLATIONS = [
     "Verstanden – zurück zum Auftrag",
     "Got It – Back to the Assignment",
     "Verstanden – zurück zum Auftrag"
+  ],
+  [
+    "02 / EURE FORSCHUNGSKARTE",
+    "02 / YOUR RESEARCH MAP",
+    "02 / EURE KARTE"
+  ],
+  [
+    "Erkunden. Untersuchen. Gestalten.",
+    "Explore. Investigate. Create.",
+    "Ansehen. Untersuchen. Gestalten."
+  ],
+  [
+    "Wählt eine Station und öffnet die Materialien. Unter „Bearbeiten“ könnt ihr eigene Notizen und Links hinzufügen. Eure Eingaben bleiben vorerst nur im jeweiligen Browser gespeichert.",
+    "Select a station and open its materials. Under “Work on This”, you can add your own notes and links. Your entries are currently saved only in this browser.",
+    "Wählt einen Ort. Seht euch die Quellen an. Unter „Bearbeiten“ könnt ihr Notizen und Links eintragen. Eure Notizen bleiben auf diesem Gerät."
+  ],
+  [
+    "02 / INTERAKTIVE KARTE",
+    "02 / INTERACTIVE MAP",
+    "02 / KARTE ZUM ANKLICKEN"
+  ],
+  [
+    "Vier Orte. Eure Forschung.",
+    "Four Sites. Your Research.",
+    "Vier Orte. Eure Forschung."
+  ],
+  [
+    "Wählt einen Punkt auf der Karte. Die Station öffnet sich rechts – mit historischen Materialien, freigegebenen Funden aus der Database, Aufgaben und euren bearbeitbaren Feldern.",
+    "Select a point on the map. The station opens on the right, with historical materials, approved Database contributions, tasks, and fields for your notes.",
+    "Klickt auf einen Punkt auf der Karte. Rechts seht ihr Informationen, Quellen und Aufgaben. Hier könnt ihr auch eigene Notizen schreiben."
+  ],
+  [
+    "VON 4 STATIONEN",
+    "OF 4 STATIONS",
+    "VON 4 ORTEN"
+  ],
+  [
+    "KARLSRUHE · INNENSTADT",
+    "KARLSRUHE · CITY CENTRE",
+    "KARLSRUHE · INNENSTADT"
+  ],
+  [
+    "Die Karte wird geladen. Für die Kartendarstellung ist eine Internetverbindung erforderlich.",
+    "Loading map. An internet connection is required to display it.",
+    "Die Karte lädt. Dafür braucht ihr Internet."
+  ],
+  [
+    "Rot gestrichelt:",
+    "Red dashed line:",
+    "Rote gestrichelte Linie:"
+  ],
+  [
+    "näherungsweise rekonstruierter Streckenabschnitt zwischen den ausgewählten Erinnerungsorten.",
+    "Approximate reconstruction of the route between the selected remembrance sites.",
+    "So könnte die Fahrt zwischen den vier Orten verlaufen sein. Der genaue Weg ist noch nicht sicher."
+  ],
+  [
+    "Vier von acht im Archivplan bezeichneten Orten; Gebäudestandorte und genaue Straßenführung teils angenähert.",
+    "Four of the eight sites identified on the archive map. Some building locations and route details are approximate.",
+    "Wir zeigen vier von acht Orten auf der alten Karte. Manche Stellen sind nur ungefähr eingezeichnet."
+  ],
+  [
+    "Originalkarte des Stadtarchivs ansehen ↗",
+    "View the Original City Archive Map ↗",
+    "Original-Karte ansehen ↗"
+  ],
+  [
+    "Station auswählen",
+    "Choose a Station",
+    "Ort auswählen"
+  ],
+  [
+    "Historische Einordnung:",
+    "Historical Context:",
+    "Wichtig zur Geschichte:"
+  ],
+  [
+    "Die tatsächliche Schaufahrt führte an weiteren Orten vorbei und endete außerhalb der Innenstadt im Konzentrationslager Kislau.",
+    "The actual parade passed additional locations and ended outside the city centre at the Kislau concentration camp.",
+    "Der Wagen fuhr noch an weiteren Orten vorbei. Die Fahrt endete im Konzentrationslager Kislau."
+  ],
+  [
+    "Originalroute des Stadtarchivs ↗",
+    "City Archive Route ↗",
+    "Weg im Stadtarchiv ansehen ↗"
+  ],
+  [
+    "Benötigt ihr Unterstützung? Zum Methodenkoffer →",
+    "Need Help? Open the Toolkit →",
+    "Braucht ihr Hilfe? Hier klicken →"
+  ],
+  [
+    "03 / GEMEINSAMES FORSCHUNGSARCHIV",
+    "03 / SHARED RESEARCH ARCHIVE",
+    "03 / GEMEINSAME MATERIAL-SAMMLUNG"
+  ],
+  [
+    "Quellen finden. Materialien teilen. Geschichte erforschen. In unserem Forschungsarchiv sammelt ihr Fundstellen, Links und Hinweise zu den vier Orten der Schaufahrt.",
+    "Find sources. Share materials. Investigate history. Our shared research archive collects references, links, and findings about the four locations of the public parade.",
+    "Hier sammelt ihr Quellen, Bilder, Dateien und Links. So können alle Gruppen die Materialien für ihre Forschung nutzen."
+  ],
+  [
+    "QUELLEN & RECHERCHE",
+    "SOURCES & RESEARCH",
+    "QUELLEN UND INFORMATIONEN"
+  ],
+  [
+    "Unsere Materialsammlung",
+    "Our Materials",
+    "Unsere Materialien"
+  ],
+  [
+    "Jeder Eintrag erhält eine nachvollziehbare Herkunft und eine kurze Beschreibung. Neue Materialien werden zunächst geprüft, bevor sie für alle erscheinen.",
+    "Every entry should include a clear source reference and brief description. New materials are reviewed before everyone can see them.",
+    "Schreibt zu jedem Material, woher es kommt und was es zeigt. Neue Materialien werden zuerst geprüft. Erst danach sehen alle sie."
+  ],
+  [
+    "↻ Aktualisieren",
+    "↻ Refresh",
+    "↻ Neu laden"
+  ],
+  [
+    "+ Material hinzufügen",
+    "+ Add Material",
+    "+ Material hinzufügen"
+  ],
+  [
+    "Datenbankverbindung noch nicht eingerichtet",
+    "Database connection not set up",
+    "Die Material-Sammlung ist noch nicht verbunden"
+  ],
+  [
+    "Die Oberfläche ist vorbereitet. Sobald die Datenbank verbunden ist, werden hier die gemeinsamen Materialien angezeigt. Im Moment werden keine Einträge zentral gespeichert.",
+    "The interface is ready. Shared materials will appear once the database is connected. Nothing is currently saved centrally.",
+    "Die Seite ist vorbereitet. Noch ist keine Datenbank verbunden. Darum können wir hier noch nichts gemeinsam speichern."
+  ],
+  [
+    "Redaktionszugang",
+    "Team Sign-In",
+    "Anmeldung für die Gruppe"
+  ],
+  [
+    "Melde dich mit einem freigegebenen Projektkonto an, um Materialien einzureichen.",
+    "Sign in with an approved project account to submit materials.",
+    "Meldet euch mit dem Konto eurer Gruppe an. Dann könnt ihr Materialien hinzufügen."
+  ],
+  [
+    "Es gibt hier keine öffentliche Registrierung. Projektkonten werden durch die Projektverantwortlichen eingerichtet. Keine privaten Schülerdaten in Beiträgen hinterlegen.",
+    "Public registration is disabled. Project accounts are created by the project team. Do not include private student information in submissions.",
+    "Ihr müsst kein eigenes Konto erstellen. Die Lehrkraft verteilt die Zugänge. Schreibt keine privaten Daten in Beiträge."
+  ],
+  [
+    "Materialien durchsuchen",
+    "Search Materials",
+    "Materialien suchen"
+  ],
+  [
+    "Materialart",
+    "Material Type",
+    "Art des Materials"
+  ],
+  [
+    "Anzeige",
+    "View",
+    "Zeigen"
+  ],
+  [
+    "Materialübersicht",
+    "Material Overview",
+    "Alle Materialien"
+  ],
+  [
+    "Noch keine Einträge",
+    "No Entries Yet",
+    "Noch keine Materialien"
+  ],
+  [
+    "Hier entsteht euer Forschungsarchiv.",
+    "Your Research Archive Starts Here.",
+    "Hier sammelt ihr Materialien."
+  ],
+  [
+    "Mit der Datenbankverbindung könnt ihr Materialien gemeinsam sammeln und nach Orten, Themen oder Quellentypen durchsuchen.",
+    "Once connected, you can collect materials together and search by location, topic, or source type.",
+    "Wenn die Datenbank verbunden ist, könnt ihr Quellen gemeinsam speichern. Ihr könnt nach Orten oder Arten suchen."
+  ],
+  [
+    "So funktioniert die Materialsammlung:",
+    "How to Use the Material Archive:",
+    "So nutzt ihr die Sammlung:"
+  ],
+  [
+    "Tragt bei euren Funden möglichst Urheber, Entstehungszeit, Fundstelle und eine kurze quellenkritische Einordnung ein. Links zu Bildern, PDFs und Videos sind möglich. Auch PDF-Dateien und Bilder lassen sich nach der Einrichtung des privaten Dateispeichers hochladen und gemeinsam prüfen.",
+    "For each find, record its creator, date, source reference, and a brief critical assessment wherever possible. You can link images, PDFs, and videos, and upload image/PDF files once private storage is enabled.",
+    "Schreibt zu jeder Quelle: Wer hat sie gemacht? Wann entstand sie? Wo habt ihr sie gefunden? Was zeigt sie? Ihr könnt Links und nach der Freigabe auch Bilder und PDFs hochladen."
+  ],
+  [
+    "Ein Link kann ungültig werden, wenn die externe Datei entfernt wird. Für dauerhafte Archivierung sind Nutzungsrechte und Sicherungskopien gesondert zu klären.",
+    "Links may stop working if a file is removed. Long-term storage also requires permission checks and backups.",
+    "Ein Link kann später verschwinden. Darum müssen wichtige Dateien gesichert werden. Achtet auf die Rechte an Bildern und Texten."
+  ],
+  [
+    "RECHERCHEERGEBNIS EINREICHEN",
+    "SUBMIT RESEARCH MATERIAL",
+    "MATERIAL ABGEBEN"
+  ],
+  [
+    "Neues Material",
+    "New Material",
+    "Neues Material"
+  ],
+  [
+    "Ergänzt einen öffentlich erreichbaren",
+    "Add a publicly accessible",
+    "Fügt einen öffentlichen"
+  ],
+  [
+    "HTTPS-Link",
+    "HTTPS link",
+    "HTTPS-Link"
+  ],
+  [
+    "sowie nachvollziehbare Angaben zum Material. Vor der Freigabe ist der Eintrag nur für das einreichende Konto sichtbar.",
+    "and enough details to identify and assess the material. Until approval, only the submitting account can see it.",
+    "hinzu. Beschreibt die Quelle. Bis zur Freigabe kann nur eure Gruppe den Beitrag sehen."
+  ],
+  [
+    "Titel des Materials",
+    "Material Title",
+    "Name des Materials"
+  ],
+  [
+    "Zugehörige Station",
+    "Related Station",
+    "Zu welchem Ort gehört es?"
+  ],
+  [
+    "Urheber / Verfasser",
+    "Creator / Author",
+    "Wer hat es gemacht?"
+  ],
+  [
+    "Entstehungszeit",
+    "Date Created",
+    "Wann entstand es?"
+  ],
+  [
+    "Archiv / Fundstelle / Quellenangabe",
+    "Archive / Source Reference",
+    "Wo habt ihr es gefunden?"
+  ],
+  [
+    "Erläuterung und quellenkritische Hinweise",
+    "Description and Source Criticism",
+    "Was zeigt es? Was ist wichtig?"
+  ],
+  [
+    "Wie möchtet ihr das Material bereitstellen?",
+    "How Would You Like to Share the Material?",
+    "Wie möchtet ihr das Material hinzufügen?"
+  ],
+  [
+    "Externen Link eintragen",
+    "Add External Link",
+    "Link eintragen"
+  ],
+  [
+    "Datei direkt hochladen",
+    "Upload File",
+    "Datei hochladen"
+  ],
+  [
+    "Datei-Uploads werden nach der Einrichtung des privaten Supabase-Speichers verfügbar.",
+    "File uploads will be available once private Supabase storage is configured.",
+    "Dateien könnt ihr hochladen, wenn der geschützte Speicher eingerichtet ist."
+  ],
+  [
+    "Link zum Material (HTTPS)",
+    "Material Link (HTTPS)",
+    "Link zur Quelle (HTTPS)"
+  ],
+  [
+    "Bild oder PDF auswählen",
+    "Select Image or PDF",
+    "Bild oder PDF auswählen"
+  ],
+  [
+    "PDF, JPEG, PNG oder WebP · maximal 10 MB pro Datei. Vor der Prüfung nur für das einreichende Konto sichtbar.",
+    "PDF, JPEG, PNG, or WebP · maximum 10 MB per file. Visible only to the submitting account until approved.",
+    "PDF, JPG, PNG oder WebP. Höchstens 10 MB. Vor der Freigabe sieht nur eure Gruppe die Datei."
+  ],
+  [
+    "Bitte keine Namen von Schülerinnen und Schülern, privaten Fotos oder ungeprüften Archivscans hochladen. Bildrechte und Herkunft müssen geklärt sein.",
+    "Do not upload students' names, private photos, or archival scans without permission. Check copyright and provenance first.",
+    "Ladet keine Namen von Schülern und keine privaten Fotos hoch. Fragt zuerst, ob ihr Archiv-Bilder verwenden dürft."
+  ],
+  [
+    "Zur Prüfung einreichen",
+    "Submit for Review",
+    "Zur Prüfung abgeben"
+  ],
+  [
+    "04 / HILFE NACH BEDARF",
+    "04 / HELP WHEN YOU NEED IT",
+    "04 / HILFE"
+  ],
+  [
+    "Eure Arbeitsmaterialien für Quellenanalyse, historische Argumentation, Zusammenarbeit und Mediengestaltung. Klappt nur die Hilfen auf, die ihr wirklich braucht.",
+    "Tools for analyzing sources, building historical arguments, working as a team, and creating media. Open only the guidance you need.",
+    "Hier bekommt ihr Hilfe. Ihr lernt, wie ihr Quellen prüft, zusammenarbeitet und einen Beitrag erstellt. Öffnet die Hilfen, die ihr braucht."
+  ],
+  [
+    "04 / HILFE & METHODEN",
+    "04 / HELP & METHODS",
+    "04 / TIPPS UND HILFEN"
+  ],
+  [
+    "Euer Methodenkoffer",
+    "Your Research Toolkit",
+    "Eure Hilfe"
+  ],
+  [
+    "Wählt selbst, wann ihr Hilfestellungen benötigt. Hier gibt es keine fertigen Lösungen.",
+    "Choose when you need help. There are no ready-made answers here.",
+    "Ihr entscheidet selbst, wann ihr Hilfe braucht. Hier stehen keine fertigen Antworten."
+  ],
+  [
+    "Quellen untersuchen",
+    "Analyze Sources",
+    "Quellen prüfen"
+  ],
+  [
+    "Quellenkritik in sechs Schritten",
+    "Six Steps to Evaluate a Source",
+    "Sechs Schritte für Quellen"
+  ],
+  [
+    "Welche Art von Material liegt vor?",
+    "What kind of material is this?",
+    "Was ist das? Ein Foto, Brief oder Text?"
+  ],
+  [
+    "Wer hat es wann und für wen erstellt?",
+    "Who created it, when, and for whom?",
+    "Wer hat es gemacht? Wann? Für wen?"
+  ],
+  [
+    "Welche Aussage oder Beobachtung ist belegt?",
+    "What claim or observation does it support?",
+    "Was kann ich damit zeigen?"
+  ],
+  [
+    "Welche Absicht oder Perspektive ist erkennbar?",
+    "What intention or point of view can you identify?",
+    "Welche Meinung zeigt die Quelle?"
+  ],
+  [
+    "Was können wir daraus nicht sicher schließen?",
+    "What can we not conclude with certainty?",
+    "Was wissen wir durch die Quelle nicht?"
+  ],
+  [
+    "Wie geben wir die Fundstelle korrekt an?",
+    "How do we cite the source correctly?",
+    "Wo haben wir die Quelle gefunden?"
+  ],
+  [
+    "Historisch argumentieren",
+    "Build Historical Arguments",
+    "Geschichte erklären"
+  ],
+  [
+    "Behauptung · Beleg · Erklärung",
+    "Claim · Evidence · Explanation",
+    "Aussage · Beweis · Erklärung"
+  ],
+  [
+    "Formuliert zuerst eure historische Aussage. Verweist dann auf die konkrete Stelle in der Quelle. Erklärt, warum der Beleg eure Aussage stützt – und welche Grenzen er hat.",
+    "First state your historical interpretation. Then point to a specific passage or detail in the source. Explain how it supports your claim and what it cannot prove.",
+    "Sagt zuerst, was ihr herausgefunden habt. Zeigt dann die passende Stelle in der Quelle. Erklärt, warum diese Stelle eure Aussage unterstützt."
+  ],
+  [
+    "Im Team arbeiten",
+    "Work as a Team",
+    "Zusammenarbeiten"
+  ],
+  [
+    "Kooperation statt Einzelarbeit",
+    "Collaboration, Not Separate Work",
+    "Zusammen arbeiten statt allein"
+  ],
+  [
+    "Verteilt Rollen als Verantwortlichkeiten, nicht als getrennte Arbeitspakete. Entscheidet gemeinsam über Unterleitfrage, historische Kernaussage und Medienform. Jede Person muss das Ergebnis erklären können.",
+    "Distribute responsibilities, not isolated tasks. Decide on your research question, historical interpretation, and media format together. Everyone should understand and explain the result.",
+    "Verteilt Aufgaben. Aber arbeitet gemeinsam. Entscheidet zusammen, was ihr erforscht und wie ihr es zeigt. Alle sollen das Ergebnis verstehen."
+  ],
+  [
+    "Beiträge gestalten",
+    "Create Your Contribution",
+    "Beitrag gestalten"
+  ],
+  [
+    "Video · Galerie · Präsentation",
+    "Video · Gallery · Presentation",
+    "Video · Bilder · Präsentation"
+  ],
+  [
+    "Entscheidet euch für ein geeignetes Medium. Erstellt ein kurzes Storyboard mit Ort, Quellenbeleg und historischer Erklärung. Videos, Präsentationen und Galerien erfüllen dieselben fachlichen Mindestkriterien.",
+    "Choose a suitable format. Make a short storyboard showing the location, source evidence, and historical explanation. Videos, presentations, and galleries must meet the same historical standards.",
+    "Wählt: Video, Bilder-Galerie oder Präsentation. Plant euren Beitrag. Zeigt den Ort, eure Quellen und eure Erklärung. Alle Formen müssen die Geschichte richtig darstellen."
+  ],
+  [
+    "Redaktionscheck",
+    "Editorial Review",
+    "Ergebnis prüfen"
+  ],
+  [
+    "Peerfeedback und Selbstkontrolle",
+    "Peer Feedback and Self-Check",
+    "Gemeinsam kontrollieren"
+  ],
+  [
+    "Ist die historische Aussage nachvollziehbar?",
+    "Is the historical interpretation clear?",
+    "Ist eure Aussage verständlich?"
+  ],
+  [
+    "Ist sie durch Quellen belegt?",
+    "Is it supported by sources?",
+    "Habt ihr Beweise aus Quellen?"
+  ],
+  [
+    "Unterscheiden wir Täter- und Opferperspektiven?",
+    "Do we distinguish perpetrators' and victims' perspectives?",
+    "Unterscheidet ihr die Sicht der Täter und der Opfer?"
+  ],
+  [
+    "Kann eine Person ohne Vorwissen den Beitrag verstehen?",
+    "Can someone without prior knowledge understand it?",
+    "Versteht jemand den Beitrag ohne Vorwissen?"
+  ],
+  [
+    "Jean-Claude",
+    "Jean-Claude",
+    "Jean-Claude"
+  ],
+  [
+    "Digitaler Assistent · Konzept",
+    "Digital Assistant · Concept",
+    "Digitaler Helfer · Idee"
+  ],
+  [
+    "„Ich helfe euch, Fragen an Quellen zu stellen, Fachbegriffe zu verstehen und euren Beitrag zu planen.“ Diese Demo bietet feste Hilfen; ein echter KI-Chat ist noch",
+    "“I help you ask questions about sources, understand historical terms, and plan your contribution.” This demo provides fixed guidance. A real AI chat is",
+    "„Ich helfe euch, Quellen zu prüfen, schwierige Wörter zu verstehen und eure Arbeit zu planen.“ Dies sind bisher nur feste Tipps. Ein echter KI-Chat ist"
+  ],
+  [
+    "nicht",
+    "not",
+    "noch nicht"
+  ],
+  [
+    "angebunden.",
+    "connected.",
+    "vorhanden."
+  ],
+  [
+    "Zurück zur Forschungsarbeit ↗",
+    "Back to Research ↗",
+    "Zurück zur Karte ↗"
+  ],
+  [
+    "05 / GEMEINSAMES LERNPRODUKT",
+    "05 / SHARED FINAL PROJECT",
+    "05 / UNSER ERGEBNIS"
+  ],
+  [
+    "Der digitale Erinnerungsrundgang.",
+    "The Digital Remembrance Tour.",
+    "Unser digitaler Erinnerungs-Rundgang."
+  ],
+  [
+    "Hier entsteht nach der historischen Recherche die gemeinsame Ausstellung. Die vier Stationen werden später durch die geprüften Beiträge der Gruppen ergänzt.",
+    "After the research, the shared exhibition will take shape here. Reviewed contributions from the four groups will be added to the four stations.",
+    "Hier entsteht eine Ausstellung. Jede Gruppe stellt ihren fertigen Beitrag vor. Vorher werden die Beiträge geprüft."
+  ],
+  [
+    "DIE AUSSTELLUNG WÄCHST",
+    "THE EXHIBITION GROWS",
+    "HIER ENTSTEHT DIE AUSSTELLUNG"
+  ],
+  [
+    "Vier Stationen. Eine gemeinsame Geschichte.",
+    "Four Stations. One Shared Story.",
+    "Vier Orte. Eine Geschichte."
+  ],
+  [
+    "Diese Seite ist derzeit eine Vorschau. Die lokalen Entwürfe auf der Arbeitskarte werden noch nicht automatisch hier veröffentlicht. Später sollen ausschließlich freigegebene Inhalte sichtbar sein.",
+    "This page is currently a preview. Drafts saved on the working map are not automatically published here. Later, only approved content should appear.",
+    "Diese Seite ist noch nicht fertig. Die Notizen auf der Karte erscheinen hier nicht von allein. Später seht ihr hier nur geprüfte Beiträge."
+  ],
+  [
+    "Gefängnis Riefstahlstraße",
+    "Riefstahlstraße Prison",
+    "Gefängnis Riefstahlstraße"
+  ],
+  [
+    "Kanzlei Ludwig Marum",
+    "Ludwig Marum's Law Office",
+    "Kanzlei von Ludwig Marum"
+  ],
+  [
+    "Volksfreund-Redaktion",
+    "Volksfreund Newspaper Office",
+    "Redaktion der Zeitung Volksfreund"
+  ],
+  [
+    "Badisches Ständehaus",
+    "Baden Parliament Building",
+    "Badisches Ständehaus"
+  ],
+  [
+    "Hier erscheint später der geprüfte Beitrag des Forschungsteams: historische Einordnung, Quellenbelege und digitale Vermittlung.",
+    "The research team's approved contribution will appear here later: historical context, source evidence, and digital presentation.",
+    "Hier kommt später der fertige Beitrag eurer Gruppe hin. Ihr zeigt Quellen und erklärt die Geschichte."
+  ],
+  [
+    "Noch kein Beitrag freigegeben",
+    "No Contribution Approved Yet",
+    "Noch kein Beitrag freigegeben"
+  ],
+  [
+    "LEITFRAGE",
+    "MAIN QUESTION",
+    "UNSERE FRAGE"
+  ],
+  [
+    "Warum führten die Nationalsozialisten ihre politischen Gegner am 16. Mai 1933 öffentlich durch Karlsruhe?",
+    "Why did the National Socialists publicly parade their political opponents through Karlsruhe on 16 May 1933?",
+    "Warum führten die Nationalsozialisten ihre Gegner 1933 öffentlich durch Karlsruhe?"
+  ],
+  [
+    "TRANSFERFRAGE",
+    "QUESTION FOR TODAY",
+    "FRAGE FÜR HEUTE"
+  ],
+  [
+    "Wo verläuft heute die Grenze zwischen politischer Auseinandersetzung, Einschüchterung und Verfolgung?",
+    "Where is the line today between political debate, intimidation, and persecution?",
+    "Wann wird aus politischem Streit eine Drohung oder Verfolgung?"
+  ],
+  [
+    "Zur Arbeitskarte ↗",
+    "Back to the Working Map ↗",
+    "Zur Karte ↗"
+  ],
+  [
+    "Methodenkoffer öffnen",
+    "Open the Research Toolkit",
+    "Hilfe öffnen"
   ]
 ];
