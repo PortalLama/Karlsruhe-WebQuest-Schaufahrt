@@ -70,6 +70,11 @@
             </div>
             <p class="reservation-description">Jede Forschungsgruppe übernimmt genau einen Ort. Eine vergebene Station kann nicht von einer zweiten Gruppe gebucht werden.</p>
             <p class="reservation-state" id="reservation-state" role="status" aria-live="polite">Die Belegungen werden geladen …</p>
+            <p class="reservation-feedback" id="reservation-feedback" role="status" aria-live="polite"></p>
+            <div class="reservation-account" id="reservation-account" hidden>
+              <span id="reservation-account-text">Projektkonto angemeldet</span>
+              <button type="button" class="reservation-logout" id="reservation-logout">Abmelden</button>
+            </div>
             <div id="reservation-actions" hidden>
               <form id="reservation-claim-form" class="reservation-claim-form" hidden>
                 <label for="reservation-group-name">Name eurer Gruppe</label>
