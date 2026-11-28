@@ -294,3 +294,91 @@ noch manuell im bestehenden Projekt ausgeführt werden.**
 - [Deutscher Bundestag: Grundgesetz](https://www.bundestag.de/parlament/aufgaben/rechtsgrundlagen/grundgesetz)
 - [bpb: Beutelsbacher Konsens](https://www.bpb.de/die-bpb/ueber-uns/auftrag/51310/beutelsbacher-konsens/)
 
+
+
+---
+
+## Stationsbelegung V1 – Vier Orte ohne Doppelbelegung
+
+Die Kartenseite hat nun an **jeder Station** einen Bereich
+**„Stationsbelegung“** sowie Statushinweise unter den vier Stationsbuttons.
+Dort kann sich ein angemeldetes Gruppenkonto mit einem **neutralen
+Gruppennamen** (z. B. „Gruppe A“) für genau **einen** der vier Orte
+eintragen.
+
+**Wichtig: Die Website ist vorbereitet, aber die SQL-Migration wurde noch
+nicht automatisch in deinem Supabase-Projekt ausgeführt.** Bis zur
+Einrichtung zeigt die Karte ausdrücklich den Hinweis, dass die
+Stationsbelegung noch nicht aktiv ist. Die bisherige historische Karte,
+Quellen, Notizen und Database bleiben funktionsfähig.
+
+### Einmalige Einrichtung
+
+1. Im existierenden Supabase-Projekt unter **Authentication → Users**
+   prüfen, ob vier **unterschiedliche Gruppen-/Projektkonten** vorhanden
+   sind. Falls nicht, dort vier neutrale Konten für die vier Gruppen
+   anlegen. Ein fünftes Konto kann bei Bedarf der Lehrkraft dienen.
+   Öffentliche Registrierung weiterhin deaktiviert lassen.
+2. [supabase/station_assignments_migration.sql](supabase/station_assignments_migration.sql)
+   öffnen und **gesamten Text** kopieren.
+3. Supabase → **SQL Editor → New query** → SQL einfügen → **Run**.
+4. Supabase → **Table Editor** → Schema \`public\` → die neue Tabelle
+   \`station_assignments\` prüfen. Sie sollte zunächst leer sein.
+5. [Historische Karte](karte.html) öffnen (gegebenenfalls Strg+F5).
+6. Unter einer freien Station auf **Projektkonto anmelden** klicken und
+   das von der Lehrkraft verteilte Gruppenkonto verwenden. Wer schon auf
+   der Database-Seite angemeldet ist, sollte auch auf der Karte angemeldet
+   sein (gleiche Browser-Origin / gleicher Supabase Auth-Speicher).
+7. Neutralen Gruppennamen wie **„Gruppe A“** eingeben und auf
+   **Station übernehmen** klicken.
+8. In einem zweiten Browserfenster oder auf einem anderen Gerät prüfen:
+   Die Station erscheint als **„Bereits vergeben“**. Andere Konten dürfen
+   sie nicht erneut übernehmen.
+
+### Wie werden Doppelbelegungen verhindert?
+
+Die **Datenbank**, nicht nur das Webformular, garantiert die Zuordnung:
+
+- \`station_id\` ist **PRIMARY KEY**. Pro Station kann exakt ein Eintrag
+  existieren – auch bei zeitgleichen Klicks zweier Geräte.
+- \`owner_id\` hat einen **UNIQUE**-Constraint. Ein Projektkonto darf
+  nur genau eine Station belegen.
+- Auch der neutrale \`group_name\` ist eindeutig (ohne Unterscheidung
+  von Groß- und Kleinschreibung).
+- Row Level Security: Belegungen sind **lesbar für alle**, aber nur
+  angemeldete Konten können einen eigenen Eintrag erstellen.
+- Ein belegendes Konto kann **nur die eigene Station** über
+  „Eigene Belegung aufheben“ wieder freigeben.
+- Passwörter und private E-Mail-Adressen erscheinen nicht auf der Karte.
+  Öffentlich angezeigt wird **nur der selbst eingetragene Gruppenname**.
+
+Die Anzeige aktualisiert sich während der Kartennutzung ungefähr alle
+20 Sekunden. Zusätzlich gibt es „↻ Aktualisieren“. Eine schon
+bestehende Belegung wird auch dann zuverlässig verhindert, wenn die
+Anzeige noch nicht aktualisiert war.
+
+### Für die Lehrkraft
+
+Unter **Table Editor → public → station_assignments** lässt sich bei
+Bedarf eine Belegung entfernen oder korrigieren. Die Website enthält
+noch **keine eigene gesicherte Lehrkraft-Verwaltung** mit Sonderrechten.
+Ein Konto mit dem Namen „Lehrer“ erhält durch die Benennung allein keine
+Administratorrechte. Diese sollten später separat mit passenden
+RLS-Richtlinien eingerichtet werden.
+
+**Datenschutz:** Keine Schülernamen, privaten E-Mail-Adressen oder
+anderen personenbezogenen Daten als Gruppennamen eintragen. Das
+Verwenden von Sammelkonten ist datensparsamer, ersetzt aber nicht die
+Datenschutzprüfung durch die Schule. Browser-Sitzungen auf gemeinsam
+benutzten Geräten nach der Nutzung abmelden.
+
+### Falls die Funktion nicht erscheint
+
+| Beobachtung | Lösung |
+| --- | --- |
+| „Stationsvergabe noch nicht eingerichtet“ | SQL-Migration vollständig im selben Supabase-Projekt ausführen |
+| Anmeldedaten werden nicht angenommen | Benutzer unter Authentication → Users prüfen, keine private Schülerregistrierung nötig |
+| Zweite Gruppe kann keine andere Station übernehmen | Prüfen, ob beide Gruppen dasselbe Projektkonto verwenden; pro Konto nur eine Station |
+| Station ist bereits vergeben | Eine andere freie Station wählen; Lehrkraft kann Belegung im Table Editor aufheben |
+| Eine Station wird auf anderem Gerät zunächst als frei angezeigt | „Aktualisieren“ klicken; serverseitiger PRIMARY KEY verhindert trotzdem Doppelbuchung |
+
