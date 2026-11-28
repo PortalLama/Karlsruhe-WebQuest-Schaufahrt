@@ -6,10 +6,10 @@
   <meta name="description" content="Gegner oder Feind? – Karlsruher WebQuest zur Schaufahrt vom 16. Mai 1933.">
   <title>Database | Karlsruhe erinnert</title>
   
-  <link rel="stylesheet" href="styles.css?v=lang-v3">
+  <link rel="stylesheet" href="styles.css?v=transfer-v1">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
   <script src="supabase-config.js" defer></script>
-  <script src="database.js?v=archive-v3-station" defer></script>
+  <script src="database.js?v=archive-v4-gegenwart" defer></script>
   
   <script src="i18n-data.js?v=lang-v3" defer></script>
   <script src="i18n.js?v=lang-v3" defer></script>
@@ -110,6 +110,7 @@
             <option value="bild">Bild / Fotografie</option>
             <option value="video">Video / Audio</option>
             <option value="link">Weiterführender Link</option>
+            <option value="gegenwart">Gegenwartsmaterial</option>
           </select>
         </div>
         <div class="archive-filter">
@@ -131,6 +132,11 @@
         </div>
       </div>
 
+      <div class="archive-period-note">
+        <strong>Neu: Gegenwartsmaterialien</strong>
+        <p>Aktuelle Berichte, Beiträge aus politischen Debatten oder Materialien zu Demonstrationen könnt ihr jetzt getrennt von den historischen Quellen als „Gegenwartsmaterial“ einreichen. Nach der Freigabe erscheinen stationsbezogene Beiträge im Kartenreiter „Heute“.</p>
+        <p>Die neue Materialart benötigt einmalig die <a href="https://github.com/PortalLama/Karlsruhe-WebQuest-Schaufahrt/blob/main/supabase/gegenwart_migration_v3.sql" target="_blank" rel="noopener noreferrer">Supabase-Migration V3 ↗</a>. Die bisherigen Materialien bleiben unverändert.</p>
+      </div>
       <div class="archive-footnote">
         <strong>So funktioniert die Materialsammlung:</strong>
         <p>Tragt bei euren Funden möglichst Urheber, Entstehungszeit, Fundstelle und eine kurze quellenkritische Einordnung ein. Links zu Bildern, PDFs und Videos sind möglich. Auch PDF-Dateien und Bilder lassen sich nach der Einrichtung des privaten Dateispeichers hochladen und gemeinsam prüfen.</p>
@@ -157,6 +163,7 @@
               <option value="bild">Bild / Fotografie</option>
               <option value="video">Video / Audio</option>
               <option value="link">Weiterführender Link</option>
+            <option value="gegenwart">Gegenwartsmaterial</option>
             </select>
           </label>
           <label>Zugehörige Station
