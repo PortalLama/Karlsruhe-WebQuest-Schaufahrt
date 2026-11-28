@@ -86,6 +86,44 @@ Im Projektordner `python -m http.server 8000` starten und `http://localhost:8000
 - Derzeit keine Open-Source-Lizenz festgelegt; Rechte historischer Materialien sind getrennt zu klären.
 
 
+## Stationsbelegung · Keine Doppelbuchungen (V5)
+
+Auf der **Historischen Karte** gibt es direkt unter dem Namen jeder
+Station ein neues Formular **„Stationsbelegung“**. Alle vier Stationen
+zeigen in der Liste ihren zentral gespeicherten Gruppenstatus.
+
+**Eine Station pro Gruppe:** Belegung erfordert ein vorhandenes,
+angemeldetes Supabase-Projektkonto. Die Schülerinnen und Schüler
+verwenden neutrale Namen wie „Gruppe A“ statt persönlicher Namen.
+Für vier unabhängig arbeitende Gruppen müssen vier verschiedene
+Projektkonten existieren; die Projektkonten sind **nicht automatisch
+angelegt**. Die Lehrkraft kann die Zugangsdaten verteilen.
+
+**Technischer Schutz:** Die [SQL-Migration](supabase/station_assignments_migration.sql)
+legt \`public.station_assignments\` mit einem PRIMARY KEY für die Station,
+einem UNIQUE-Constraint für den Kontoinhaber und einem eindeutigen
+Gruppennamen an. Gleichzeitige Reservierungsversuche werden deshalb
+auch serverseitig eindeutig entschieden. RLS erlaubt allen das Lesen
+neutraler Gruppennamen, aber nur angemeldeten Konten das Anlegen
+eigener Einträge beziehungsweise das Freigeben der eigenen Station.
+Unbekannte oder nicht freigegebene Konten können keine Station
+reservieren.
+
+Die Karte zeigt Änderungen nach „↻ Aktualisieren“ beziehungsweise
+bei geöffnetem Tab ungefähr alle 20 Sekunden. Persönliche
+Benutzerdaten wie Passwort oder E-Mail werden **nicht** auf der Karte
+veröffentlicht. Das gewählte Gruppenpseudonym wird öffentlich angezeigt.
+
+**Einrichtung ist noch nötig:** Die SQL-Migration muss einmalig im
+bereits bestehenden Supabase-Projekt unter SQL Editor ausgeführt werden.
+Danach können die vier Konten ihre Stationen auswählen. Eine eigene
+Lehrkraft-Verwaltung fehlt weiterhin; die Lehrkraft kann eine Belegung
+über den geschützten Supabase Table Editor aufheben. Details:
+[DATABASE_SETUP.md](DATABASE_SETUP.md).
+
+Die bisherige Quellen-Datenbank, Kartenquellen, lokalen Notizen,
+Sprachfassung und Freigabeprozesse bleiben erhalten.
+
 ## Damals und heute · Gegenwartsbezug (V4)
 
 Die WebQuest hat einen **vierten Projektabschnitt „Vergleichen“**. Nach der
