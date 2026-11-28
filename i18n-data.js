@@ -1394,5 +1394,530 @@ window.WQ_TRANSLATIONS = [
     "Welche Bedeutung hatte der Ort für die Demokratie?",
     "Why was the site important to democracy?",
     "Warum war das Gebäude wichtig für die Demokratie?"
+  ],
+  [
+    "Zur Startseite",
+    "Go to Home Page",
+    "Zur Startseite"
+  ],
+  [
+    "Hauptnavigation",
+    "Main Navigation",
+    "Haupt-Menü"
+  ],
+  [
+    "Mobile Navigation",
+    "Mobile Navigation",
+    "Menü für Handy"
+  ],
+  [
+    "Originalaufnahme und historischen Kontext beim Jüdischen Museum Berlin öffnen",
+    "Open historical photograph and context at the Jewish Museum Berlin",
+    "Foto und Informationen öffnen"
+  ],
+  [
+    "Historische Schwarz-Weiß-Fotografie: Sieben Sozialdemokraten auf einem offenen Polizeilastwagen, umgeben von uniformierten Männern und Zuschauenden, Karlsruhe, 16. Mai 1933.",
+    "Historical black-and-white photograph: Seven Social Democrats on an open police truck, surrounded by uniformed men and onlookers, Karlsruhe, 16 May 1933.",
+    "Altes Foto: Sieben Sozialdemokraten auf einem offenen Polizei-Wagen in Karlsruhe. Das war am 16. Mai 1933."
+  ],
+  [
+    "Die drei Etappen eures Auftrags",
+    "The Three Stages of Your Assignment",
+    "Die drei Schritte"
+  ],
+  [
+    "Projektleitung: Aufgaben und Beschreibung öffnen",
+    "Project Coordinator: Open Tasks and Description",
+    "Gruppen-Leitung: Aufgaben ansehen"
+  ],
+  [
+    "Quellen-Detektiv: Aufgaben und Beschreibung öffnen",
+    "Source Detective: Open Tasks and Description",
+    "Quellen-Prüfung: Aufgaben ansehen"
+  ],
+  [
+    "Historiker/in: Aufgaben und Beschreibung öffnen",
+    "Historian: Open Tasks and Description",
+    "Geschichte erklären: Aufgaben ansehen"
+  ],
+  [
+    "Medienredaktion: Aufgaben und Beschreibung öffnen",
+    "Media Editor: Open Tasks and Description",
+    "Medien gestalten: Aufgaben ansehen"
+  ],
+  [
+    "Rollenfenster schließen",
+    "Close Role Dialog",
+    "Rollen-Fenster schließen"
+  ],
+  [
+    "Interaktive Karte der ausgewählten historischen Orte in Karlsruhe",
+    "Interactive map of historical sites in Karlsruhe",
+    "Karte mit vier historischen Orten in Karlsruhe"
+  ],
+  [
+    "Historische Stationen",
+    "Historical Stations",
+    "Historische Orte"
+  ],
+  [
+    "Stationsinformationen",
+    "Station Information",
+    "Infos zum Ort"
+  ],
+  [
+    "Stationsansicht",
+    "Station View",
+    "Ansicht des Orts"
+  ],
+  [
+    "Materialansicht",
+    "Material Viewer",
+    "Material ansehen"
+  ],
+  [
+    "Materialfilter",
+    "Material Filters",
+    "Material filtern"
+  ],
+  [
+    "Schließen",
+    "Close",
+    "Schließen"
+  ],
+  [
+    "Projektkonto-E-Mail",
+    "Project Account Email",
+    "E-Mail vom Gruppen-Konto"
+  ],
+  [
+    "Titel, Person, Ort oder Fundstelle …",
+    "Title, Person, Site, or Reference …",
+    "Nach Titel, Person oder Ort suchen …"
+  ],
+  [
+    "z. B. Zeitungsbericht zur Schaufahrt",
+    "e.g. Newspaper Report about the Parade",
+    "z. B. Zeitungs-Artikel zur Schaufahrt"
+  ],
+  [
+    "Soweit bekannt",
+    "If Known",
+    "Wenn bekannt"
+  ],
+  [
+    "z. B. Mai 1933",
+    "e.g. May 1933",
+    "z. B. Mai 1933"
+  ],
+  [
+    "Institution, Sammlung, Signatur oder genaue Fundstelle",
+    "Institution, Collection, Call Number, or Exact Reference",
+    "Wo habt ihr das Material gefunden?"
+  ],
+  [
+    "Was zeigt das Material? Von wem stammt es? Welche Perspektive hat es und wozu ist es nützlich?",
+    "What does the material show? Who created it? What is their perspective, and how is it useful?",
+    "Was zeigt das Material? Wer hat es gemacht? Was können wir daraus lernen?"
+  ],
+  [
+    "Stadtarchiv: Station und Streckenverlauf",
+    "City Archive: Site and Route",
+    "Stadtarchiv: Ort und Weg"
+  ],
+  [
+    "Einstieg in die historische Dokumentation. Ein konkreter Scan der Haftakte muss noch ergänzt und geprüft werden.",
+    "Introduction to historical documentation. A scan of the detention records still needs to be added and checked.",
+    "Hier findet ihr Informationen zur Geschichte. Eine alte Gefängnis-Akte soll später ergänzt werden."
+  ],
+  [
+    "Stadtarchiv: Biografien der Verfolgten",
+    "City Archive: Biographies of Those Persecuted",
+    "Stadtarchiv: Leben der Verfolgten"
+  ],
+  [
+    "Biografischer Kontext",
+    "Biographical Context",
+    "Informationen zur Person"
+  ],
+  [
+    "Biografische Informationen, etwa zu Gustav Heller. Kein Ersatz für die Quellenanalyse.",
+    "Biographical information, including Gustav Heller. Not a substitute for analysing original sources.",
+    "Hier steht etwas über das Leben der Verfolgten, zum Beispiel Gustav Heller. Prüft trotzdem die Quellen."
+  ],
+  [
+    "Stadtarchiv: Marums Kanzlei als Station",
+    "City Archive: Marum's Law Office",
+    "Stadtarchiv: Marums Arbeitsort"
+  ],
+  [
+    "Historische Einordnung des Ortes und der Schaufahrt. Ein Originalfoto wird später als eigener Scan hinterlegt.",
+    "Historical explanation of the site and parade. An original photo scan may be added later.",
+    "Hier erfahrt ihr mehr über den Ort. Ein altes Foto soll später ergänzt werden."
+  ],
+  [
+    "Kurzbiografie Ludwig Marum",
+    "Short Biography of Ludwig Marum",
+    "Das Leben von Ludwig Marum"
+  ],
+  [
+    "Hinweise zu Marums politischer Tätigkeit und Verfolgung. Briefe aus Kislau sollen als Originalmaterial ergänzt werden.",
+    "Information about Marum's political work and persecution. Original letters from Kislau may be added later.",
+    "Hier steht etwas über Marums Arbeit und seine Verfolgung. Seine Briefe aus Kislau sollen später ergänzt werden."
+  ],
+  [
+    "Redaktion des Volksfreund",
+    "Volksfreund Newspaper Office",
+    "Redaktion der Zeitung Volksfreund"
+  ],
+  [
+    "Stadtarchiv: Volksfreund als Station",
+    "City Archive: Volksfreund Site",
+    "Stadtarchiv: Zeitung Volksfreund"
+  ],
+  [
+    "Kontext zum Gebäude. Ein historischer Zeitungsausschnitt und eine NS-Pressestimme werden später hinzugefügt.",
+    "Background about the building. A period newspaper excerpt and Nazi press report will be added later.",
+    "Hier stehen Infos zum Gebäude. Später kommen alte Zeitungs-Texte dazu."
+  ],
+  [
+    "Einordnung der Schaufahrt durch das Stadtarchiv. Quellenkritisch vom zeitgenössischen Presseartikel unterscheiden.",
+    "The City Archive's interpretation of the parade. Distinguish this later account from contemporary newspaper sources.",
+    "Das Stadtarchiv erklärt die Schaufahrt. Dieser Text ist später geschrieben worden. Er ist nicht dasselbe wie eine Zeitung von 1933."
+  ],
+  [
+    "Stadtarchiv: Ständehaus auf der Route",
+    "City Archive: Parliament Building on the Route",
+    "Stadtarchiv: Ständehaus auf dem Weg"
+  ],
+  [
+    "Beschreibung des historischen Stationsortes. Zeitgenössische Materialien zur Landtagssitzung fehlen im Prototyp noch.",
+    "Historical description of this stop. Contemporary documents about the parliament session have not yet been added.",
+    "Hier steht etwas über den Ort. Alte Dokumente zur Sitzung fehlen noch."
+  ],
+  [
+    "Stadtarchiv: Schaufahrt im historischen Kontext",
+    "City Archive: Historical Context of the Parade",
+    "Stadtarchiv: Die Schaufahrt erklärt"
+  ],
+  [
+    "Einordnung der politischen Inszenierung. Diese Darstellung ist keine zeitgenössische Originalquelle.",
+    "Explanation of the political staging. This is a later historical account, not a contemporary primary source.",
+    "Dieser Text erklärt die Schaufahrt. Er wurde später geschrieben und ist keine Quelle von 1933."
+  ],
+  [
+    "Gefängnis",
+    "Prison",
+    "Gefängnis"
+  ],
+  [
+    "Kanzlei Marum",
+    "Marum's Law Office",
+    "Marums Kanzlei"
+  ],
+  [
+    "Volksfreund",
+    "Volksfreund",
+    "Volksfreund"
+  ],
+  [
+    "Ständehaus",
+    "Parliament Building",
+    "Ständehaus"
+  ],
+  [
+    "Die Verbindung zur gemeinsamen Database ist derzeit nicht eingerichtet oder konnte nicht geladen werden.",
+    "The shared Database connection is unavailable or not configured.",
+    "Die Material-Sammlung ist gerade nicht erreichbar."
+  ],
+  [
+    "Die freigegebenen Materialien sind vorübergehend nicht erreichbar. Die Archivlinks oben bleiben verfügbar.",
+    "Approved materials are temporarily unavailable. The archive links above still work.",
+    "Die neuen Materialien können gerade nicht geladen werden. Die anderen Links oben funktionieren weiter."
+  ],
+  [
+    "Freigegebene Materialien aus der Database",
+    "Approved Materials from the Database",
+    "Geprüfte Materialien aus der Sammlung"
+  ],
+  [
+    "Neu freigegebene Materialien laden",
+    "Refresh Newly Approved Materials",
+    "Neue Materialien laden"
+  ],
+  [
+    "Gemeinsame Materialien werden geladen …",
+    "Loading Shared Materials …",
+    "Materialien werden geladen …"
+  ],
+  [
+    "Für diese Station sind noch keine Materialien freigegeben.",
+    "No Materials Approved for This Station Yet.",
+    "Für diesen Ort gibt es noch keine geprüften Materialien."
+  ],
+  [
+    "1 geprüft und freigegeben · für alle sichtbar",
+    "1 approved · visible to everyone",
+    "1 Material geprüft · alle können es sehen"
+  ],
+  [
+    "Alle Quellen in der Database ansehen ↗",
+    "View All Sources in the Database ↗",
+    "Alle Materialien ansehen ↗"
+  ],
+  [
+    "Nicht angegeben",
+    "Not Provided",
+    "Nicht angegeben"
+  ],
+  [
+    "Keine Beschreibung vorhanden.",
+    "No Description Available.",
+    "Keine Beschreibung vorhanden."
+  ],
+  [
+    "Material / externe Fundstelle öffnen ↗",
+    "Open Material / External Source ↗",
+    "Material öffnen ↗"
+  ],
+  [
+    "Die Datei kann momentan nicht geladen werden.",
+    "The File Cannot Be Loaded Right Now.",
+    "Die Datei kann gerade nicht geladen werden."
+  ],
+  [
+    "Geschützte Dateivorschau wird geladen …",
+    "Loading Protected File Preview …",
+    "Bild oder PDF wird geladen …"
+  ],
+  [
+    "Bild in neuem Tab öffnen ↗",
+    "Open Image in New Tab ↗",
+    "Bild öffnen ↗"
+  ],
+  [
+    "PDF in neuem Tab öffnen ↗",
+    "Open PDF in New Tab ↗",
+    "PDF öffnen ↗"
+  ],
+  [
+    "Der Dateilink ist aus Datenschutzgründen nur zwei Minuten gültig. Für einen neuen Link das Material erneut öffnen.",
+    "For data protection, the file link works for only two minutes. Reopen the material for a new link.",
+    "Der Link funktioniert nur zwei Minuten. Öffnet die Quelle dann erneut, um einen neuen Link zu bekommen."
+  ],
+  [
+    "Die Datei kann gerade nicht geöffnet werden. Bitte Verbindung und Freigabe prüfen oder es später erneut versuchen.",
+    "The File Cannot Be Opened Right Now. Check the Connection and Approval Status, or Try Again Later.",
+    "Die Datei lässt sich gerade nicht öffnen. Prüft die Verbindung und die Freigabe."
+  ],
+  [
+    "Archivmaterial des vorgegebenen Quellenpakets. Öffnet die Fundstelle, beachtet Urheber und Entstehungszeit und prüft die Perspektive der Quelle.",
+    "Material from the initial source collection. Open the reference, note the creator and date, and examine the source's perspective.",
+    "Das Material gehört zum ersten Quellen-Paket. Seht nach: Wer hat es gemacht? Wann? Welche Meinung zeigt es?"
+  ],
+  [
+    "Quelle / Fundstelle in neuem Tab öffnen ↗",
+    "Open Source in New Tab ↗",
+    "Quelle öffnen ↗"
+  ],
+  [
+    "Wo sind wir?",
+    "Where Are We?",
+    "Wo ist dieser Ort?"
+  ],
+  [
+    "Was ist hier passiert?",
+    "What Happened Here?",
+    "Was passierte hier?"
+  ],
+  [
+    "Die Ausgangsmaterialien dienen eurer ersten Orientierung. Prüft ihre Herkunft, Perspektive und Aussagekraft. Weitere freigegebene Forschungsfunde aus der gemeinsamen Database erscheinen darunter.",
+    "The initial materials give you a starting point. Check their origins, perspectives, and reliability. Additional approved Database materials appear below.",
+    "Hier findet ihr erste Quellen. Prüft, woher sie kommen und was sie zeigen. Weitere geprüfte Materialien stehen darunter."
+  ],
+  [
+    "Ergänzte Quelle",
+    "Added Source",
+    "Neue Quelle"
+  ],
+  [
+    "Euer Material",
+    "Your Material",
+    "Euer Material"
+  ],
+  [
+    "Von dieser Arbeitsgruppe ergänzter Quellenlink; noch nicht durch eine Lehrkraft überprüft.",
+    "A source link added by this team; not yet reviewed by the teacher.",
+    "Eure Gruppe hat diesen Link ergänzt. Eine Lehrkraft hat ihn noch nicht geprüft."
+  ],
+  [
+    "Welche Materialien gibt es?",
+    "What Materials Are Available?",
+    "Welche Quellen gibt es?"
+  ],
+  [
+    "MÖGLICHE FORSCHUNGSFRAGE",
+    "POSSIBLE RESEARCH QUESTION",
+    "EINE MÖGLICHE FRAGE"
+  ],
+  [
+    "Was sollt ihr untersuchen?",
+    "What Should You Investigate?",
+    "Was sollt ihr herausfinden?"
+  ],
+  [
+    "Noch offen: Eure historische Erklärung und die Quellenbelege.",
+    "Still Missing: Your Historical Explanation and Source Evidence.",
+    "Noch fehlt eure Erklärung. Zeigt auch Beweise aus den Quellen."
+  ],
+  [
+    "Unser Medienbeitrag",
+    "Our Media Contribution",
+    "Unser Beitrag"
+  ],
+  [
+    "Noch kein Video, keine Bildergalerie oder Präsentation eingefügt.",
+    "No Video, Image Gallery, or Presentation Added Yet.",
+    "Ihr habt noch kein Video, keine Bilder oder Präsentation eingefügt."
+  ],
+  [
+    "Euer digitaler Beitrag",
+    "Your Digital Contribution",
+    "Euer fertiger Beitrag"
+  ],
+  [
+    "Eure Einträge werden nur auf diesem Gerät und in diesem Browser gespeichert. Sie sind NICHT automatisch für Mitschüler oder Lehrkräfte sichtbar. Exportiert eure Daten, bevor ihr das Gerät wechselt.",
+    "Your notes are saved only in this browser on this device. Other students and teachers cannot see them automatically. Export your work before switching devices.",
+    "Die Notizen bleiben auf diesem Gerät. Andere Gruppen und die Lehrkraft können sie nicht automatisch sehen. Speichert eine Kopie, bevor ihr das Gerät wechselt."
+  ],
+  [
+    "Unsere Unterleitfrage",
+    "Our Research Question",
+    "Unsere Frage"
+  ],
+  [
+    "Welche historische Frage untersucht ihr?",
+    "What Historical Question Will You Investigate?",
+    "Was wollt ihr herausfinden?"
+  ],
+  [
+    "Unsere Quellenbeobachtungen und Fundstellen",
+    "Our Source Observations and References",
+    "Was zeigen unsere Quellen?"
+  ],
+  [
+    "Was zeigt Quelle A? Welche Stelle belegt eure Beobachtung?",
+    "What Does Source A Show? Which Part Supports Your Observation?",
+    "Was seht ihr in der Quelle? Welche Stelle zeigt das?"
+  ],
+  [
+    "Unsere historische Erklärung",
+    "Our Historical Explanation",
+    "Unsere Erklärung"
+  ],
+  [
+    "Welche Aussage ist durch die Quellen begründet?",
+    "Which Claim Is Supported by the Sources?",
+    "Was könnt ihr mit den Quellen beweisen?"
+  ],
+  [
+    "Unsere Erinnerungsbotschaft",
+    "Our Message of Remembrance",
+    "Was sollen Menschen daraus lernen?"
+  ],
+  [
+    "Was sollten Besucherinnen und Besucher verstehen?",
+    "What Should Visitors Understand?",
+    "Was sollen andere verstehen?"
+  ],
+  [
+    "Name des Medienbeitrags",
+    "Title of Media Contribution",
+    "Name von eurem Beitrag"
+  ],
+  [
+    "z. B. Bildergalerie zur Kanzlei Marum",
+    "e.g. Gallery about Marum's Law Office",
+    "z. B. Bilder-Galerie zur Kanzlei Marum"
+  ],
+  [
+    "Link zum Medienbeitrag (https://…)",
+    "Link to Media Contribution (https://…)",
+    "Link zum Beitrag (https://…)"
+  ],
+  [
+    "Titel einer ergänzten Quelle",
+    "Title of Added Source",
+    "Name einer neuen Quelle"
+  ],
+  [
+    "Quellentitel und gegebenenfalls Archivsignatur",
+    "Source Title and Archive Reference, If Available",
+    "Name und Fundstelle der Quelle"
+  ],
+  [
+    "Link zur ergänzten Quelle (https://…)",
+    "Link to Added Source (https://…)",
+    "Link zur Quelle (https://…)"
+  ],
+  [
+    "✓ Lokal im Browser gespeichert",
+    "✓ Saved in This Browser",
+    "✓ Auf diesem Gerät gespeichert"
+  ],
+  [
+    "Achtung: Browser-Speicherung ist nicht verfügbar. Bitte Daten exportieren.",
+    "Warning: Browser Storage Is Unavailable. Please Export Your Work.",
+    "Achtung: Notizen können hier nicht gespeichert werden. Ladet eine Kopie herunter."
+  ],
+  [
+    "Nur Links einfügen, die für die Zielgruppe freigegeben sind. Bitte keine persönlichen Schülerdaten veröffentlichen.",
+    "Only Include Links Suitable for Your Audience. Do Not Publish Students' Personal Information.",
+    "Nutzt nur erlaubte Links. Schreibt keine privaten Daten von Schülern dazu."
+  ],
+  [
+    "Ergänzte Materialien sind zunächst ungeprüft und müssen fachlich sowie urheberrechtlich geprüft werden.",
+    "Added Materials Have Not Been Reviewed Yet. Check Historical Accuracy and Usage Rights.",
+    "Neue Quellen müssen erst geprüft werden. Dürft ihr sie verwenden? Sind die Informationen richtig?"
+  ],
+  [
+    "Arbeitsstand exportieren",
+    "Export Work",
+    "Notizen speichern"
+  ],
+  [
+    "Text kopieren",
+    "Copy Text",
+    "Text kopieren"
+  ],
+  [
+    "Text kopiert.",
+    "Text Copied.",
+    "Text kopiert."
+  ],
+  [
+    "Kopieren nicht möglich. Nutzt den Export.",
+    "Unable to Copy. Use Export Instead.",
+    "Kopieren geht nicht. Speichert eure Notizen als Datei."
+  ],
+  [
+    "Station zurücksetzen",
+    "Reset Station",
+    "Notizen für diesen Ort löschen"
+  ],
+  [
+    "Alle lokalen Einträge dieser Station löschen?",
+    "Delete All Notes Saved on This Device for This Station?",
+    "Alle Notizen für diesen Ort auf diesem Gerät löschen?"
+  ],
+  [
+    "Änderungen werden automatisch lokal gespeichert.",
+    "Changes Are Automatically Saved on This Device.",
+    "Änderungen werden auf diesem Gerät gespeichert."
+  ],
+  [
+    "Die Kartenbibliothek konnte nicht geladen werden. Die Stationen sind über die Schaltflächen unter der Karte trotzdem erreichbar.",
+    "The Map Could Not Be Loaded. You Can Still Select Stations Using the Buttons Below.",
+    "Die Karte lädt nicht. Ihr könnt die vier Orte trotzdem über die Knöpfe auswählen."
   ]
 ];
