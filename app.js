@@ -109,6 +109,7 @@ const DEFAULT_WORK = () => ({question:"",observation:"",analysis:"",message:"",m
 let work = loadWork();
 let activeIndex = 0;
 let activeTab = "discover";
+let lastNotifiedStation = null;
 let map, markerObjects = [], routeObject;
 const byId = id => document.getElementById(id);
 
@@ -184,9 +185,10 @@ async function refreshApprovedArchive(){
   if(activeTab==="discover" || activeTab==="today")render();
   try{
     if(!approvedArchive.client){
-      approvedArchive.client=window.supabase.createClient(cfg.url,cfg.publishableKey,{
-        auth:{persistSession:false,autoRefreshToken:false,detectSessionInUrl:false}
-      });
+      // Reuse the same authenticated Supabase client as the reservation
+      // widget. This shares the project-account session with database.html.
+      approvedArchive.client=window.WQ_SHARED_SUPABASE ||
+        window.supabase.createClient(cfg.url,cfg.publishableKey);
     }
     const {data,error}=await approvedArchive.client.from("research_materials")
       .select("id,title,kind,station,description,author,historical_date,source_reference,material_url,storage_path")
@@ -622,6 +624,13 @@ function render(){
     if(icon)icon.classList.toggle("is-active",i===activeIndex);
   });
   updateCounters();
+  // Broadcast only real station changes, not every redraw of notes/materials.
+  if(lastNotifiedStation!==activeIndex+1){
+    lastNotifiedStation=activeIndex+1;
+    document.dispatchEvent(new CustomEvent("wq-station-change",{
+      detail:{station:activeIndex+1}
+    }));
+  }
 }
 function setupMap(){
   const mapHolder=byId("map");
