@@ -85,6 +85,35 @@ Im Projektordner `python -m http.server 8000` starten und `http://localhost:8000
 - Öffentliches Repository: **keine Zugangsdaten, API-Schlüssel, personenbezogenen Schülerdaten oder unveröffentlichten Archivscans hochladen.**
 - Derzeit keine Open-Source-Lizenz festgelegt; Rechte historischer Materialien sind getrennt zu klären.
 
+## Sprache umschalten · Deutsch / English / Einfache Sprache
+
+Auf **allen sechs Seiten** befindet sich in der Kopfzeile ein Sprachmenü
+mit den Optionen **DE · Deutsch**, **EN · English** und **Einfach · DE**.
+Die Auswahl wird lokal mit dem Schlüssel
+\`karlsruhe-webquest-language-v1\` gespeichert und bleibt beim
+Seitenwechsel erhalten. Es ist kein zusätzliches Nutzerkonto nötig.
+
+- \`i18n-data.js\` enthält redaktionell erstellte deutsche, englische und
+  vereinfachte deutsche Textfassungen (Seiteninhalte, Rollen, Stations-
+  beschreibungen, Quellenhilfen und wesentliche Bedienhinweise).
+- \`i18n.js\` zeigt den zugänglichen Sprachwähler, setzt das \`lang\`-
+  Attribut des HTML-Dokuments und übersetzt auch dynamisch eingefügte
+  Elemente (Stationsansichten, Rollenfenster und Database-Meldungen).
+- **Kein Cloud-Übersetzungsdienst:** Website-Texte und Eingaben werden
+  nicht zur Übersetzung an externe Anbieter geschickt.
+- Die vereinfachte deutsche Version heißt bewusst **Einfache Sprache**;
+  sie wurde **nicht** nach den Regelwerken für Leichte Sprache
+  von einer qualifizierten Prüfgruppe geprüft.
+- **Historische Primärquellen** und **von Lernenden verfasste bzw.
+  hochgeladene Materialien** werden nicht automatisch übersetzt.
+  Für sie bleibt die ursprüngliche Sprache erhalten.
+- Die individuellen Arbeitsnotizen bleiben weiterhin lokal und werden
+  durch das Sprachmenü weder verändert noch übertragen.
+
+Die Übersetzungen sind didaktische Arbeitsfassungen. Bei der späteren
+schulischen Veröffentlichung sollten sie von Fachlehrkräften bzw.
+Muttersprachlern und geeigneten Zielgruppen gegengelesen werden.
+
 ## Forschungsstationen V3 · automatische Database-Verknüpfung
 
 Die **Historische Karte** liest ausschließlich **freigegebene** Einträge aus
