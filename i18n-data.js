@@ -2304,5 +2304,45 @@ window.WQ_TRANSLATIONS = [
     "übergreifend",
     "general",
     "für alle Orte"
+  ],
+  [
+    "DATABASE · FREIGEGEBEN",
+    "DATABASE · APPROVED",
+    "MATERIAL · GEPRÜFT"
+  ],
+  [
+    "Freigegeben",
+    "Approved",
+    "Geprüft"
+  ],
+  [
+    "Noch nicht bearbeitet",
+    "Not yet edited",
+    "Noch offen"
+  ],
+  [
+    "Bilddatei",
+    "Image File",
+    "Bilddatei"
+  ],
+  [
+    "PDF-Dokument",
+    "PDF Document",
+    "PDF-Datei"
+  ],
+  [
+    "Material",
+    "Material",
+    "Material"
+  ],
+  [
+    "Weitere Originalquellen fehlen noch",
+    "More Primary Sources Are Still Needed",
+    "Es fehlen noch Quellen"
+  ],
+  [
+    "Eure historische Erklärung und die Quellenbelege.",
+    "Your historical explanation and source evidence.",
+    "Eure Erklärung und die Quellen."
   ]
 ];
