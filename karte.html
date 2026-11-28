@@ -7,11 +7,12 @@
   <title>Historische Karte | Karlsruhe erinnert</title>
   <link rel="preconnect" href="https://unpkg.com">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="styles.css?v=democracy-v1">
+  <link rel="stylesheet" href="styles.css?v=station-booking-v1">
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
   <script src="supabase-config.js" defer></script>
-  <script src="app.js?v=democracy-v1" defer></script>
+  <script src="app.js?v=station-booking-v1" defer></script>
+  <script src="station-reservations.js?v=station-booking-v1" defer></script>
   <script src="i18n-data.js?v=democracy-v2" defer></script>
   <script src="i18n.js?v=democracy-v1" defer></script>
 </head>
@@ -55,13 +56,45 @@
             <div class="map-fallback">Die Karte wird geladen. Für die Kartendarstellung ist eine Internetverbindung erforderlich.</div>
           </div>
           <div class="map-footer"><span class="legend-line"></span> <strong>Rot gestrichelt:</strong> näherungsweise rekonstruierter Streckenabschnitt zwischen den ausgewählten Erinnerungsorten.<br><span class="map-disclaimer">Vier von acht im Archivplan bezeichneten Orten; Gebäudestandorte und genaue Straßenführung teils angenähert. <a href="https://stadtgeschichte.karlsruhe.de/erinnerungskultur/erinnerungskultur-im-oeffentlichen-raum/schaufahrt-1933/orte" target="_blank" rel="noopener noreferrer">Originalkarte des Stadtarchivs ansehen ↗</a></span></div>
-          <div class="station-menu"><h3>Station auswählen</h3><div id="station-buttons" class="station-buttons" role="group" aria-label="Historische Stationen"></div></div>
+          <div class="station-menu"><h3>Station auswählen <span class="reservation-counter" id="reservation-counter" role="status" aria-live="polite">Belegung wird geladen …</span></h3><div id="station-buttons" class="station-buttons" role="group" aria-label="Historische Stationen"></div></div>
           <div class="map-note"><strong>Historische Einordnung:</strong> Die tatsächliche Schaufahrt führte an weiteren Orten vorbei und endete außerhalb der Innenstadt im Konzentrationslager Kislau. <a href="https://stadtgeschichte.karlsruhe.de/erinnerungskultur/erinnerungskultur-im-oeffentlichen-raum/schaufahrt-1933/orte" target="_blank" rel="noopener noreferrer">Originalroute des Stadtarchivs ↗</a></div>
         </div>
 
         <aside class="detail-column" aria-label="Stationsinformationen">
           <div class="detail-topline"><span id="station-index">STATION 01 / 04</span><span class="chip chip-pending" id="station-status">NOCH NICHT BEARBEITET</span></div>
           <h3 id="station-title"></h3><p class="station-address" id="station-address"></p>
+          <section class="reservation-panel" id="reservation-panel" aria-labelledby="reservation-heading">
+            <div class="reservation-topline">
+              <strong id="reservation-heading">Stationsbelegung</strong>
+              <button type="button" class="reservation-refresh" id="reservation-refresh" title="Belegung aktualisieren">↻ Aktualisieren</button>
+            </div>
+            <p class="reservation-description">Jede Forschungsgruppe übernimmt genau einen Ort. Eine vergebene Station kann nicht von einer zweiten Gruppe gebucht werden.</p>
+            <p class="reservation-state" id="reservation-state" role="status" aria-live="polite">Die Belegungen werden geladen …</p>
+            <div id="reservation-actions" hidden>
+              <form id="reservation-claim-form" class="reservation-claim-form" hidden>
+                <label for="reservation-group-name">Name eurer Gruppe</label>
+                <div class="reservation-form-row">
+                  <input id="reservation-group-name" name="group_name" type="text" required minlength="3" maxlength="32" autocomplete="off" placeholder="z. B. Gruppe A">
+                  <button type="submit" class="reservation-primary" id="reservation-claim-button">Station übernehmen</button>
+                </div>
+              </form>
+              <button type="button" class="reservation-release" id="reservation-release" hidden>Eigene Belegung aufheben</button>
+              <div id="reservation-login" hidden>
+                <p class="reservation-login-note">Meldet euch mit eurem bestehenden Gruppen- oder Projektkonto an. Ihr könnt auch die Anmeldung in der <a href="database.html">Database</a> nutzen.</p>
+                <details class="reservation-login-details">
+                  <summary>Projektkonto anmelden</summary>
+                  <form id="reservation-login-form" class="reservation-login-form">
+                    <label for="reservation-email">E-Mail des Gruppenkontos</label>
+                    <input type="email" id="reservation-email" name="email" autocomplete="username" required>
+                    <label for="reservation-password">Passwort</label>
+                    <input type="password" id="reservation-password" name="password" autocomplete="current-password" required>
+                    <button type="submit" class="reservation-primary">Anmelden</button>
+                  </form>
+                </details>
+              </div>
+            </div>
+            <p class="reservation-hint">Verwendet nur neutrale Gruppennamen – keine Namen einzelner Schülerinnen oder Schüler. Die Belegung ist öffentlich sichtbar.</p>
+          </section>
           <div class="tab-row" role="tablist" aria-label="Stationsansicht">
             <button type="button" class="tab active" id="tab-discover" role="tab" aria-selected="true">Entdecken</button>
             <button type="button" class="tab" id="tab-edit" role="tab" aria-selected="false">Bearbeiten</button>
