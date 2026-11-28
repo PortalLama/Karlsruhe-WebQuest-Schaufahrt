@@ -81,7 +81,8 @@
     const actionButton = id("reservation-claim-button");
 
     box.dataset.state = !state.ready ? "inactive" : claim ? "occupied" : "free";
-    actions.hidden = !state.ready || state.loading;
+    // Bei Hintergrund-Aktualisierungen die Eingabe nicht ausblenden.
+    actions.hidden = !state.ready;
     form.hidden = true;
     release.hidden = true;
     login.hidden = true;
