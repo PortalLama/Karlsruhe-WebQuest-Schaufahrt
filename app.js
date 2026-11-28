@@ -243,15 +243,19 @@ async function openApprovedMaterial(item){
   const requestId=materialDialogRequest;
   const dialog=byId("source-dialog"), body=byId("dialog-content");
   body.replaceChildren();
+  const sourceTitle=el("h3",{text:item.title});
+  sourceTitle.setAttribute("data-no-translate","");
   body.append(
     el("p",{className:"section-kicker",text:"DATABASE · FREIGEGEBEN"}),
-    el("h3",{text:item.title}),
+    sourceTitle,
     el("p",{className:"approved-dialog-kind",text:DB_KIND[item.kind]||"Material"})
   );
   if(item.author)body.append(el("p",{text:"Urheber / Verfasser: "+item.author}));
   if(item.historical_date)body.append(el("p",{text:"Entstehungszeit: "+item.historical_date}));
   body.append(el("p",{text:"Fundstelle: "+(item.source_reference||"Nicht angegeben")}));
-  body.append(el("p",{text:item.description||"Keine Beschreibung vorhanden."}));
+  const description=el("p",{text:item.description||"Keine Beschreibung vorhanden."});
+  if(item.description)description.setAttribute("data-no-translate","");
+  body.append(description);
   if(safeApprovedUrl(item.material_url)){
     body.append(safeAnchor(item.material_url,"Material / externe Fundstelle öffnen ↗"));
     dialog.showModal();
