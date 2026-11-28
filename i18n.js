@@ -66,6 +66,29 @@
         return (lang==="en"?english:simple)+value.slice(source.length);
       }
     }
+    // Gruppenbelegung: den frei gewählten Gruppennamen nicht übersetzen.
+    const count=value.match(/^(\d+) von 4 belegt$/);
+    if(count){
+      return lang==="en" ? count[1]+" of 4 assigned" : count[1]+" von 4 Orten vergeben";
+    }
+    const mine=value.match(/^Diese Station gehört eurer Gruppe: (.+)\.$/);
+    if(mine){
+      return lang==="en"
+        ? "Your group has claimed this site: "+mine[1]+"."
+        : "Dieser Ort gehört eurer Gruppe: "+mine[1]+".";
+    }
+    const occupied=value.match(/^Bereits vergeben an (.+)\. Bitte wählt einen anderen Ort\.$/);
+    if(occupied){
+      return lang==="en"
+        ? "Already assigned to "+occupied[1]+". Please choose another site."
+        : "Dieser Ort gehört schon "+occupied[1]+". Wählt einen anderen.";
+    }
+    const another=value.match(/^Noch frei\. Euer Konto hat aber bereits Station (\d+) – (.+) übernommen\.$/);
+    if(another){
+      return lang==="en"
+        ? "Available, but your group account already has site "+another[1]+" – "+tr(another[2],lang)+"."
+        : "Dieser Ort ist frei. Eure Gruppe hat aber schon Ort "+another[1]+" – "+tr(another[2],lang)+".";
+    }
     // Dynamische Zähler, Datums-/Stationsnummern und verknüpfte Ortsangaben.
     if(lang==="en"){
       if(/^(\d+) Materialien$/.test(value))return value.replace(" Materialien"," materials");
