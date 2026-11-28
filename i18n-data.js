@@ -2344,5 +2344,295 @@ window.WQ_TRANSLATIONS = [
     "Eure historische Erklärung und die Quellenbelege.",
     "Your historical explanation and source evidence.",
     "Eure Erklärung und die Quellen."
+  ],
+  [
+    "Die vier Etappen eures Auftrags",
+    "The Four Stages of Your Assignment",
+    "Die vier Schritte eures Auftrags"
+  ],
+  [
+    "Vergleichen",
+    "Compare",
+    "Vergleichen"
+  ],
+  [
+    "Einen Gegenwartsfall untersuchen: Gemeinsamkeiten und Unterschiede erkennen.",
+    "Examine a present-day case: identify similarities and differences.",
+    "Schaut euch einen Fall von heute an. Was ist ähnlich? Was ist anders?"
+  ],
+  [
+    "Historische Erklärung und Gegenwartsfenster in einem Beitrag verbinden.",
+    "Combine a historical explanation and a present-day reflection in one contribution.",
+    "Erklärt die Geschichte. Zeigt auch einen Fall von heute."
+  ],
+  [
+    "Schlagt anschließend die Brücke in die Gegenwart.",
+    "Then connect your findings to the present.",
+    "Vergleicht die Geschichte mit heute."
+  ],
+  [
+    "Öffnet bei eurer Station den Reiter „Heute“ und untersucht einen aktuellen Fall: politische Gewalt, öffentliche Einschüchterung, Streitkultur in den Medien oder Demonstrationen. Nutzt dabei den",
+    "Open the “Today” tab at your station and examine a current case: political violence, public intimidation, media debates, or demonstrations. Use the",
+    "Öffnet bei eurem Ort den Reiter „Heute“. Dort findet ihr einen Fall von heute: Gewalt, Drohungen, Streit in den Medien oder Demonstrationen. Nutzt den"
+  ],
+  [
+    "Demokratie-Kompass",
+    "Democracy Compass",
+    "Demokratie-Kompass"
+  ],
+  [
+    "und nennt ausdrücklich",
+    "and clearly identify",
+    "und nennt"
+  ],
+  [
+    "eine Gemeinsamkeit und einen grundlegenden Unterschied",
+    "one similarity and one fundamental difference",
+    "eine Gemeinsamkeit und einen wichtigen Unterschied"
+  ],
+  [
+    "zwischen 1933 und heute.",
+    "between 1933 and today.",
+    "zwischen 1933 und heute."
+  ],
+  [
+    "Euer Beitrag enthält eine historische Erklärung",
+    "Your contribution includes a historical explanation",
+    "Euer Beitrag erklärt die Geschichte"
+  ],
+  [
+    "und ein kurzes Gegenwartsfenster",
+    "and a short present-day comparison window",
+    "und zeigt einen Fall von heute"
+  ],
+  [
+    "Bevor ihr das Medium gestaltet, einigt ihr euch auf eine Unterleitfrage und eine historische Kernaussage. Prüft gemeinsam, mit welchen Quellen ihr eure Aussage belegen könnt. Für das Gegenwartsfenster haltet ihr eine Gemeinsamkeit und einen grundlegenden Unterschied fest. Jede Person im Team sollte beides erklären können.",
+    "Before creating your contribution, agree on a research question and central historical claim. Check which sources support it. For your present-day window, identify one similarity and one fundamental difference. Everyone should be able to explain both.",
+    "Einigt euch zuerst auf eure Frage und eure wichtigste Aussage. Prüft gemeinsam die Quellen. Beim Vergleich mit heute braucht ihr eine Gemeinsamkeit und einen wichtigen Unterschied. Alle sollen das erklären können."
+  ],
+  [
+    "Unter „Bearbeiten“ könnt ihr eigene Notizen und Links hinzufügen. Im Reiter „Heute“ vergleicht ihr die Geschichte mit einem Gegenwartsbeispiel. Eure Eingaben bleiben vorerst nur im jeweiligen Browser gespeichert.",
+    "Under “Edit”, you can add notes and links. In the “Today” tab, compare the past with a present-day example. Your entries are saved only in this browser for now.",
+    "Unter „Bearbeiten“ schreibt ihr Notizen. Unter „Heute“ vergleicht ihr die Geschichte mit einem Fall von heute. Die Notizen bleiben auf diesem Gerät."
+  ],
+  [
+    "Wählt eine Station und öffnet die Materialien. Unter „Bearbeiten“ könnt ihr eigene Notizen und Links hinzufügen. Im Reiter „Heute“ vergleicht ihr die Geschichte mit einem Gegenwartsbeispiel. Eure Eingaben bleiben vorerst nur im jeweiligen Browser gespeichert.",
+    "Select a station and its source materials. Under “Edit”, add your notes and links. In the “Today” tab, compare the past with a present-day example. Your entries are currently saved only in this browser.",
+    "Wählt einen Ort. Seht euch die Quellen an. Unter „Bearbeiten“ schreibt ihr Notizen. Unter „Heute“ vergleicht ihr die Geschichte mit einem Fall von heute. Die Notizen bleiben auf diesem Gerät."
+  ],
+  [
+    "Wählt einen Punkt auf der Karte. Die Station öffnet sich rechts – mit historischen Materialien, freigegebenen Funden aus der Database, Aufgaben, euren bearbeitbaren Feldern und einem eigenen Gegenwartsvergleich.",
+    "Select a point on the map. Its materials, approved Database contributions, assignments, editable fields, and a present-day comparison will appear on the right.",
+    "Klickt auf einen Ort auf der Karte. Rechts findet ihr Quellen, Aufgaben und ein Beispiel von heute."
+  ],
+  [
+    "Heute",
+    "Today",
+    "Heute"
+  ],
+  [
+    "Gegenwartsmaterial",
+    "Present-day Material",
+    "Material von heute"
+  ],
+  [
+    "Neu: Gegenwartsmaterialien",
+    "New: Present-day Materials",
+    "Neu: Materialien von heute"
+  ],
+  [
+    "Aktuelle Berichte, Beiträge aus politischen Debatten oder Materialien zu Demonstrationen könnt ihr jetzt getrennt von den historischen Quellen als „Gegenwartsmaterial“ einreichen. Nach der Freigabe erscheinen stationsbezogene Beiträge im Kartenreiter „Heute“.",
+    "Current news reports, political-debate materials and demonstration coverage can be submitted separately from historical sources as “Present-day Material”. Once approved, station-related contributions appear in the map's “Today” tab.",
+    "Berichte und Bilder von heute könnt ihr getrennt von alten Quellen sammeln. Nach der Prüfung erscheinen die Materialien beim passenden Ort unter „Heute“."
+  ],
+  [
+    "Die neue Materialart benötigt einmalig die",
+    "This material type requires a one-time",
+    "Dafür muss die Lehrkraft einmal die"
+  ],
+  [
+    "Supabase-Migration V3 ↗",
+    "Supabase Migration V3 ↗",
+    "Datenbank-Erweiterung V3 ↗"
+  ],
+  [
+    ". Die bisherigen Materialien bleiben unverändert.",
+    ". Existing materials will remain unchanged.",
+    ". Die alten Materialien bleiben erhalten."
+  ],
+  [
+    "Eure Arbeitsmaterialien für Quellenanalyse, historische Argumentation, den kritischen Gegenwartsvergleich, Zusammenarbeit und Mediengestaltung. Klappt nur die Hilfen auf, die ihr wirklich braucht.",
+    "Tools for source analysis, historical arguments, critical comparisons with today, teamwork and media production. Open only what you need.",
+    "Hier gibt es Hilfe für alte Quellen, den Vergleich mit heute, eure Gruppe und euren Beitrag. Öffnet die Hilfen, die ihr braucht."
+  ],
+  [
+    "1933 und heute vergleichen – ohne Gleichsetzung",
+    "Compare 1933 and Today—Without Equating Them",
+    "1933 und heute vergleichen – aber Unterschiede beachten"
+  ],
+  [
+    "Vergleicht zuerst die historischen Quellen mit eurem heutigen Fall. Nutzt fünf gemeinsame Fragen:",
+    "First compare historical sources with your present-day case. Use these five guiding questions:",
+    "Vergleicht die alten Quellen mit dem Fall von heute. Diese fünf Fragen helfen:"
+  ],
+  [
+    "Wer handelt?",
+    "Who Acts?",
+    "Wer macht etwas?"
+  ],
+  [
+    "Staat, Parteien, Gruppen oder einzelne Personen?",
+    "The state, parties, groups, or individuals?",
+    "Ist es der Staat, eine Partei oder eine Person?"
+  ],
+  [
+    "Was geschieht?",
+    "What Happens?",
+    "Was passiert?"
+  ],
+  [
+    "Sachliche Kritik, Demonstration, Beleidigung, Bedrohung oder Gewalt?",
+    "Criticism, demonstration, insult, threat, or violence?",
+    "Wird diskutiert, demonstriert, beleidigt, gedroht oder Gewalt ausgeübt?"
+  ],
+  [
+    "Welches Ziel?",
+    "What Is the Goal?",
+    "Was soll erreicht werden?"
+  ],
+  [
+    "Überzeugen, protestieren, einschüchtern oder Gegner ausschalten?",
+    "To persuade, protest, intimidate, or eliminate opponents?",
+    "Soll jemand überzeugt oder eingeschüchtert werden?"
+  ],
+  [
+    "Welche Rechte gelten?",
+    "Which Rights Apply?",
+    "Welche Rechte gibt es?"
+  ],
+  [
+    "Meinungsfreiheit, Versammlungsfreiheit, Schutz vor Gewalt?",
+    "Freedom of expression, freedom of assembly, protection from violence?",
+    "Darf man seine Meinung sagen? Darf man demonstrieren? Wer schützt Menschen?"
+  ],
+  [
+    "Wie reagiert der Staat?",
+    "How Does the State Respond?",
+    "Was macht der Staat?"
+  ],
+  [
+    "Ist er Täter oder schützt und verfolgt er Rechtsverletzungen?",
+    "Is the state the perpetrator, or does it protect people and prosecute violations?",
+    "Macht der Staat selbst Gewalt? Oder schützt er Menschen und verfolgt Täter?"
+  ],
+  [
+    "Euer Ergebnis:",
+    "Your Result:",
+    "Euer Ergebnis:"
+  ],
+  [
+    "Formuliert eine belegte Gemeinsamkeit, einen grundlegenden Unterschied und eine Schlussfolgerung für die Demokratie.",
+    "Identify one evidence-based similarity, one fundamental difference, and a conclusion for democracy.",
+    "Schreibt eine Gemeinsamkeit, einen wichtigen Unterschied und was das für unsere Demokratie bedeutet."
+  ],
+  [
+    "Wichtiger Unterschied:",
+    "Important Difference:",
+    "Wichtiger Unterschied:"
+  ],
+  [
+    "Die Schaufahrt 1933 war eine staatlich organisierte Verfolgung innerhalb der entstehenden NS-Diktatur. Politische Gewalt einzelner Täter heute geschieht dagegen in einem demokratischen Rechtsstaat, der die Betroffenen schützen und Straftaten verfolgen muss.",
+    "The 1933 parade was state-organized persecution in the emerging Nazi dictatorship. In contrast, political violence by individual perpetrators today takes place in a democratic state governed by law, which must protect victims and prosecute crimes.",
+    "1933 verfolgten die Nationalsozialisten Gegner mit staatlicher Macht. Heute muss der demokratische Rechtsstaat Menschen vor Gewalt schützen und Täter bestrafen."
+  ],
+  [
+    "Politische Kritik darf scharf sein. Eine friedliche Demonstration kann ein Grundrecht ausüben. Gewalt und Bedrohung sind keine gleichwertige Form des demokratischen Streits.",
+    "Political criticism may be sharp. Peaceful demonstrations are protected rights. Violence and threats are not equivalent forms of democratic debate.",
+    "Man darf Politiker kritisieren. Man darf friedlich demonstrieren. Gewalt und Drohungen sind keine normale Diskussion."
+  ],
+  [
+    "Grundgesetz: Artikel 5 und 8 ↗",
+    "Basic Law: Articles 5 and 8 ↗",
+    "Grundrechte: Meinungsfreiheit und Demonstrieren ↗"
+  ],
+  [
+    "bpb: Beutelsbacher Konsens ↗",
+    "bpb: Beutelsbach Consensus ↗",
+    "bpb: Regeln für politische Bildung ↗"
+  ],
+  [
+    "Gibt es ein Gegenwartsfenster mit einer Gemeinsamkeit, einem Unterschied und einer belegten Schlussfolgerung?",
+    "Is there a present-day comparison with a similarity, a difference, and a supported conclusion?",
+    "Zeigt ihr einen Fall von heute? Nennt ihr eine Gemeinsamkeit, einen Unterschied und eine Erklärung?"
+  ],
+  [
+    "Hier entsteht nach der historischen Recherche die gemeinsame Ausstellung. Jeder geprüfte Beitrag soll die Geschichte eines Ortes erklären und einen kritisch belegten Gegenwartsvergleich enthalten.",
+    "After historical research, your shared exhibition will take shape here. Every approved contribution should explain a site and include a carefully evidenced present-day comparison.",
+    "Hier entsteht eure Ausstellung. Jede Gruppe erklärt einen Ort und vergleicht die Geschichte mit einem Fall von heute."
+  ],
+  [
+    "Hier erscheint später der geprüfte Beitrag: historische Erklärung, Quellenbelege und ein Gegenwartsfenster mit Gemeinsamkeit, Unterschied und Schlussfolgerung.",
+    "The approved contribution will appear here later: historical explanation, source evidence, and a present-day comparison with a similarity, difference, and conclusion.",
+    "Hier steht später euer fertiger Beitrag. Er zeigt Quellen und erklärt, was 1933 geschah. Ihr vergleicht die Geschichte auch mit heute."
+  ],
+  [
+    "DAMALS UND HEUTE · GEMEINSAMER ABSCHLUSS",
+    "THEN AND NOW · SHARED CONCLUSION",
+    "DAMALS UND HEUTE"
+  ],
+  [
+    "Was hat dieser Ort mit unserer Demokratie heute zu tun?",
+    "What Does This Site Mean for Our Democracy Today?",
+    "Was hat dieser Ort mit unserer Demokratie heute zu tun?"
+  ],
+  [
+    "Jeder Gruppenbeitrag enthält ein kurzes Gegenwartsfenster. Vergleicht einen heutigen Fall mit eurer historischen Station – ohne die NS-Diktatur mit unserem demokratischen Rechtsstaat gleichzusetzen.",
+    "Every group contribution includes a short present-day window. Compare a current case with your historical site without equating the Nazi dictatorship with today's democratic rule of law.",
+    "Jede Gruppe zeigt einen Fall von heute. Vergleicht ihn mit 1933. Aber denkt daran: Die NS-Diktatur war anders als unser demokratischer Staat heute."
+  ],
+  [
+    "Historische Erklärung",
+    "Historical Explanation",
+    "Erklärung zur Geschichte"
+  ],
+  [
+    "Was geschah 1933 an eurem Ort? Welche Quellen belegen eure Aussage?",
+    "What happened at your site in 1933? Which sources support your account?",
+    "Was passierte 1933? Welche Quellen zeigen das?"
+  ],
+  [
+    "Gegenwartsfall",
+    "Present-day Case",
+    "Fall von heute"
+  ],
+  [
+    "Welcher heutige Fall passt zu eurer Frage? Welche verlässliche Quelle beschreibt ihn?",
+    "Which present-day case matches your question? Which reliable source describes it?",
+    "Welcher Fall von heute passt? Woher habt ihr die Information?"
+  ],
+  [
+    "Gemeinsamkeit & Unterschied",
+    "Similarity & Difference",
+    "Was ist ähnlich? Was ist anders?"
+  ],
+  [
+    "Was lässt sich vergleichen? Wo liegt ein grundlegender Unterschied?",
+    "What can be compared? What fundamental difference remains?",
+    "Was ist ähnlich? Was ist sehr anders?"
+  ],
+  [
+    "Schlussfolgerung",
+    "Conclusion",
+    "Was können wir daraus lernen?"
+  ],
+  [
+    "Was bedeutet dieser Vergleich für demokratischen Streit und den Schutz politischer Rechte?",
+    "What does the comparison mean for democratic debate and the protection of political rights?",
+    "Was bedeutet das für demokratischen Streit und unsere Rechte?"
+  ],
+  [
+    "Die Ergebnisse werden erst nach fachlicher Prüfung veröffentlicht. Eure lokalen Vergleichsnotizen aus der Karte erscheinen hier nicht automatisch.",
+    "The results will be published only after review. Local comparison notes from the map do not appear here automatically.",
+    "Die Lehrkraft prüft die Beiträge vor der Veröffentlichung. Eure Notizen auf der Karte erscheinen hier nicht von allein."
   ]
 ];
