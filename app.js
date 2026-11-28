@@ -163,7 +163,7 @@ function todayApprovedSection(stationIndex){
       }
     }
   }
-  area.append(safeAnchor("database.html?station="+String(stationIndex+1),
+  area.append(safeAnchor("database.html?station="+String(stationIndex+1)+"&kind=gegenwart",
     "Gegenwartsmaterial zur Database hinzufügen ↗","today-tool-link"));
   return area;
 }
