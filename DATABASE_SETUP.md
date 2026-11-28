@@ -238,3 +238,59 @@ für die Schule zulässigen Datenverarbeitungskonfiguration.
 **Technik:** [Supabase Storage Policies](https://supabase.com/docs/guides/storage/security/access-control) ·
 [Private Buckets](https://supabase.com/docs/guides/storage/buckets/creating-buckets) ·
 [Signierte Downloads](https://supabase.com/docs/guides/storage/serving/downloads)
+
+
+---
+
+## Database V3 – Gegenwartsmaterialien getrennt von historischen Quellen
+
+Für die neue WebQuest-Erweiterung **„Gegner oder Feind? – 1933 und heute“**
+gibt es unter den Kartenstationen einen dritten Reiter **„Heute“**.
+Neue Materialien zu politischer Gewalt, Demonstrationen und politischer
+Streitkultur sollen von historischen Quellen unterscheidbar bleiben.
+
+### Einmalige Änderung in Supabase
+
+**Die Website ist bereits programmiert. Diese Datenbank-Migration muss
+noch manuell im bestehenden Projekt ausgeführt werden.**
+
+1. [supabase/gegenwart_migration_v3.sql](supabase/gegenwart_migration_v3.sql)
+   öffnen und den vollständigen SQL-Text kopieren.
+2. Supabase → bestehendes WebQuest-Projekt → **SQL Editor → New query**.
+3. SQL einfügen, **Run** auswählen. Es sollte ohne Fehler durchlaufen.
+4. Database-Seite aktualisieren. Nun ist die Materialart
+   **„Gegenwartsmaterial“** bei Filtern und im Einreichungsformular verfügbar.
+5. Als Test einen Gegenwartslink (z. B. bpb-Artikel zum Angriff auf
+   Matthias Ecke) einer der vier Stationen zuordnen und einreichen.
+6. Im Supabase **Table Editor** wie gewohnt \`review_status\` von
+   \`pending\` auf \`approved\` setzen.
+7. Auf der historischen Karte die Station auswählen → **„Heute“**
+   öffnen → der Link erscheint unter den zusätzlichen geprüften
+   Gegenwartsmaterialien. Unter **„Entdecken“** erscheinen weiterhin
+   nur die historischen Quellen.
+
+### Wichtige didaktische Hinweise
+
+- Materialart = **Gegenwartsmaterial**. Historische Originalquellen gehören
+  weiterhin in die entsprechenden historischen Kategorien.
+- Für den Gegenwartsvergleich immer **Titel, Datum, Urheber/Fundstelle**
+  und Perspektive des Berichts notieren.
+- Die Fälle 2024 sind bewusst feste, überprüfbare Beispiele und kein
+  automatisch aktueller Nachrichtenfeed. Vor dem Unterricht auf
+  Aktualität prüfen.
+- Schülerantworten im Reiter „Heute“ werden **nur im bisherigen lokalen
+  Browser-Speicher** abgelegt, nicht in Supabase übertragen. Der
+  bestehende Export enthält die neuen Antwortfelder.
+- Keine Gleichsetzung: Die NS-Schaufahrt war **staatlich organisierte
+  politische Verfolgung**; Gewalt durch einzelne Täter in einem heutigen
+  Rechtsstaat muss von Behörden verfolgt werden. Die Gegenwartsanalyse
+  dient der begründeten Differenzierung.
+
+### Ausgewählte Gegenwartsquellen
+
+- [bpb: Angriff auf Matthias Ecke (2024)](https://www.bpb.de/kurz-knapp/taegliche-dosis-politik/548158/angriff-auf-spd-politiker-matthias-ecke/)
+- [Deutschlandfunk: Demonstrationen nach dem Angriff (05.05.2024)](https://www.deutschlandfunk.de/demonstrationen-fuer-demokratie-und-gegen-gewalt-nach-angriff-gegen-spd-europaabgeordneten-102.html)
+- [bpb: Politische Beredsamkeit und Streitkultur](https://www.bpb.de/shop/zeitschriften/apuz/148218/mitreden-koennen-die-bedeutung-der-politischen-beredsamkeit-in-der-demokratie/)
+- [Deutscher Bundestag: Grundgesetz](https://www.bundestag.de/parlament/aufgaben/rechtsgrundlagen/grundgesetz)
+- [bpb: Beutelsbacher Konsens](https://www.bpb.de/die-bpb/ueber-uns/auftrag/51310/beutelsbacher-konsens/)
+
