@@ -26,6 +26,11 @@ create table if not exists public.station_assignments (
   claimed_at timestamptz not null default now()
 );
 
+-- Gruppennamen müssen zusätzlich eindeutig sein (auch bei Groß-/Kleinschreibung).
+-- So kann "Gruppe A" nicht gleichzeitig an zwei Orten stehen.
+create unique index if not exists station_assignments_group_name_unique
+  on public.station_assignments (lower(group_name));
+
 alter table public.station_assignments enable row level security;
 
 -- Zugriff auf sensible Konten-IDs ist auf angemeldete Konten begrenzt.
