@@ -24,8 +24,7 @@
     "[translate='no']","#language-picker",
     ".archive-item-title",".archive-item-description",".archive-item-info",
     ".archive-detail-fields dd",".approved-source-card strong",
-    ".archive-detail-body h2",".archive-file-preview img",
-    ".station-address"
+    ".archive-detail-body h2",".archive-file-preview img"
   ].join(",");
   const pageTitles={
     "index.html":["Gegner oder Feind? | Karlsruhe erinnert","Opponent or Enemy? | Karlsruhe Remembers","Gegner oder Feind? | Karlsruhe erinnert"],
@@ -42,6 +41,31 @@
     if(lang==="de")return value;
     const match=dictionaries.get(normalize(String(value)));
     if(match) return match[localeIndex[lang]]||value;
+    // Historical source category + action; the descriptor remains
+    // separate for accessibility even if it is rendered as one text node.
+    const action=value.match(/^(.*?) · (öffnen|Link öffnen|Datei ansehen)$/);
+    if(action){
+      const suffix={
+        "öffnen":lang==="en"?"open":"öffnen",
+        "Link öffnen":lang==="en"?"open link":"Link öffnen",
+        "Datei ansehen":lang==="en"?"view file":"Datei ansehen"
+      }[action[2]];
+      return tr(action[1],lang)+" · "+suffix;
+    }
+    const prefixPairs=[
+      ["Vorschau des Materials: ","Preview of Material: ","Vorschau des Materials: "],
+      ["Fundstelle: ","Source Reference: ","Fundstelle: "],
+      ["Urheber / Verfasser: ","Creator / Author: ","Wer hat es gemacht? "],
+      ["Entstehungszeit: ","Date Created: ","Wann entstand es? "],
+      ["Speichern fehlgeschlagen: ","Save Failed: ","Speichern ging nicht: "],
+      ["Anmeldung fehlgeschlagen. Prüfe E-Mail, Passwort und Projektfreigabe. ","Sign-In Failed. Check Email, Password, and Project Access. ","Die Anmeldung hat nicht funktioniert. Prüft eure Zugangsdaten. "],
+      ["Datei-Upload fehlgeschlagen: ","File Upload Failed: ","Die Datei konnte nicht hochgeladen werden: "]
+    ];
+    for(const [source,english,simple] of prefixPairs){
+      if(value.startsWith(source)){
+        return (lang==="en"?english:simple)+value.slice(source.length);
+      }
+    }
     // Dynamische Zähler, Datums-/Stationsnummern und verknüpfte Ortsangaben.
     if(lang==="en"){
       if(/^(\d+) Materialien$/.test(value))return value.replace(" Materialien"," materials");
