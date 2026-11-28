@@ -122,7 +122,8 @@ const DB_KIND = Object.freeze({
   darstellung:"Historische Darstellung",
   bild:"Bild / Fotografie",
   video:"Video / Audio",
-  link:"Weiterführender Link"
+  link:"Weiterführender Link",
+  gegenwart:"Gegenwartsmaterial"
 });
 const approvedArchive = {
   client:null, items:[], status:"loading", error:""
@@ -137,8 +138,36 @@ function safeApprovedUrl(value){
   }catch{return false;}
 }
 function approvedForStation(stationIndex){
-  return approvedArchive.items.filter(item=>item.station===stationIndex+1);
+  return approvedArchive.items.filter(item=>item.station===stationIndex+1 && item.kind!=="gegenwart");
 }
+function approvedTodayForStation(stationIndex){
+  return approvedArchive.items.filter(item=>item.station===stationIndex+1 && item.kind==="gegenwart");
+}
+function todayApprovedSection(stationIndex){
+  const area=el("div",{className:"today-shared"});
+  area.append(el("strong",{text:"Weitere geprüfte Gegenwartsmaterialien aus der Database"}));
+  if(approvedArchive.status==="loading"){
+    area.append(el("p",{text:"Gemeinsame Materialien werden geladen …"}));
+  } else if(approvedArchive.status==="error" || approvedArchive.status==="unavailable"){
+    area.append(el("p",{text:"Die Database ist momentan nicht erreichbar. Die redaktionell ausgewählten Links oben bleiben verfügbar."}));
+  } else {
+    const matches=approvedTodayForStation(stationIndex);
+    if(!matches.length){
+      area.append(el("p",{text:"Für diese Station sind noch keine zusätzlichen Gegenwartsmaterialien freigegeben."}));
+    } else {
+      for(const item of matches){
+        const open=el("button",{type:"button",className:"today-shared-item"});
+        open.append(el("strong",{text:item.title}),el("small",{text:"Gegenwartsmaterial · geprüft"}));
+        open.addEventListener("click",()=>void openApprovedMaterial(item));
+        area.append(open);
+      }
+    }
+  }
+  area.append(safeAnchor("database.html?station="+String(stationIndex+1),
+    "Gegenwartsmaterial zur Database hinzufügen ↗","today-tool-link"));
+  return area;
+}
+
 async function refreshApprovedArchive(){
   lastArchiveCheck=Date.now();
   const cfg=window.WEBQUEST_DB_CONFIG||{};
@@ -148,11 +177,11 @@ async function refreshApprovedArchive(){
     ||!window.supabase?.createClient){
     approvedArchive.status="unavailable";
     approvedArchive.error="Die Verbindung zur gemeinsamen Database ist derzeit nicht eingerichtet oder konnte nicht geladen werden.";
-    if(activeTab==="discover")render();
+    if(activeTab==="discover" || activeTab==="today")render();
     return;
   }
   approvedArchive.status="loading";
-  if(activeTab==="discover")render();
+  if(activeTab==="discover" || activeTab==="today")render();
   try{
     if(!approvedArchive.client){
       approvedArchive.client=window.supabase.createClient(cfg.url,cfg.publishableKey,{
@@ -180,7 +209,7 @@ async function refreshApprovedArchive(){
     // Details nur in der Entwicklerkonsole, nicht in der Schüleransicht.
     console.warn("Database-Materialien konnten nicht geladen werden:",error);
   }
-  if(activeTab==="discover")render();
+  if(activeTab==="discover" || activeTab==="today")render();
 }
 
 function approvedMaterialSection(stationIndex){
@@ -460,6 +489,7 @@ function todayView(station){
     materialList.append(row);
   }
   body.append(section("Gegenwartsmaterialien prüfen","▤",materialList));
+  body.append(todayApprovedSection(index));
 
   const task=el("div",{className:"today-question-card"});
   task.append(el("strong",{text:"EURE VERGLEICHSFRAGE"}),el("p",{text:item.question}));
