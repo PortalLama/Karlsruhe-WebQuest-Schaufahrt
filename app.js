@@ -105,7 +105,7 @@ function markerHtml(i) {
 }
 
 const STORAGE_KEY = "schaufahrt-webquest-v01";
-const DEFAULT_WORK = () => ({question:"",observation:"",analysis:"",message:"",mediaUrl:"",mediaLabel:"",sourceUrl:"",sourceLabel:""});
+const DEFAULT_WORK = () => ({question:"",observation:"",analysis:"",message:"",mediaUrl:"",mediaLabel:"",sourceUrl:"",sourceLabel:"",todaySimilarity:"",todayDifference:"",todayConclusion:""});
 let work = loadWork();
 let activeIndex = 0;
 let activeTab = "discover";
@@ -386,6 +386,124 @@ function discoverView(station){
   body.append(section("Euer digitaler Beitrag", "▣",results));
   return body;
 }
+
+/* Gegenwartsmaterialien sind redaktionell ausgewählte externe Darstellungen,
+ * keine unmittelbaren Augenzeugenquellen zu 1933 und kein Echtzeit-Newsfeed.
+ * Fälle und Rechtslage jeweils vor dem Unterricht erneut auf Aktualität prüfen.
+ */
+const TODAY_CASES = [
+  {
+    label:"FALL A · POLITISCHE GEWALT",
+    title:"Angriff auf Matthias Ecke (2024)",
+    background:"Am 3. Mai 2024 wurde der SPD-Politiker Matthias Ecke beim Aufhängen von Wahlplakaten in Dresden angegriffen und schwer verletzt. Der Angriff war eine Gewalttat gegen einen politisch engagierten Menschen.",
+    focus:"1933 organisierten die nationalsozialistischen Machthaber die öffentliche Demütigung und Verschleppung politischer Gegner. Heute ist eine solche Gewalttat verboten. Polizei und Justiz müssen dagegen vorgehen.",
+    question:"Wer übte 1933 Gewalt aus? Wer übte sie 2024 aus – und welche Rolle spielt der demokratische Rechtsstaat?",
+    materials:[
+      {label:"bpb · Angriff auf Matthias Ecke (2024)",url:"https://www.bpb.de/kurz-knapp/taegliche-dosis-politik/548158/angriff-auf-spd-politiker-matthias-ecke/",note:"Kurzbericht als Gegenwartsdarstellung; Erscheinungsdatum und Perspektive beachten"}
+    ]
+  },
+  {
+    label:"FALL A · PERSÖNLICHE EINSCHÜCHTERUNG",
+    title:"Wenn politische Gegner angegriffen werden",
+    background:"Der Angriff auf Matthias Ecke im Wahlkampf 2024 zeigt, dass Menschen wegen ihres politischen Engagements eingeschüchtert und körperlich angegriffen werden können.",
+    focus:"Ludwig Marum war 1933 selbst Gefangener und wurde gezielt an seiner eigenen Kanzlei vorgeführt. Ein heutiger Gewalttäter handelt dagegen nicht im Namen des demokratischen Rechtsstaats.",
+    question:"Was soll eine öffentliche Demütigung oder Bedrohung bewirken? Welche Schutzmöglichkeiten gibt es heute?",
+    materials:[
+      {label:"bpb · Angriff auf Matthias Ecke (2024)",url:"https://www.bpb.de/kurz-knapp/taegliche-dosis-politik/548158/angriff-auf-spd-politiker-matthias-ecke/",note:"Fragen zu politischer Einschüchterung und Schutz vor Gewalt"},
+      {label:"Grundgesetz · Grundrechte und Rechtsstaat",url:"https://www.bundestag.de/parlament/aufgaben/rechtsgrundlagen/grundgesetz",note:"Rechtlicher Maßstab für den Gegenwartsvergleich"}
+    ]
+  },
+  {
+    label:"FALL C · MEDIEN UND DEBATTEN",
+    title:"Politische Kritik oder persönliche Herabsetzung?",
+    background:"Politische Parteien dürfen sich in einer Demokratie widersprechen und scharf kritisieren. Fernsehdiskussionen, Zeitungen und soziale Medien prägen, wie wir politische Gegner wahrnehmen.",
+    focus:"Die Zeitung Volksfreund wurde 1933 verboten. Heute schützt Artikel 5 des Grundgesetzes grundsätzlich die Meinungs- und Pressefreiheit. Sachliche Kritik und persönliche Angriffe sind bei der Analyse zu unterscheiden.",
+    question:"Wann kritisieren Medien eine politische Position? Wann werden Menschen persönlich herabgesetzt oder als Feinde dargestellt?",
+    materials:[
+      {label:"bpb · Mitreden können: Politisch diskutieren",url:"https://www.bpb.de/shop/zeitschriften/apuz/148218/mitreden-koennen-die-bedeutung-der-politischen-beredsamkeit-in-der-demokratie/",note:"Material zur politischen Streitkultur; ordnet persönliche Angriffe ein"},
+      {label:"Grundgesetz · Artikel 5",url:"https://www.bundestag.de/parlament/aufgaben/rechtsgrundlagen/grundgesetz",note:"Meinungs- und Pressefreiheit: Den vollständigen Gesetzestext prüfen"}
+    ]
+  },
+  {
+    label:"FALL B · DEMONSTRATIONEN",
+    title:"Protest für Demokratie und gegen Gewalt (2024)",
+    background:"Nach dem Angriff auf Matthias Ecke demonstrierten Menschen im Mai 2024 in Dresden und Berlin gegen politische Gewalt und für die Demokratie.",
+    focus:"1933 diente die staatlich organisierte Schaufahrt der Einschüchterung. Eine heutige friedliche Demonstration kann dagegen Ausdruck des Grundrechts auf Versammlungsfreiheit sein.",
+    question:"Was unterscheidet die erzwungene Schaufahrt 1933 von einer freiwilligen friedlichen Demonstration heute?",
+    materials:[
+      {label:"Deutschlandfunk · Demonstrationen nach dem Angriff (05.05.2024)",url:"https://www.deutschlandfunk.de/demonstrationen-fuer-demokratie-und-gegen-gewalt-nach-angriff-gegen-spd-europaabgeordneten-102.html",note:"Nachrichtenbericht über die Proteste 2024"},
+      {label:"Deutscher Bundestag · Artikel 8 Grundgesetz",url:"https://www.bundestag.de/parlament/grundgesetz/641190-641190",note:"Grundrecht auf friedliche Versammlungen"}
+    ]
+  }
+];
+
+function todayView(station){
+  const index=STATIONS.indexOf(station),item=TODAY_CASES[index];
+  const body=el("div",{className:"today-workspace"});
+  body.append(el("p",{className:"section-kicker",text:"1933 UND HEUTE"}));
+  body.append(el("h4",{className:"today-title",text:"Politische Gegner – damals und heute"}));
+  body.append(el("p",{
+    className:"today-intro",
+    text:"Untersucht einen Fall von heute. Nennt eine Gemeinsamkeit und einen grundlegenden Unterschied. Die Verfolgung in einer NS-Diktatur ist nicht mit einem heutigen Rechtsstaat gleichzusetzen."
+  }));
+  const c=el("div",{className:"today-case"});
+  c.append(el("span",{className:"today-case-label",text:item.label}));
+  c.append(el("h5",{text:item.title}),el("p",{text:item.background}));
+  c.append(el("p",{className:"today-focus",text:item.focus}));
+  body.append(c);
+
+  const materialList=el("div",{className:"today-materials"});
+  for(const material of item.materials){
+    const row=el("div",{className:"today-material"});
+    row.append(safeAnchor(material.url,material.label+" ↗","today-material-link"));
+    row.append(el("small",{text:material.note}));
+    materialList.append(row);
+  }
+  body.append(section("Gegenwartsmaterialien prüfen","▤",materialList));
+
+  const task=el("div",{className:"today-question-card"});
+  task.append(el("strong",{text:"EURE VERGLEICHSFRAGE"}),el("p",{text:item.question}));
+  task.append(el("p",{className:"today-task",text:"Lest die Gegenwartsquelle. Vergleicht mit euren historischen Quellen. Belegt eure Aussagen und achtet darauf, wer handelt und welche Rechte gelten."}));
+  task.append(safeAnchor("methodenkoffer.html#demokratie-kompass","Zum Demokratie-Kompass ↗","today-tool-link"));
+  body.append(section("Vergleicht kritisch","?",task));
+
+  const fields=[
+    ["todaySimilarity","Eine Gemeinsamkeit","In beiden Fällen …"],
+    ["todayDifference","Ein grundlegender Unterschied","Anders als 1933 …"],
+    ["todayConclusion","Unsere Schlussfolgerung für die Demokratie","Für eine Demokratie bedeutet das …"]
+  ];
+  const form=el("div",{className:"today-comparison"});
+  form.append(el("p",{text:"Haltet eure Antworten gemeinsam fest. Sie werden wie die übrigen Kartennotizen nur in diesem Browser gespeichert."}));
+  for(const [key,label,placeholder] of fields){
+    const labelElement=el("label",{text:label});
+    const id="today-"+key;
+    labelElement.setAttribute("for",id);
+    const field=el("textarea",{id,placeholder});
+    field.rows=3;
+    field.value=work[station.id][key]||"";
+    field.addEventListener("input",()=>{
+      work[station.id][key]=field.value;
+      const saved=persist();
+      const status=form.querySelector(".today-save-note");
+      if(status) status.textContent=saved?"✓ Lokal im Browser gespeichert":"Achtung: Browser-Speicherung ist nicht verfügbar. Bitte Daten exportieren.";
+      updateCounters();
+    });
+    form.append(labelElement,field);
+  }
+  const status=el("p",{className:"today-save-note",text:"Änderungen werden automatisch lokal gespeichert."});
+  form.append(status);
+  const hint=el("p",{className:"today-didactic-hint",text:"Wichtig: Staatlich organisierte Verfolgung in der NS-Diktatur ist nicht dasselbe wie politische Konflikte oder einzelne Straftaten in einem demokratischen Rechtsstaat."});
+  body.append(section("Euer Gegenwartsvergleich","◈",form),hint);
+  const controls=el("div",{className:"today-actions"});
+  const exportBtn=el("button",{type:"button",className:"primary-action",text:"Arbeitsstand exportieren"});
+  exportBtn.addEventListener("click",exportWork);
+  const editBtn=el("button",{type:"button",text:"Historische Notizen bearbeiten"});
+  editBtn.addEventListener("click",()=>{activeTab="edit";render()});
+  controls.append(exportBtn,editBtn);
+  body.append(controls);
+  return body;
+}
+
 function saveStatus(stationId){
   const d=work[stationId];return Boolean(d.analysis.trim()||d.observation.trim()||validExternalUrl(d.mediaUrl));
 }
@@ -461,11 +579,13 @@ function render(){
   byId("station-index").textContent="STATION "+String(activeIndex+1).padStart(2,"0")+" / 04";
   byId("station-title").textContent=station.name;
   byId("station-address").textContent="⌖ "+station.address+" · Kartenposition näherungsweise";
-  byId("station-body").replaceChildren(activeTab==="discover"?discoverView(station):editView(station));
+  byId("station-body").replaceChildren(activeTab==="discover"?discoverView(station):activeTab==="today"?todayView(station):editView(station));
   byId("tab-discover").classList.toggle("active",activeTab==="discover");
   byId("tab-edit").classList.toggle("active",activeTab==="edit");
+  byId("tab-today").classList.toggle("active",activeTab==="today");
   byId("tab-discover").setAttribute("aria-selected",activeTab==="discover"?"true":"false");
   byId("tab-edit").setAttribute("aria-selected",activeTab==="edit"?"true":"false");
+  byId("tab-today").setAttribute("aria-selected",activeTab==="today"?"true":"false");
   byId("station-buttons").querySelectorAll(".station-btn").forEach((b,i)=>b.classList.toggle("active",i===activeIndex));
   markerObjects.forEach((m,i)=>{
     const icon=m.getElement();
@@ -526,6 +646,7 @@ function setup(){
   });
   byId("tab-discover").addEventListener("click",()=>{activeTab="discover";render()});
   byId("tab-edit").addEventListener("click",()=>{activeTab="edit";render()});
+  byId("tab-today").addEventListener("click",()=>{activeTab="today";render()});
   byId("fit-map").addEventListener("click",()=>{if(map&&routeObject){const fit=L.latLngBounds([...ROUTE_GUIDE,...STATIONS.map(s=>s.coordinates)]);map.fitBounds(fit.pad(.14),{maxZoom:15,padding:[28,28]});}});
   byId("close-dialog").addEventListener("click",()=>{materialDialogRequest++;byId("source-dialog").close()});
   byId("source-dialog").addEventListener("click",e=>{if(e.target===byId("source-dialog"))byId("source-dialog").close()});
