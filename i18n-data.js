@@ -2929,5 +2929,200 @@ window.WQ_TRANSLATIONS = [
     "Materialsammlung öffnen ↗",
     "Open Material Archive ↗",
     "Materialien ansehen ↗"
+  ],
+  [
+    "Stationsbelegung",
+    "Station Assignment",
+    "Wer arbeitet an diesem Ort?"
+  ],
+  [
+    "Jede Forschungsgruppe übernimmt genau einen Ort. Eine vergebene Station kann nicht von einer zweiten Gruppe gebucht werden.",
+    "Each research group takes one site. Once assigned, a site cannot be reserved by another group.",
+    "Jede Gruppe wählt einen Ort. Ein Ort darf nur zu einer Gruppe gehören."
+  ],
+  [
+    "Die Belegungen werden geladen …",
+    "Loading Assignments …",
+    "Gruppen werden geladen …"
+  ],
+  [
+    "Belegung wird geladen …",
+    "Loading Assignments …",
+    "Gruppen werden geladen …"
+  ],
+  [
+    "Belegung aktualisieren",
+    "Refresh Assignments",
+    "Gruppen neu laden"
+  ],
+  [
+    "Name eurer Gruppe",
+    "Your Group Name",
+    "Name eurer Gruppe"
+  ],
+  [
+    "z. B. Gruppe A",
+    "e.g. Group A",
+    "z. B. Gruppe A"
+  ],
+  [
+    "Station übernehmen",
+    "Claim This Station",
+    "Diesen Ort wählen"
+  ],
+  [
+    "Eigene Belegung aufheben",
+    "Release Our Assignment",
+    "Unsere Belegung löschen"
+  ],
+  [
+    "Meldet euch mit eurem bestehenden Gruppen- oder Projektkonto an. Ihr könnt auch die Anmeldung in der",
+    "Sign in with your existing group or project account. You can also use the login on the",
+    "Meldet euch mit dem Konto eurer Gruppe an. Das geht auch in der"
+  ],
+  [
+    "nutzen.",
+    "page.",
+    "."
+  ],
+  [
+    "Projektkonto anmelden",
+    "Sign In to Project Account",
+    "Gruppen-Konto anmelden"
+  ],
+  [
+    "E-Mail des Gruppenkontos",
+    "Group Account Email",
+    "E-Mail der Gruppe"
+  ],
+  [
+    "Verwendet nur neutrale Gruppennamen – keine Namen einzelner Schülerinnen oder Schüler. Die Belegung ist öffentlich sichtbar.",
+    "Use neutral group names only, never individual students' names. Station assignments are publicly visible.",
+    "Schreibt nur einen Gruppen-Namen. Keine Namen einzelner Schüler. Alle können die Belegung sehen."
+  ],
+  [
+    "Projektkonto angemeldet",
+    "Project Account Signed In",
+    "Gruppen-Konto angemeldet"
+  ],
+  [
+    "Stationsbelegungen werden geladen …",
+    "Loading Station Assignments …",
+    "Gruppen werden geladen …"
+  ],
+  [
+    "Belegung nicht eingerichtet",
+    "Assignments Not Enabled",
+    "Noch nicht eingerichtet"
+  ],
+  [
+    "Eure Station",
+    "Your Station",
+    "Euer Ort"
+  ],
+  [
+    "Bereits vergeben",
+    "Already Assigned",
+    "Schon vergeben"
+  ],
+  [
+    "Noch frei",
+    "Available",
+    "Noch frei"
+  ],
+  [
+    "Belegung noch nicht aktiv",
+    "Assignments Not Active",
+    "Noch nicht freigeschaltet"
+  ],
+  [
+    "Die Belegung ist noch nicht mit Supabase verbunden. Bitte die Lehrkraft informieren.",
+    "The assignment system is not connected to Supabase. Please inform your teacher.",
+    "Das Gruppen-System ist noch nicht verbunden. Fragt eure Lehrkraft."
+  ],
+  [
+    "Die Stationsvergabe ist noch nicht eingerichtet. Die Lehrkraft muss die SQL-Erweiterung aktivieren.",
+    "Station assignments are not configured yet. The teacher must enable the database extension.",
+    "Die Gruppen-Belegung muss noch eingerichtet werden. Bitte fragt eure Lehrkraft."
+  ],
+  [
+    "Die Belegung wird gespeichert …",
+    "Saving Assignment …",
+    "Eure Wahl wird gespeichert …"
+  ],
+  [
+    "Noch frei. Meldet euch mit eurem Gruppenkonto an, um diese Station zu übernehmen.",
+    "Available. Sign in with your group account to claim this site.",
+    "Der Ort ist noch frei. Meldet euch mit eurem Gruppen-Konto an."
+  ],
+  [
+    "Noch frei. Ihr könnt diesen Ort jetzt verbindlich für eure Gruppe auswählen.",
+    "Available. Your group can now reserve this site.",
+    "Dieser Ort ist frei. Ihr könnt ihn jetzt wählen."
+  ],
+  [
+    "Die Station ist bereits vergeben oder euer Konto hat bereits einen anderen Ort.",
+    "This site is already assigned, or your account already has another site.",
+    "Der Ort ist schon vergeben. Oder eure Gruppe hat bereits einen Ort."
+  ],
+  [
+    "Bitte einen neutralen Gruppennamen mit 3 bis 32 Zeichen eingeben (z. B. Gruppe A).",
+    "Please enter a neutral group name of 3 to 32 characters (e.g. Group A).",
+    "Gebt einen Gruppen-Namen mit 3 bis 32 Zeichen ein. Zum Beispiel: Gruppe A."
+  ],
+  [
+    "Diese Station wurde inzwischen von einer anderen Gruppe übernommen – oder euer Konto hat bereits eine Station.",
+    "Another group has just claimed this station, or your account already has one.",
+    "Eine andere Gruppe hat den Ort gerade gewählt. Oder eure Gruppe hat schon einen Ort."
+  ],
+  [
+    "Belegung fehlgeschlagen. Prüft eure Anmeldung und die Zugriffsrechte.",
+    "Unable to Assign the Site. Check Your Sign-in and Permissions.",
+    "Das hat nicht geklappt. Prüft eure Anmeldung oder fragt die Lehrkraft."
+  ],
+  [
+    "Erfolgreich eingetragen. Eure Station ist nun für andere Gruppen gesperrt.",
+    "Successfully Assigned. Other groups can no longer claim this site.",
+    "Geschafft! Eure Gruppe hat diesen Ort. Andere Gruppen können ihn nicht mehr wählen."
+  ],
+  [
+    "Die Station konnte nicht gespeichert werden. Bitte erneut versuchen.",
+    "Could Not Save This Assignment. Please Try Again.",
+    "Eure Wahl konnte nicht gespeichert werden. Versucht es noch einmal."
+  ],
+  [
+    "Möchtet ihr eure Belegung wirklich aufheben? Danach können andere Gruppen diese Station übernehmen.",
+    "Do you really want to release this station? Other groups will then be able to claim it.",
+    "Wollt ihr euren Ort wirklich freigeben? Dann kann eine andere Gruppe ihn wählen."
+  ],
+  [
+    "Eure Belegung wurde aufgehoben. Die Station ist wieder frei.",
+    "Your Assignment Was Released. The Station Is Available Again.",
+    "Eure Gruppe hat den Ort freigegeben. Er ist wieder frei."
+  ],
+  [
+    "Die Belegung konnte nicht aufgehoben werden. Bitte die Lehrkraft informieren.",
+    "Could Not Release the Assignment. Please Contact Your Teacher.",
+    "Ihr könnt den Ort gerade nicht freigeben. Fragt die Lehrkraft."
+  ],
+  [
+    "Projektkonto angemeldet.",
+    "Project Account Signed In.",
+    "Gruppen-Konto angemeldet."
+  ],
+  [
+    "Anmeldung fehlgeschlagen. Prüft die Zugangsdaten eures Projektkontos.",
+    "Sign-in failed. Check your project account credentials.",
+    "Die Anmeldung hat nicht geklappt. Prüft eure Zugangsdaten."
+  ],
+  [
+    "Projektkonto abgemeldet.",
+    "Project Account Signed Out.",
+    "Gruppen-Konto abgemeldet."
+  ],
+  [
+    "Abmelden fehlgeschlagen. Versucht es erneut.",
+    "Sign-out Failed. Please Try Again.",
+    "Abmelden hat nicht geklappt. Versucht es noch einmal."
   ]
 ];
