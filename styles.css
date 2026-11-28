@@ -1727,3 +1727,228 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   .method-democracy{grid-column:span 1}
   .exhibition-today{padding:21px 18px}
 }
+
+
+/* === Gruppenbelegung der Forschungsstationen V1 === */
+.station-menu .reservation-counter{
+  display:inline-block;
+  color:#6C4245;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:0;
+  margin-left:8px;
+}
+.station-btn>span:nth-child(2){min-width:0}
+.station-btn .reservation-mini{
+  display:block;
+  width:max-content;
+  max-width:100%;
+  border-radius:4px;
+  padding:4px 6px;
+  font-size:9px;
+  line-height:1.35;
+  font-weight:750;
+  margin-top:6px;
+  white-space:normal;
+}
+.station-btn .reservation-mini[data-state="free"]{
+  background:#EFECE6;
+  color:#3F383C;
+}
+.station-btn .reservation-mini[data-state="own"]{
+  background:#ECE6E0;
+  color:#7E2731;
+}
+.station-btn .reservation-mini[data-state="occupied"]{
+  background:#F5E7E5;
+  color:#8B2934;
+}
+.station-btn .reservation-mini[data-state="inactive"]{
+  background:#F2EFEA;
+  color:#5A5659;
+}
+.reservation-panel{
+  border:1px solid #D9CFC8;
+  border-left:3px solid #A72C36;
+  border-radius:0 9px 9px 0;
+  padding:17px 18px 16px;
+  background:#F8F3ED;
+  margin:16px 0 22px;
+}
+.reservation-panel[data-state="occupied"]{
+  background:#F7F1EC;
+}
+.reservation-panel .reservation-topline{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:9px;
+}
+.reservation-topline strong{
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:400;
+  font-size:19px;
+  color:#2A282D;
+}
+.reservation-refresh{
+  border:1px solid #D4C9C0;
+  border-radius:6px;
+  background:#FFFCF8;
+  color:#8D2934;
+  padding:7px 9px;
+  font-size:11px;
+  line-height:1.3;
+  font-weight:700;
+  cursor:pointer;
+}
+.reservation-refresh:hover{background:#F3E9E3}
+.reservation-description,.reservation-hint{
+  margin:11px 0 9px;
+  color:#393438;
+  font-size:12px;
+  line-height:1.65;
+}
+.reservation-state{
+  color:#2F2C31;
+  font-size:13px;
+  line-height:1.65;
+  font-weight:750;
+  margin:13px 0 9px;
+  overflow-wrap:anywhere;
+}
+.reservation-feedback{
+  font-size:12px;
+  font-weight:700;
+  line-height:1.5;
+  color:#74454A;
+  margin:5px 0;
+}
+.reservation-feedback:empty{display:none}
+.reservation-feedback[data-state="error"]{color:#A72C36}
+.reservation-panel .reservation-hint{
+  font-size:11px;
+  line-height:1.55;
+  color:#50464B;
+  margin:12px 0 0;
+}
+.reservation-form-row{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:8px;
+  margin:8px 0 0;
+}
+.reservation-claim-form>label,.reservation-login-form>label{
+  display:block;
+  font-size:12px;
+  font-weight:750;
+  color:#302D31;
+  margin-top:11px;
+  margin-bottom:5px;
+}
+.reservation-form-row input,.reservation-login-form input{
+  box-sizing:border-box;
+  width:100%;
+  min-width:0;
+  border:1px solid #C9BFB7;
+  background:#FFFFFF;
+  color:#252329;
+  border-radius:7px;
+  font-size:13px;
+  min-height:42px;
+  padding:10px 12px;
+}
+.reservation-form-row input:focus,.reservation-login-form input:focus{
+  outline:2px solid #C58A90;
+  outline-offset:1px;
+}
+.reservation-primary{
+  appearance:none;
+  background:#A72C36;
+  color:#fff;
+  border:1px solid #A72C36;
+  border-radius:7px;
+  padding:11px 14px;
+  min-height:42px;
+  font-size:12px;
+  line-height:1.4;
+  font-weight:800;
+  cursor:pointer;
+}
+.reservation-primary:hover{background:#852630}
+.reservation-primary:disabled{opacity:.6;cursor:not-allowed}
+.reservation-release{
+  display:inline-flex;
+  border:1px solid #CFA3A2;
+  color:#912D38;
+  background:#FFFDFC;
+  border-radius:7px;
+  padding:10px 13px;
+  font-size:12px;
+  font-weight:750;
+  cursor:pointer;
+}
+.reservation-release:hover{background:#F9ECEB}
+.reservation-account{
+  display:flex;
+  gap:8px;
+  justify-content:space-between;
+  align-items:center;
+  margin:10px 0;
+  flex-wrap:wrap;
+}
+.reservation-account span{
+  font-size:11px;
+  font-weight:700;
+  color:#454045;
+}
+.reservation-logout{
+  border:none;
+  color:#892733;
+  text-decoration:underline;
+  background:transparent;
+  padding:5px 2px;
+  font-size:11px;
+  font-weight:750;
+  cursor:pointer;
+}
+.reservation-login-note{
+  font-size:12px;
+  line-height:1.6;
+  color:#393438;
+  margin:10px 0;
+}
+.reservation-login-note a{
+  color:#912D37;
+  font-weight:750;
+  text-decoration:underline;
+}
+.reservation-login-details{
+  border:1px solid #D5CBC3;
+  border-radius:7px;
+  background:#FFFDF9;
+  padding:11px 13px;
+}
+.reservation-login-details summary{
+  color:#8F2935;
+  font-size:12px;
+  font-weight:750;
+  cursor:pointer;
+}
+.reservation-login-form{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:4px;
+  margin-top:8px;
+}
+.reservation-login-form button{
+  margin-top:8px;
+}
+@media(max-width:700px){
+  .reservation-panel{
+    padding:15px 14px;
+    margin:15px 0 18px;
+  }
+  .reservation-topline strong{font-size:18px}
+  .station-menu .reservation-counter{display:block;margin-left:0;margin-top:6px}
+}
