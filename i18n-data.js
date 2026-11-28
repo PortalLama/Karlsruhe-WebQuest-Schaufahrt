@@ -1919,5 +1919,295 @@ window.WQ_TRANSLATIONS = [
     "Die Kartenbibliothek konnte nicht geladen werden. Die Stationen sind über die Schaltflächen unter der Karte trotzdem erreichbar.",
     "The Map Could Not Be Loaded. You Can Still Select Stations Using the Buttons Below.",
     "Die Karte lädt nicht. Ihr könnt die vier Orte trotzdem über die Knöpfe auswählen."
+  ],
+  [
+    "Zur Prüfung eingereicht",
+    "Submitted for Review",
+    "Zur Prüfung abgegeben"
+  ],
+  [
+    "Nicht freigegeben",
+    "Not Approved",
+    "Nicht freigegeben"
+  ],
+  [
+    "Bitte eine Datei zwischen 1 Byte und 10 MB auswählen.",
+    "Please select a file between 1 byte and 10 MB.",
+    "Bitte eine Datei auswählen. Sie darf höchstens 10 MB groß sein."
+  ],
+  [
+    "Nur echte PDF-, JPG-, PNG- oder WebP-Dateien mit passender Dateiendung sind erlaubt.",
+    "Only genuine PDF, JPG, PNG, or WebP files with matching extensions are allowed.",
+    "Nur PDF, JPG, PNG und WebP sind erlaubt. Die Datei-Endung muss stimmen."
+  ],
+  [
+    "Die vorhandene Datei kann nach dem Einreichen nicht direkt ersetzt werden. Metadaten lassen sich bis zur Freigabe bearbeiten.",
+    "You cannot replace a submitted file directly. Its description can be edited until approval.",
+    "Die Datei könnt ihr nicht direkt austauschen. Den Text dazu könnt ihr bis zur Freigabe ändern."
+  ],
+  [
+    "Datei-Uploads erfordern einen privaten Bucket namens webquest-materials. Maximale Dateigröße: 10 MB.",
+    "File uploads require a private bucket named webquest-materials. Maximum size: 10 MB.",
+    "Für Dateien braucht ihr den geschützten Speicher. Höchstens 10 MB pro Datei."
+  ],
+  [
+    "Datei-Uploads werden nach der SQL-Migration und Einrichtung des privaten Supabase-Buckets verfügbar.",
+    "File uploads will be available after the SQL migration and private Supabase bucket setup.",
+    "Dateien könnt ihr hochladen, wenn der Speicher eingerichtet ist."
+  ],
+  [
+    "Datei-Uploads sind für PDF, JPG, PNG und WebP vorbereitet (max. 10 MB).",
+    "PDF, JPG, PNG, and WebP uploads are supported (max. 10 MB).",
+    "Ihr könnt PDF, JPG, PNG und WebP hochladen. Höchstens 10 MB."
+  ],
+  [
+    "Dateivorschau wird sicher geladen …",
+    "Loading Secure File Preview …",
+    "Datei wird geladen …"
+  ],
+  [
+    "PDF-Dokument: Zum Betrachten im Browser öffnen.",
+    "PDF Document: Open in Your Browser to Read.",
+    "PDF-Datei: Öffnet sie im Browser."
+  ],
+  [
+    "Bild öffnen ↗",
+    "Open Image ↗",
+    "Bild öffnen ↗"
+  ],
+  [
+    "PDF öffnen ↗",
+    "Open PDF ↗",
+    "PDF öffnen ↗"
+  ],
+  [
+    "Der Zugriff auf diese private Datei wird für zwei Minuten freigegeben. Danach die Materialdetails erneut öffnen.",
+    "Access to this private file lasts two minutes. Reopen the details to obtain a new link.",
+    "Der Link funktioniert nur zwei Minuten. Öffnet die Material-Infos erneut, wenn ihr die Datei wieder sehen wollt."
+  ],
+  [
+    "Angemeldet. Du kannst Quellen, Links und nach Einrichtung des Dateispeichers auch PDFs und Bilder zur Prüfung einreichen.",
+    "Signed in. You can submit sources and links, as well as PDFs and images once file storage is enabled.",
+    "Ihr seid angemeldet. Jetzt könnt ihr Quellen und Links abgeben. Auch Bilder und PDFs sind möglich, wenn der Datei-Speicher eingerichtet ist."
+  ],
+  [
+    "Mit einem freigegebenen Projektkonto kannst du Quellen und Links einreichen. Freigegebene Materialien sind auch ohne Anmeldung sichtbar.",
+    "With an approved project account, you can submit sources and links. Approved materials are available without signing in.",
+    "Mit einem Gruppen-Konto könnt ihr Quellen abgeben. Geprüfte Materialien können alle sehen."
+  ],
+  [
+    "Die gemeinsame Speicherung ist noch nicht verbunden. Das Formular wird nach der Einrichtung aktiv.",
+    "Shared storage is not connected yet. The form will become available after setup.",
+    "Der gemeinsame Speicher ist noch nicht verbunden. Ihr könnt euch noch nicht anmelden."
+  ],
+  [
+    "Noch nicht mit einem gemeinsamen Archiv verbunden.",
+    "Not Connected to a Shared Archive Yet.",
+    "Die gemeinsame Sammlung ist noch nicht verbunden."
+  ],
+  [
+    "Die Benutzeroberfläche ist vorbereitet. Nach dem Anlegen des Supabase-Projekts und der sicheren Zugriffsregeln werden hier die echten Einträge angezeigt.",
+    "The interface is ready. Materials will appear here after the Supabase project and secure access rules are set up.",
+    "Die Seite ist fertig. Wenn die Datenbank eingerichtet ist, seht ihr hier die Materialien."
+  ],
+  [
+    "Bitte zuerst anmelden.",
+    "Please Sign In First.",
+    "Bitte meldet euch zuerst an."
+  ],
+  [
+    "Die persönlichen Einreichungen sind nur für das jeweilige Projektkonto sichtbar.",
+    "Your own submissions are visible only to your project account.",
+    "Nur eure Gruppe sieht diese eigenen Beiträge."
+  ],
+  [
+    "Keine Treffer für diese Filter.",
+    "No Results for These Filters.",
+    "Keine passenden Materialien gefunden."
+  ],
+  [
+    "Noch keine Materialien vorhanden.",
+    "No Materials Yet.",
+    "Hier sind noch keine Materialien."
+  ],
+  [
+    "Passe deine Suche oder die Filter an.",
+    "Adjust Your Search or Filters.",
+    "Probiert einen anderen Suchbegriff oder Filter."
+  ],
+  [
+    "Neue Einreichungen werden zunächst geprüft. Freigegebene Materialien erscheinen anschließend in der Übersicht.",
+    "New submissions are reviewed first. Approved materials will then appear in the overview.",
+    "Neue Beiträge werden zuerst geprüft. Danach erscheinen sie für alle."
+  ],
+  [
+    "Urheber unbekannt",
+    "Unknown Creator",
+    "Wer die Quelle gemacht hat, ist unbekannt."
+  ],
+  [
+    "Status unbekannt",
+    "Unknown Status",
+    "Status unbekannt"
+  ],
+  [
+    "Details ansehen",
+    "View Details",
+    "Infos ansehen"
+  ],
+  [
+    "Datei ansehen ↗",
+    "View File ↗",
+    "Datei ansehen ↗"
+  ],
+  [
+    "Material öffnen ↗",
+    "Open Material ↗",
+    "Material öffnen ↗"
+  ],
+  [
+    "Erläuterung und Hinweise",
+    "Description and Notes",
+    "Erklärung und Hinweise"
+  ],
+  [
+    "Eingereicht am",
+    "Submitted On",
+    "Abgegeben am"
+  ],
+  [
+    "Material extern öffnen ↗",
+    "Open External Material ↗",
+    "Material öffnen ↗"
+  ],
+  [
+    "Material bearbeiten",
+    "Edit Material",
+    "Material bearbeiten"
+  ],
+  [
+    "Änderungen speichern",
+    "Save Changes",
+    "Änderungen speichern"
+  ],
+  [
+    "Diese noch nicht freigegebene Einreichung endgültig löschen?",
+    "Permanently Delete This Unapproved Submission?",
+    "Wollt ihr diesen noch nicht geprüften Beitrag wirklich löschen?"
+  ],
+  [
+    "Bitte zuerst mit einem Projektkonto anmelden.",
+    "Please Sign In with a Project Account First.",
+    "Bitte mit dem Gruppen-Konto anmelden."
+  ],
+  [
+    "Bitte einen gültigen HTTPS-Link ohne Zugangsdaten eintragen.",
+    "Please Enter a Valid HTTPS Link Without Login Credentials.",
+    "Bitte einen richtigen Link mit https:// eintragen. Keine Passwörter in den Link schreiben."
+  ],
+  [
+    "Der private Dateispeicher ist noch nicht eingerichtet. Bitte zuerst die SQL-Migration ausführen.",
+    "Private File Storage Has Not Been Set Up Yet. Run the SQL Migration First.",
+    "Der Speicher für Dateien ist noch nicht eingerichtet. Bitte fragt eure Lehrkraft."
+  ],
+  [
+    "Datei wird geprüft und hochgeladen …",
+    "Checking and Uploading File …",
+    "Datei wird geprüft und hochgeladen …"
+  ],
+  [
+    "Eintrag wird gespeichert …",
+    "Saving Submission …",
+    "Beitrag wird gespeichert …"
+  ],
+  [
+    "Bitte einen aktuellen Browser mit sicherer HTTPS-Verbindung verwenden.",
+    "Please Use a Current Browser with a Secure HTTPS Connection.",
+    "Bitte nutzt einen aktuellen Browser mit einer sicheren Verbindung."
+  ],
+  [
+    "Datei gespeichert. Quellenangaben werden zur Prüfung eingereicht …",
+    "File Uploaded. Submitting Source Information for Review …",
+    "Datei gespeichert. Jetzt werden die Infos dazu abgegeben …"
+  ],
+  [
+    "Bitte Eingaben und Zugriffsrechte prüfen.",
+    "Check Your Entries and Access Permissions.",
+    "Prüft eure Eingaben oder fragt die Lehrkraft."
+  ],
+  [
+    "Lade Materialien …",
+    "Loading Materials …",
+    "Materialien werden geladen …"
+  ],
+  [
+    "Gemeinsames Forschungsarchiv verbunden",
+    "Shared Research Archive Connected",
+    "Gemeinsame Sammlung verbunden"
+  ],
+  [
+    "Freigegebene Materialien sind sichtbar. Eigene Entwürfe erscheinen nach Anmeldung im Bereich „Meine Einreichungen“.",
+    "Approved materials are visible. Your own drafts appear under “My Submissions” after signing in.",
+    "Alle können geprüfte Materialien sehen. Eure eigenen Beiträge findet ihr nach der Anmeldung unter „Meine Beiträge“."
+  ],
+  [
+    "Die Materialsammlung kann nicht geladen werden",
+    "Unable to Load Materials",
+    "Materialien können gerade nicht geladen werden"
+  ],
+  [
+    "Anmeldung läuft …",
+    "Signing In …",
+    "Anmeldung läuft …"
+  ],
+  [
+    "Database wartet auf die Supabase-Verbindung",
+    "Database Waiting for Supabase Connection",
+    "Die Sammlung ist noch nicht verbunden"
+  ],
+  [
+    "Die Oberfläche ist fertig. Es sind noch keine Zugangsdaten für die gemeinsame Speicherung hinterlegt. Ohne Verbindung werden keine Materialien gespeichert.",
+    "The interface is ready, but the shared storage has not been configured. No materials are saved without a connection.",
+    "Die Seite ist fertig. Der gemeinsame Speicher fehlt noch. Darum kann hier noch nichts gespeichert werden."
+  ],
+  [
+    "Datenbankbibliothek konnte nicht geladen werden",
+    "Could Not Load Database Library",
+    "Die Datenbank kann nicht geladen werden"
+  ],
+  [
+    "Bitte Internetverbindung prüfen und die Seite neu laden.",
+    "Check Your Internet Connection and Reload the Page.",
+    "Prüft das Internet. Ladet die Seite neu."
+  ],
+  [
+    "Verbindung fehlgeschlagen",
+    "Connection Failed",
+    "Verbindung hat nicht funktioniert"
+  ],
+  [
+    "01 – Gefängnis Riefstahlstraße",
+    "01 – Riefstahlstraße Prison",
+    "01 – Gefängnis"
+  ],
+  [
+    "02 – Kanzlei Ludwig Marum",
+    "02 – Ludwig Marum's Law Office",
+    "02 – Kanzlei Marum"
+  ],
+  [
+    "03 – Volksfreund-Redaktion",
+    "03 – Volksfreund Newspaper Office",
+    "03 – Zeitung Volksfreund"
+  ],
+  [
+    "04 – Badisches Ständehaus",
+    "04 – Baden Parliament Building",
+    "04 – Ständehaus"
+  ],
+  [
+    "Datei",
+    "File",
+    "Datei"
   ]
 ];
